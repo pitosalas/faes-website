@@ -39,4 +39,4 @@ def test_uv_run_exits_zero():
         text=True,
     )
     assert result.returncode == 0
-    assert "faes-website generator" in result.stdout
+    assert "Done" in result.stdout

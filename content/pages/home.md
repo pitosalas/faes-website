@@ -3,16 +3,18 @@ title: Welcome
 date: 2024-01-01
 type: page
 slug: index
+public: true
 ---
 
 # Fundashon Abram Edgardo Salas
 
-The Fundashon Abram Edgardo Salas is a private foundation dedicated to supporting individuals and communities through meaningful grants.
+We are a grant making organization established in Curaçao to provide financial support to a variety of non-profits and foundations in Curaçao. We focus on small organizations which don't necessarily have the attention of large institutional donors because they are new, small, and less well known.
 
-We believe in the power of education, culture, and opportunity. Our grants help people build better futures for themselves and those around them.
+## Our Grants
 
-## Our Work
+We have two kinds of grants:
 
-We award grants to individuals and organizations whose work reflects our values of integrity, creativity, and community. Each year we review applications and select recipients whose projects make a lasting difference.
+1. **Pilot grants** of XCG 2,500 to XCG 10,000 for recipients we are getting to know. We do a basic amount of due diligence, with almost no paperwork or reporting requested. These are organizations with exciting prospects and work that matches our goals.
+2. **Major grants** of XCG 10,000 up to XCG 100,000 for recipients we have gotten to know and are really comfortable with. For those we request a "Letter of Interest" to begin the process, followed by our own due diligence, reference checking, and follow up.
 
 [Learn about our mission](/mission) or [read about who we are](/about).

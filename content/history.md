@@ -3,6 +3,7 @@ title: Our History
 date: 2024-01-01
 type: page
 slug: history
+public: false
 ---
 
 # Fundashon Abram Edgardo Salas

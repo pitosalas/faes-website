@@ -4,7 +4,8 @@
       "Bash(mkdir:*)",
       "Bash(uv:*)",
       "Bash(git push:*)",
-      "Bash(git:*)"
+      "Bash(git:*)",
+      "Bash(lsof:*)"
     ]
   }
 }

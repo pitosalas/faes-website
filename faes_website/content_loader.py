@@ -32,7 +32,15 @@ class ContentLoader:
         parts = raw.split("---", 2)
         return parts[1], parts[2].strip()
 
+    def load_public(self, directory: Path) -> list[dict]:
+        return [item for item in self.load(directory) if item.get("public") is True]
+
     def _validate(self, data: dict, path: Path) -> None:
-        for field in ("title", "date", "type"):
+        for field in ("title", "date", "type", "public"):
             if field not in data:
                 raise KeyError(f"Missing required field '{field}' in {path}")
+        if data.get("type") == "grant":
+            if "grant_type" not in data:
+                raise KeyError(f"Missing required field 'grant_type' in {path}")
+            if data["grant_type"] not in ("pilot", "primary"):
+                raise ValueError(f"Invalid grant_type '{data['grant_type']}' in {path}")

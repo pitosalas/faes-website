@@ -31,3 +31,6 @@ Thumbs.db
 # Generated site output
 site/*
 !site/.gitkeep
+
+# Local staging output (never deployed)
+staging/

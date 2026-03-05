@@ -30,6 +30,7 @@ title: Test Page
 date: 2024-01-01
 type: page
 slug: test
+public: true
 ---
 
 Hello world.
@@ -48,6 +49,7 @@ title: Test
 date: 2024-01-01
 type: page
 slug: test
+public: true
 ---
 
 # Heading One
@@ -61,6 +63,7 @@ def test_missing_title_raises(tmp_path):
 ---
 date: 2024-01-01
 type: page
+public: true
 ---
 
 No title here.
