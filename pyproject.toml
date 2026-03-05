@@ -1,0 +1,19 @@
+[project]
+name = "faes-website"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "jinja2",
+    "markdown",
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+faes-website = "faes_website.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

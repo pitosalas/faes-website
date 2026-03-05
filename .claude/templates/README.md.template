@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-# faes-website
-=======
-# faes-website
+# <APP NAME>
 
 <One sentence description of what the app does.>
 
@@ -9,7 +6,7 @@
 
 ```bash
 git clone <repo url>
-cd faes-website
+cd <app name>
 uv sync
 ```
 
@@ -28,4 +25,3 @@ uv run pytest
 ## License
 
 MIT — see [LICENSE](LICENSE)
->>>>>>> efe34dc (first commit)
