@@ -4,4 +4,4 @@
 **Done:** no
 **Tests Written:** no
 **Test Passing:** no
-**Description**: A Python program that reads all markdown files from `content/`, applies HTML templates, and writes the generated site to `site/`. Must handle: YAML front matter parsing, markdown-to-HTML conversion, applying layout templates, generating an index/home page, and copying static assets. Invoked with `uv run` from the project root.
+**Description**: A Python program that reads all markdown files from `content/`, applies HTML templates, and writes the generated site to `site/`. Must handle: YAML front matter parsing, markdown-to-HTML conversion, applying layout templates, generating an index/home page, copying static assets, and filtering out content where `public: false`. Only public content is written to `site/`. Invoked with `uv run` from the project root.
