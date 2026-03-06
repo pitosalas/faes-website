@@ -98,14 +98,14 @@ class SiteGenerator:
         self._write("board.html", html)
 
     def _person_card(self, p: dict) -> str:
-        photo_html = ""
-        if p.get("photo"):
-            photo_html = f'<img src="static/photos/{p["photo"]}" alt="{p["title"]}" class="person-photo">'
+        photo = p.get("photo") or "default-person.svg"
         return f"""
         <div class="person-card">
-          {photo_html}
-          <h3>{p["title"]}</h3>
-          <div class="person-bio">{p["body_html"]}</div>
+          <img src="static/photos/{photo}" alt="{p["title"]}" class="person-photo">
+          <div class="person-card-body">
+            <h3>{p["title"]}</h3>
+            <div class="person-bio">{p["body_html"]}</div>
+          </div>
         </div>"""
 
     def _page_html(self, title: str, slug: str, body_html: str) -> str:

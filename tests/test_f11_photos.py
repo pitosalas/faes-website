@@ -59,15 +59,16 @@ def test_photo_alt_text_is_person_name(tmp_path):
     assert 'alt="Jane Board"' in html
 
 
-def test_no_photo_omits_img_tag(tmp_path):
+def test_no_photo_uses_default_placeholder(tmp_path):
     html = setup_site(tmp_path, PERSON_NO_PHOTO)
-    assert "<img" not in html
+    assert "default-person.svg" in html
 
 
-def test_photo_and_no_photo_together(tmp_path):
+def test_photo_and_no_photo_both_have_img(tmp_path):
     html = setup_site(tmp_path, PERSON_WITH_PHOTO, PERSON_NO_PHOTO)
     assert "jane.jpg" in html
-    assert html.count("<img") == 1
+    assert "default-person.svg" in html
+    assert html.count("<img") == 2
 
 
 def test_static_photos_dir_exists():
