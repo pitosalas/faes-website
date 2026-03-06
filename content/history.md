@@ -17,7 +17,7 @@ We are a grant making organization established in Curaçao to provide financial 
 We have two kinds of grants:
 
 1. **Pilot grants** of XCG 2,500 to XCG 10,000 for recipients we are getting to know. We do a basic amount of due diligence, with almost no paperwork or reporting requested. These are organizations with exciting prospects and work that matches our goals.
-2. **Major grants** of XCG 10,000 up to XCG 100,000 for recipients we have gotten to know and are really comfortable with. For those we request a "Letter of Interest" to begin the process, followed by our own due diligence, reference checking, and follow up.
+2. **Major grants** of XCG 10,000 up to XCG 100,000 for recipients we have gotten to know and are really comfortable with. We make only a few Major grants a year. We will invite you by email to send "Letter of Interest" to begin the process, followed by our own due diligence, reference checking, and follow up.
 
 ## History
 
