@@ -45,4 +45,4 @@ def test_topbar_above_banner(tmp_path):
 def test_topbar_css_exists():
     css = (Path(__file__).parent.parent / "static" / "style.css").read_text()
     assert ".site-topbar" in css
-    assert "#2188c4" in css
+    assert "#5FA9DC" in css

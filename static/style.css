@@ -62,13 +62,15 @@ strong { font-weight: 600; }
 /* ── Topbar ────────────────────────────────────────────────── */
 .site-topbar {
   width: 100%;
-  background: #2188c4;
+  background: #5FA9DC;
   color: #fff;
-  text-align: center;
-  padding: 0.45rem var(--space-md);
+  text-align: left;
+  padding: 0.25rem var(--space-lg);
   font-family: var(--font-serif);
-  font-size: 0.95rem;
-  letter-spacing: 0.06em;
+  font-size: 0.82rem;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid #1a5a8a;
 }
 
 /* ── Banner ────────────────────────────────────────────────── */
