@@ -6,6 +6,7 @@
 import markdown
 import yaml
 from pathlib import Path
+from faes_website.csv_loader import CsvLoader
 
 
 class ContentLoader:
@@ -15,6 +16,7 @@ class ContentLoader:
             if path.name == "README.md":
                 continue
             results.append(self._parse_file(path))
+        results.extend(CsvLoader().load(directory / "grants.csv"))
         return results
 
     def _parse_file(self, path: Path) -> dict:
