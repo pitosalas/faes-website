@@ -8,7 +8,7 @@ public: true
 
 # About the Foundation
 
-We are a grant making organization established in Curaçao to provide financial support to a variety of non-profits and foundations in Curaçao. We focus on small organizations which don't necessarily have the attention of large institutional donors because they are new, small, and less well known.
+The Fundashon Abram Edgardo Salas is a grant-making organization based in Curaçao. We direct financial support to small non-profits and foundations that larger institutional donors often overlook.
 
 ## History
 
@@ -16,4 +16,4 @@ FAES was formed in 2010 by Pito Salas in honor of his father Abram Edgardo Salas
 
 ## How We Operate
 
-The foundation is managed by a small board of trustees who review grant applications annually. We value partner organizations which are relatively small, hands-on, and doing work on the ground themselves. We look at competence, professionalism, expertise, transparency, and high ethical standards.
+The foundation is managed by a small board of trustees who review grant applications annually. Our criteria and values are described on our [mission page](/mission).
