@@ -36,13 +36,14 @@ def test_topbar_present_in_board_page(tmp_path):
     assert "site-topbar" in html
 
 
-def test_topbar_above_banner(tmp_path):
+def test_topbar_inside_hero(tmp_path):
     site_dir = make_site(tmp_path)
     html = (site_dir / "grants.html").read_text()
-    assert html.index("site-topbar") < html.index("site-banner")
+    assert "site-hero" in html
+    assert html.index("site-banner") < html.index("site-topbar")
 
 
 def test_topbar_css_exists():
     css = (Path(__file__).parent.parent / "static" / "style.css").read_text()
     assert ".site-topbar" in css
-    assert "#5FA9DC" in css
+    assert ".site-topbar" in css

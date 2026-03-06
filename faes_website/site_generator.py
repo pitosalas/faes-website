@@ -125,8 +125,10 @@ class SiteGenerator:
   <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-  <div class="site-topbar">Fundashon Abram Edgardo Salas</div>
-  <div class="site-banner"></div>
+  <div class="site-hero">
+    <div class="site-banner"></div>
+    <div class="site-topbar">Fundashon Abram Edgardo Salas</div>
+  </div>
   {self._header(active)}
   <main>
     <div class="container">{body}

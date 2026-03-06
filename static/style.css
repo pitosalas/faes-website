@@ -59,19 +59,23 @@ ul, ol { margin-bottom: var(--space-sm); padding-left: 1.4rem; }
 li { margin-bottom: 0.25rem; }
 strong { font-weight: 600; }
 
-/* ── Topbar ────────────────────────────────────────────────── */
+/* ── Hero (banner + topbar overlay) ───────────────────────── */
+.site-hero {
+  position: relative;
+}
+
 .site-topbar {
-  width: 100%;
-  background: #5FA9DC;
-  color: #fff;
-  text-align: left;
-  padding: 0.25rem var(--space-lg);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.3rem var(--space-lg);
   font-family: "Cochin", "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 1.5rem;
   font-style: italic;
   letter-spacing: 0.08em;
-  color: transparent;
-  border-bottom: 1px solid #1a5a8a;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.45);
 }
 
 /* ── Banner ────────────────────────────────────────────────── */
