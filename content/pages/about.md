@@ -12,7 +12,7 @@ The Fundashon Abram Edgardo Salas is a grant-making organization based in Curaç
 
 ## History
 
-FAES was formed in 2010 by Pito Salas in honor of his father Abram Edgardo Salas. The initial board members included Pito Salas, Margarita Salas, Virginia, and Janice. Our advisory board included Patricia Salas, Larry Salas, Harlan Cohen, and Chris Salas. Since formation we have given out an average of XCG 100,000 every year.
+FAES was formed in 2010 by Pito Salas in honor of his father Abram Edgardo Salas. The initial board members included Pito Salas, Margarita Salas, Virginia, and Janice. Our advisory board included Patricia Salas, Larry Salas, Harlan Cohen, and Chris Salas. Since formation we have given out an average of XCG 100,000 every year. [Meet the current board](/board).
 
 ## How We Operate
 

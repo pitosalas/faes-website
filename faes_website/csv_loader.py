@@ -31,6 +31,8 @@ class CsvLoader:
             "grant_type": row["grant_type"],
             "public": row["public"].strip().lower() == "true",
             "body_html": markdown.markdown(row.get("description", "")),
+            "logo": row.get("logo", ""),
+            "url": row.get("url", ""),
             "source_path": source,
         }
 

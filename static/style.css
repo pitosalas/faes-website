@@ -59,6 +59,18 @@ ul, ol { margin-bottom: var(--space-sm); padding-left: 1.4rem; }
 li { margin-bottom: 0.25rem; }
 strong { font-weight: 600; }
 
+/* ── Topbar ────────────────────────────────────────────────── */
+.site-topbar {
+  width: 100%;
+  background: #2188c4;
+  color: #fff;
+  text-align: center;
+  padding: 0.45rem var(--space-md);
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+}
+
 /* ── Banner ────────────────────────────────────────────────── */
 .site-banner {
   width: 100%;

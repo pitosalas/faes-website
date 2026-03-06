@@ -63,9 +63,16 @@ class SiteGenerator:
         self._write("grants.html", html)
 
     def _grant_card(self, g: dict) -> str:
+        title = g["title"]
+        if g.get("url"):
+            title = f'<a href="{g["url"]}" target="_blank" rel="noopener">{title}</a>'
+        logo_html = ""
+        if g.get("logo"):
+            logo_html = f'<img src="static/logos/{g["logo"]}" alt="{g.get("recipient", "")}" class="grantee-logo">'
         return f"""
         <div class="grant-card">
-          <h3>{g["title"]}</h3>
+          {logo_html}
+          <h3>{title}</h3>
           <div class="grant-meta">
             <span>{g.get("year", "")}</span>
             <span>{g.get("recipient", "")}</span>
@@ -91,8 +98,12 @@ class SiteGenerator:
         self._write("board.html", html)
 
     def _person_card(self, p: dict) -> str:
+        photo_html = ""
+        if p.get("photo"):
+            photo_html = f'<img src="static/photos/{p["photo"]}" alt="{p["title"]}" class="person-photo">'
         return f"""
         <div class="person-card">
+          {photo_html}
           <h3>{p["title"]}</h3>
           <div class="person-bio">{p["body_html"]}</div>
         </div>"""
@@ -114,6 +125,7 @@ class SiteGenerator:
   <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
+  <div class="site-topbar">Fundashon Abram Edgardo Salas</div>
   <div class="site-banner"></div>
   {self._header(active)}
   <main>

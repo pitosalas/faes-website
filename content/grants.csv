@@ -1,3 +1,3 @@
-title,date,recipient,amount,year,status,grant_type,public,description
-2023 Youth Education Grant,2023-06-01,Centro di Edukashon Kòrsou,XCG 5000,2023,awarded,pilot,true,Supported after-school literacy programs for over sixty children in underserved neighborhoods across Curaçao.
-2023 Heritage Preservation Grant,2023-09-15,Stichting Monumentenzorg Curaçao,XCG 25000,2023,awarded,primary,true,Funded restoration of historic facades in the Otrobanda district and digitization of archival photographs.
+title,date,recipient,amount,year,status,grant_type,public,description,logo,url
+2023 Youth Education Grant,2023-06-01,Centro di Edukashon Kòrsou,XCG 5000,2023,awarded,pilot,true,Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.,,
+2023 Heritage Preservation Grant,2023-09-15,Stichting Monumentenzorg Curaçao,XCG 25000,2023,awarded,primary,true,Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.,,

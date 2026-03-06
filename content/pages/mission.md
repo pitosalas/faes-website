@@ -18,4 +18,4 @@ Our second mission aims to set up, guide, and support financially the Jewish com
 
 ## What We Look For
 
-We value partner organizations which are relatively small, hands-on, and doing work on the ground themselves. We look at competence, professionalism, expertise, transparency, and high ethical standards.
+We value partner organizations which are relatively small, hands-on, and doing work on the ground themselves. We look at competence, professionalism, expertise, transparency, and high ethical standards. [View our grants](/grants) to see examples of the work we support.

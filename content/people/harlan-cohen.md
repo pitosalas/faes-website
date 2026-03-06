@@ -6,4 +6,4 @@ role: advisor
 public: true
 ---
 
-Advisory board member bringing expertise in legal and organizational governance to support the foundation's mission.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

@@ -6,4 +6,4 @@ role: advisor
 public: true
 ---
 
-Advisory board member offering counsel on financial stewardship and long-term foundation sustainability.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

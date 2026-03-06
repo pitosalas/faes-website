@@ -6,4 +6,4 @@ role: board
 public: true
 ---
 
-Board member and founding trustee of FAES, bringing expertise in community development and nonprofit governance in Curaçao.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

@@ -6,4 +6,4 @@ role: advisor
 public: true
 ---
 
-Advisory board member providing strategic guidance on grant priorities and community impact assessment.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
