@@ -67,9 +67,10 @@ strong { font-weight: 600; }
   text-align: left;
   padding: 0.25rem var(--space-lg);
   font-family: "Cochin", "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-style: italic;
   letter-spacing: 0.08em;
+  color: transparent;
   border-bottom: 1px solid #1a5a8a;
 }
 
