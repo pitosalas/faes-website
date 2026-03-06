@@ -46,3 +46,8 @@ class ContentLoader:
                 raise KeyError(f"Missing required field 'grant_type' in {path}")
             if data["grant_type"] not in ("pilot", "primary"):
                 raise ValueError(f"Invalid grant_type '{data['grant_type']}' in {path}")
+        if data.get("type") == "person":
+            if "role" not in data:
+                raise KeyError(f"Missing required field 'role' in {path}")
+            if data["role"] not in ("board", "advisor"):
+                raise ValueError(f"Invalid role '{data['role']}' in {path}")

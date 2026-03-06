@@ -17,3 +17,5 @@ FAES was formed in 2010 by Pito Salas in honor of his father Abram Edgardo Salas
 ## How We Operate
 
 The foundation is managed by a small board of trustees who review grant applications annually. Our criteria and values are described on our [mission page](/mission).
+
+

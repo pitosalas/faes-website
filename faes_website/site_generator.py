@@ -12,6 +12,7 @@ NAV_ITEMS = [
     ("about", "About", "about.html"),
     ("mission", "Mission", "mission.html"),
     ("grants", "Grants", "grants.html"),
+    ("board", "Board", "board.html"),
 ]
 
 
@@ -27,9 +28,11 @@ class SiteGenerator:
         items = loader.load(self.content_dir) if include_private else loader.load_public(self.content_dir)
         pages = [i for i in items if i["type"] == "page"]
         grants = [i for i in items if i["type"] == "grant"]
+        people = [i for i in items if i["type"] == "person"]
         for page in pages:
             self._write_page(page)
         self._write_grants(grants)
+        self._write_board(people)
         return self.written
 
     def _copy_static(self):
@@ -69,6 +72,29 @@ class SiteGenerator:
             <span class="grant-type">{g.get("grant_type", "").capitalize()}</span>
           </div>
           <div class="grant-body">{g["body_html"]}</div>
+        </div>"""
+
+    def _write_board(self, people: list):
+        board = [p for p in people if p.get("role") == "board"]
+        advisors = [p for p in people if p.get("role") == "advisor"]
+        board_cards = "".join(self._person_card(p) for p in board)
+        advisor_cards = "".join(self._person_card(p) for p in advisors)
+        body = f"""
+      <div class="board-page">
+        <h1>Board &amp; Advisors</h1>
+        <h2>Board Members</h2>
+        <div class="people-grid">{board_cards}</div>
+        <h2>Advisors</h2>
+        <div class="people-grid">{advisor_cards}</div>
+      </div>"""
+        html = self._full_page("Board & Advisors", "board", body)
+        self._write("board.html", html)
+
+    def _person_card(self, p: dict) -> str:
+        return f"""
+        <div class="person-card">
+          <h3>{p["title"]}</h3>
+          <div class="person-bio">{p["body_html"]}</div>
         </div>"""
 
     def _page_html(self, title: str, slug: str, body_html: str) -> str:
@@ -121,7 +147,8 @@ class SiteGenerator:
         <nav>
           <a href="about.html">About</a> &middot;
           <a href="mission.html">Mission</a> &middot;
-          <a href="grants.html">Grants</a>
+          <a href="grants.html">Grants</a> &middot;
+          <a href="board.html">Board</a>
         </nav>
       </div>
     </div>
