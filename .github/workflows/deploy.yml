@@ -29,6 +29,9 @@ jobs:
       - name: Generate site
         run: uv run faes-website
 
+      - name: Add custom domain
+        run: echo "faesfoundation.com" > site/CNAME
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
