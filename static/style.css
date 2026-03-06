@@ -81,10 +81,10 @@ strong { font-weight: 600; }
 /* ── Banner ────────────────────────────────────────────────── */
 .site-banner {
   width: 100%;
-  flex: 0 0 100px;
+  height: 100px;
   position: relative;
   background-color: #a8cfe0;
-  background-image: url('curacao-waterfront3.jpg');
+  background-image: url('curacao-waterfront2.jpg');
   background-size: auto 100%;
   background-repeat: repeat-x;
   background-position: left center;
