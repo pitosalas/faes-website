@@ -22,7 +22,7 @@ class CsvLoader:
         self._validate(row, source)
         return {
             "title": row["title"],
-            "date": row["date"],
+            "times_awarded": int(row["times_awarded"]),
             "type": "grant",
             "recipient": row.get("recipient", ""),
             "amount": row.get("amount", ""),
@@ -37,7 +37,7 @@ class CsvLoader:
         }
 
     def _validate(self, row: dict, source: Path) -> None:
-        for field in ("title", "date", "grant_type", "public", "year"):
+        for field in ("title", "times_awarded", "grant_type", "public", "year"):
             if field not in row or not row[field].strip():
                 raise KeyError(f"Missing required field '{field}' in {source}")
         if row["grant_type"] not in ("pilot", "primary"):

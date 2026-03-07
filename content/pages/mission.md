@@ -41,3 +41,7 @@ public: true
 	</section>
 </div>
 
+---
+
+[View our grants](grants.html) • [Read about who we are](about.html) • [Meet our board](board.html)
+

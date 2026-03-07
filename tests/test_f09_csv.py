@@ -12,9 +12,9 @@ ROOT = Path(__file__).parent.parent
 CONTENT = ROOT / "content"
 
 SAMPLE_CSV = """\
-title,date,recipient,amount,year,status,grant_type,public,description
-Test Pilot Grant,2024-01-15,Jane Doe,XCG 5000,2024,awarded,pilot,true,Supported a **reading** program.
-Test Primary Grant,2024-06-01,Org Name,XCG 20000,2024,awarded,primary,false,Funded restoration work.
+title,times_awarded,recipient,amount,year,status,grant_type,public,description
+Test Pilot Grant,1,Jane Doe,XCG 5000,2024,awarded,pilot,true,Supported a **reading** program.
+Test Primary Grant,2,Org Name,XCG 20000,2024,awarded,primary,false,Funded restoration work.
 """
 
 
@@ -69,7 +69,7 @@ def test_csv_invalid_grant_type_raises(tmp_path):
 
 
 def test_csv_missing_required_field_raises(tmp_path):
-    bad = "title,date,recipient\nOnly Title,2024-01-01,Jane\n"
+    bad = "title,times_awarded,recipient\nOnly Title,1,Jane\n"
     csv_path = write_csv(tmp_path, bad)
     with pytest.raises(KeyError):
         CsvLoader().load(csv_path)
