@@ -8,9 +8,11 @@ public: true
 
 # Our Mission
 
-The Fundashon Abram Edgardo Salas exists to support individuals and organizations that make a meaningful difference in their communities.
+The Fundashon Abram Edgardo Salas exists to support organizations that make a meaningful difference in their communities in Curaçao.
 
-We aim to identify, guide, and support financially programs to benefit the needy and less fortunate members of society — programs focused on supporting the health and wellbeing, safety, and security of children; and on combatting poverty, homelessness, drug addiction, illiteracy, hunger, child abuse, and alcohol abuse. In addition we aim to work with the the Jewish community of Curaçao, with a focus on sustainability of the communities, preservation of history and culture, buildings, and artifacts.
+We aim to identify, meet and support non-profit programs in Curaçao. We look for organizations who work to benefit the needy and less fortunate members of society — programs focused on supporting the health and wellbeing, safety, and security of children; and on combatting poverty, homelessness, drug addiction, illiteracy, hunger, child abuse, and alcohol abuse. 
+
+In addition we aim to work with the the Jewish community of Curaçao, with a focus on sustainability of the communities, preservation of history and culture, buildings, and artifacts.
 
 ## What We Look For
 

@@ -124,7 +124,7 @@ class SiteGenerator:
   <title>{title} — Fundashon Abram Edgardo Salas</title>
   <link rel="stylesheet" href="static/style.css">
 </head>
-<body>
+<body class="page-{active}">
   <div class="site-hero">
     <div class="site-banner"></div>
     <div class="site-topbar">Fundashon Abram Edgardo Salas</div>
