@@ -308,6 +308,10 @@ main {
   max-width: 100%;
 }
 
+.page-mission .content-body {
+  max-width: 100%;
+}
+
 .page-index .bilingual-grid {
   width: 100vw;
   max-width: none;
