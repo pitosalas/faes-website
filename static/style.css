@@ -142,7 +142,7 @@ nav a:hover, nav a.active {
 /* ── Main content ──────────────────────────────────────────── */
 main {
   flex: 1;
-  padding: var(--space-lg) 0;
+  padding: var(--space-sm) 0;
 }
 
 /* ── Hero (home page) ──────────────────────────────────────── */
