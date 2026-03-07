@@ -229,6 +229,31 @@ nav a.active::after {
   transform: scaleX(1);
 }
 
+.header-inner nav {
+  width: 100%;
+  align-items: center;
+}
+
+.header-inner nav .nav-lang-switch {
+  margin-left: auto;
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+.header-inner nav .nav-lang-switch::after {
+  display: none;
+}
+
+.header-inner nav .nav-lang-switch:hover,
+.header-inner nav .nav-lang-switch.active {
+  color: var(--color-deep);
+  text-decoration: underline;
+}
+
 main {
   flex: 1;
   padding: var(--space-lg) 0 var(--space-xl);
@@ -601,6 +626,10 @@ footer {
   nav {
     justify-content: center;
     row-gap: 0.5rem;
+  }
+
+  .header-inner nav .nav-lang-switch {
+    margin-left: 0;
   }
 
   .content-page h1,

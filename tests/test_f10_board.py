@@ -136,7 +136,7 @@ def test_seed_people_load():
 
 def test_seed_board_roles():
     items = ContentLoader().load(CONTENT)
-    people = [i for i in items if i["type"] == "person"]
+    people = [i for i in items if i["type"] == "person" and i.get("lang", "en") == "en"]
     board = [p for p in people if p["role"] == "board"]
     advisors = [p for p in people if p["role"] == "advisor"]
     assert len(board) == 3
