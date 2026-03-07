@@ -66,15 +66,14 @@ strong { font-weight: 600; }
 
 .site-topbar {
   position: absolute;
-  top: 0;
+  top: 8px;
   left: 0;
   right: 0;
   padding: 0 var(--space-lg);
-  font-family: "Cochin", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 2.5em;
   line-height: 1;
   font-style: italic;
-  letter-spacing: 0.08em;
   color: #1a3d2a;
   text-shadow: none;
 }
