@@ -147,7 +147,6 @@ class SiteGenerator:
         return f"""<header>
     <div class="container">
       <div class="header-inner">
-        <div class="site-name"><a href="index.html">Fundashon Abram Edgardo Salas</a></div>
         <nav>{links}</nav>
       </div>
     </div>
