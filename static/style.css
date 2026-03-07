@@ -66,16 +66,16 @@ strong { font-weight: 600; }
 
 .site-topbar {
   position: absolute;
-  top: 0;
+  top: 15px;
   left: 0;
   right: 0;
-  padding: 0.3rem var(--space-lg);
+  padding: 0 var(--space-lg);
   font-family: "Cochin", "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-size: 1.5rem;
+  font-size: 2.0em;
   font-style: italic;
   letter-spacing: 0.08em;
-  color: #fff;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.45);
+  color: #000;
+  text-shadow: none;
 }
 
 /* ── Banner ────────────────────────────────────────────────── */
