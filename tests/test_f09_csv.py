@@ -12,9 +12,9 @@ ROOT = Path(__file__).parent.parent
 CONTENT = ROOT / "content"
 
 SAMPLE_CSV = """\
-title,times_awarded,recipient,amount,year,status,grant_type,public,description
-Test Pilot Grant,1,Jane Doe,XCG 5000,2024,awarded,pilot,true,Supported a **reading** program.
-Test Primary Grant,2,Org Name,XCG 20000,2024,awarded,primary,false,Funded restoration work.
+title,times_awarded,recipient,status,grant_type,public,description
+Test Pilot Grant,1,Jane Doe,awarded,pilot,true,Supported a **reading** program.
+Test Primary Grant,2,Org Name,awarded,primary,false,Funded restoration work.
 """
 
 
@@ -37,11 +37,11 @@ def test_csv_public_converted_to_bool(tmp_path):
     assert items[1]["public"] is False
 
 
-def test_csv_year_converted_to_int(tmp_path):
+def test_csv_times_awarded_converted_to_int(tmp_path):
     csv_path = write_csv(tmp_path, SAMPLE_CSV)
     items = CsvLoader().load(csv_path)
-    assert items[0]["year"] == 2024
-    assert isinstance(items[0]["year"], int)
+    assert items[0]["times_awarded"] == 1
+    assert isinstance(items[0]["times_awarded"], int)
 
 
 def test_csv_type_is_grant(tmp_path):
@@ -98,4 +98,4 @@ def test_seed_csv_loads_correctly():
     items = CsvLoader().load(CONTENT / "grants.csv")
     assert len(items) >= 2
     assert all(i["type"] == "grant" for i in items)
-    assert all(isinstance(i["year"], int) for i in items)
+    assert all(isinstance(i["times_awarded"], int) for i in items)

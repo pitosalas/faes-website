@@ -9,13 +9,13 @@ from faes_website.site_generator import SiteGenerator
 ROOT = Path(__file__).parent.parent
 
 CSV_WITH_LOGO_URL = """\
-title,times_awarded,recipient,amount,year,status,grant_type,public,description,logo,url
-Test Grant,1,Org Name,XCG 5000,2024,awarded,pilot,true,A description.,org-logo.png,https://example.org
+title,times_awarded,recipient,status,grant_type,public,description,logo,url
+Test Grant,1,Org Name,awarded,pilot,true,A description.,org-logo.png,https://example.org
 """
 
 CSV_NO_LOGO_URL = """\
-title,times_awarded,recipient,amount,year,status,grant_type,public,description,logo,url
-Test Grant,1,Org Name,XCG 5000,2024,awarded,pilot,true,A description.,,
+title,times_awarded,recipient,status,grant_type,public,description,logo,url
+Test Grant,1,Org Name,awarded,pilot,true,A description.,,
 """
 
 
