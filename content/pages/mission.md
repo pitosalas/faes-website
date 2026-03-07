@@ -14,7 +14,7 @@ We aim to identify, guide, and support financially programs to benefit the needy
 
 ## What We Look For
 
-We value partner organizations which are relatively small, hands-on, and doing work on the ground themselves. We look at competence, professionalism, expertise, transparency, and high ethical standards. [View our grants](/grants) to see examples of the work we support.
+We value partner organizations which are relatively small, hands-on, and doing work on the ground themselves. We look at competence, professionalism, expertise, transparency, and high ethical standards. [View our grants](grants.html) to see examples of the work we support.
 
 ## Our Grants
 
@@ -23,5 +23,5 @@ We have two kinds of grants:
 1. **Pilot grants** of XCG 2,500 to XCG 10,000 for recipients we are getting to know. We do a basic amount of due diligence, with almost no paperwork or reporting requested. These are organizations with exciting prospects and work that matches our goals.
 2. **Primary grants** of XCG 10,000 up to XCG 100,000 for recipients we have gotten to know and are really comfortable with. For those we request a "Letter of Interest" to begin the process, followed by our own due diligence, reference checking, and follow up.
 
-[View all our grants](/grants) &middot; [Learn about our mission](/mission) &middot; [Read about who we are](/about) &middot; [Meet our board](/board)
+[View all our grants](grants.html) &middot; [Learn about our mission](mission.html) &middot; [Read about who we are](about.html) &middot; [Meet our board](board.html)
 
