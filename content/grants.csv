@@ -1,3 +1,3 @@
-title,times_awarded,recipient,status,grant_type,public,description,logo,url
-2023 Youth Education Grant,1,Centro di Edukashon Kòrsou,awarded,pilot,true,Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.,,
-2023 Heritage Preservation Grant,2,Stichting Monumentenzorg Curaçao,awarded,primary,true,Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.,,
+recipient,times_awarded,status,grant_type,public,description,logo,url
+Centro di Edukashon Kòrsou,1,awarded,pilot,true,Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.,,
+Stichting Monumentenzorg Curaçao,2,awarded,primary,true,Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.,,

@@ -68,14 +68,12 @@ class SiteGenerator:
             title = f'<a href="{g["url"]}" target="_blank" rel="noopener">{title}</a>'
         logo_html = ""
         if g.get("logo"):
-            logo_html = f'<img src="static/logos/{g["logo"]}" alt="{g.get("recipient", "")}" class="grantee-logo">'
+            logo_html = f'<img src="static/logos/{g["logo"]}" alt="{g["title"]}" class="grantee-logo">'
         return f"""
         <div class="grant-card">
           {logo_html}
           <h3>{title}</h3>
           <div class="grant-meta">
-            <span>{g.get("year", "")}</span>
-            <span>{g.get("recipient", "")}</span>
             <span class="grant-type">{g.get("grant_type", "").capitalize()}</span>
           </div>
           <div class="grant-body">{g["body_html"]}</div>

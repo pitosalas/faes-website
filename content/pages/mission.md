@@ -22,7 +22,7 @@ public: true
 		<h3>Our Grants</h3>
 		<p><strong>Pilot grants</strong> of XCG 2,500 to XCG 10,000 for recipients we are getting to know. We do a basic amount of due diligence, with almost no paperwork or reporting requested.</p>
 		<p><strong>Primary grants</strong> of XCG 10,000 up to XCG 100,000 for recipients we have gotten to know and are really comfortable with. We request a "Letter of Interest" to begin the process, followed by our own due diligence, reference checking, and follow up.</p>
-		<p>[View our grants](grants.html) to see examples of the work we support.</p>
+		<p><a href="grants.html">View our grants</a> to see examples of the work we support.</p>
 	</section>
 	<section class="lang-panel">
 		<h3>Ken Nos Ta</h3>
@@ -37,7 +37,7 @@ public: true
 		<h3>Nos Subsidio</h3>
 		<p><strong>Subsidio piloto</strong> di XCG 2,500 até XCG 10,000 pa beneficiario ku nos ta konoće. Nos ta hasi kantidat basiko di due diligence, sin papel o rapórt alabe.</p>
 		<p><strong>Subsidio primario</strong> di XCG 10,000 até XCG 100,000 pa beneficiario ku nos ta konoché bon i nos ta konfiable ku nan. Nos ta pidi "Sketi di Interes" pa komensá proseso, siguí di nó due diligence, kontrolá referensia, i sekimientu.</p>
-		<p>[Mira nos subsidio](grants.html) pa bisa ehemplo di trabó ku nos ta suporta.</p>
+		<p><a href="grants.html">Mira nos subsidio</a> pa bisa ehemplo di trabó ku nos ta suporta.</p>
 	</section>
 </div>
 

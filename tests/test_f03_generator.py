@@ -97,7 +97,7 @@ def test_grants_html_contains_card(tmp_path):
     SiteGenerator(content, site).generate()
     html = (site / "grants.html").read_text()
     assert "grant-card" in html
-    assert "Jane Doe" in html
+    assert "Test Grant" in html
     assert "Pilot" in html
 
 
