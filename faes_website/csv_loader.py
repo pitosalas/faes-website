@@ -5,6 +5,7 @@
 
 import csv
 import markdown
+from collections import defaultdict
 from pathlib import Path
 
 
@@ -42,3 +43,19 @@ class CsvLoader:
         for field in ("name", "count", "recent"):
             if field not in row or not row[field].strip():
                 raise KeyError(f"Missing required field '{field}' in {source}")
+
+    def load_by_year(self, csv_path: Path) -> dict:
+        if not csv_path.exists():
+            return {}
+        totals = defaultdict(float)
+        with csv_path.open(encoding="utf-8", newline="") as f:
+            for row in csv.DictReader(f):
+                year = row.get("Year", "").strip()
+                amount = self._parse_amount(row.get("Amount", ""))
+                if year.isdigit():
+                    totals[int(year)] += amount
+        return dict(sorted(totals.items()))
+
+    def _parse_amount(self, raw: str) -> float:
+        cleaned = raw.strip().replace("XCG", "").replace(",", "").replace("$", "").strip().rstrip(".")
+        return float(cleaned) if cleaned else 0.0

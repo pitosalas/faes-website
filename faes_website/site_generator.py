@@ -34,6 +34,8 @@ class SiteGenerator:
         csv_loader = CsvLoader()
         csv_path = self.content_dir / "grants.csv"
         grants = csv_loader.load(csv_path)
+        detailed_path = self.content_dir / "grantsdetailed.csv"
+        by_year = csv_loader.load_by_year(detailed_path)
         
         # Group pages by slug to find translations
         pages_by_slug = {}
@@ -54,7 +56,7 @@ class SiteGenerator:
               translation_url = f"{slug}_pap.html" if other_lang == "pap" else f"{slug}.html"
             self._write_page(page, lang, translation_url)
         
-        self._write_grants(grants)
+        self._write_grants(grants, by_year)
         self._write_board(people)
         return self.written
 
@@ -75,19 +77,75 @@ class SiteGenerator:
         html = self._page_html(item["title"], slug, item["body_html"], lang, translation_url)
         self._write(filename, html)
 
-    def _write_grants(self, grants: list):
-        # Filter out None entries and sort by count descending
+    def _write_grants(self, grants: list, by_year: dict):
         grants = [g for g in grants if g is not None]
         grants.sort(key=lambda g: g["count"], reverse=True)
         cards = "".join(self._grant_card(g) for g in grants)
+        chart = self._year_chart(by_year)
         body = f"""
       <div class="grants-header">
         <h1>Grants</h1>
-        <p>Organizations supported by Fundashon Abram Edgardo Salas.</p>
       </div>
+      {chart}
+      <h2 class="grants-list-header">Grant Recipients</h2>
       <div class="grants-grid">{cards}</div>"""
         html = self._full_page("Grants", "grants", body)
         self._write("grants.html", html)
+
+    def _year_chart(self, by_year: dict) -> str:
+        labels = list(by_year.keys())
+        values = [by_year[y] for y in labels]
+        return f"""
+      <div class="chart-section">
+        <h2>Total Grants by Year (data is not yet fully correct.)</h2>
+        <div class="chart-wrapper">
+          <canvas id="grantsChart"></canvas>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+        const ctx = document.getElementById('grantsChart');
+        new Chart(ctx, {{
+          type: 'bar',
+          data: {{
+            labels: {labels},
+            datasets: [{{
+              label: 'Total Donations (XCG)',
+              data: {values},
+              backgroundColor: 'rgba(74, 124, 89, 0.75)',
+              borderColor: 'rgba(74, 124, 89, 1)',
+              borderWidth: 2,
+              borderRadius: 6,
+              borderSkipped: false,
+            }}]
+          }},
+          options: {{
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {{
+              legend: {{ display: false }},
+              tooltip: {{
+                callbacks: {{
+                  label: ctx => 'XCG ' + ctx.parsed.y.toLocaleString()
+                }}
+              }}
+            }},
+            scales: {{
+              y: {{
+                beginAtZero: true,
+                ticks: {{
+                  callback: val => 'XCG ' + val.toLocaleString()
+                }},
+                grid: {{ color: 'rgba(0,0,0,0.06)' }}
+              }},
+              x: {{
+                grid: {{ display: false }},
+                offset: true,
+              }}
+            }}
+          }}
+        }});
+      </script>"""
 
     def _grant_card(self, g: dict) -> str:
         title = g["title"]
