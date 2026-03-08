@@ -47,7 +47,6 @@ def test_pages_have_nav_links():
 def test_grants_page_has_grant_card():
     content = (SITE / "grants.html").read_text()
     assert "grant-card" in content
-    assert "grant-type" in content
 
 
 def test_home_page_has_content():

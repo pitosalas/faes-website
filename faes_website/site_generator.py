@@ -6,6 +6,7 @@
 import shutil
 from pathlib import Path
 from faes_website.content_loader import ContentLoader
+from faes_website.csv_loader import CsvLoader
 
 NAV_ITEMS = [
     ("index", "Home", "index.html"),
@@ -27,8 +28,12 @@ class SiteGenerator:
         loader = ContentLoader()
         items = loader.load(self.content_dir) if include_private else loader.load_public(self.content_dir)
         pages = [i for i in items if i["type"] == "page"]
-        grants = [i for i in items if i["type"] == "grant"]
         people = [i for i in items if i["type"] == "person"]
+        
+        # Load grants from CSV
+        csv_loader = CsvLoader()
+        csv_path = self.content_dir / "grants.csv"
+        grants = csv_loader.load(csv_path)
         
         # Group pages by slug to find translations
         pages_by_slug = {}
@@ -71,11 +76,14 @@ class SiteGenerator:
         self._write(filename, html)
 
     def _write_grants(self, grants: list):
+        # Filter out None entries and sort by count descending
+        grants = [g for g in grants if g is not None]
+        grants.sort(key=lambda g: g["count"], reverse=True)
         cards = "".join(self._grant_card(g) for g in grants)
         body = f"""
       <div class="grants-header">
         <h1>Grants</h1>
-        <p>A record of grants awarded by the foundation.</p>
+        <p>Organizations supported by Fundashon Abram Edgardo Salas.</p>
       </div>
       <div class="grants-grid">{cards}</div>"""
         html = self._full_page("Grants", "grants", body)
@@ -83,19 +91,9 @@ class SiteGenerator:
 
     def _grant_card(self, g: dict) -> str:
         title = g["title"]
-        if g.get("url"):
-            title = f'<a href="{g["url"]}" target="_blank" rel="noopener">{title}</a>'
-        logo_html = ""
-        if g.get("logo"):
-            logo_html = f'<img src="static/logos/{g["logo"]}" alt="{g["title"]}" class="grantee-logo">'
         return f"""
         <div class="grant-card">
-          {logo_html}
           <h3>{title}</h3>
-          <div class="grant-meta">
-            <span class="grant-type">{g.get("grant_type", "").capitalize()}</span>
-          </div>
-          <div class="grant-body">{g["body_html"]}</div>
         </div>"""
 
     def _write_board(self, people: list):

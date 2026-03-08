@@ -15,17 +15,61 @@ CONTENT = ROOT / "content"
 
 
 def test_include_private_writes_private_pages(tmp_path):
+    # Create a test private page
+    content_dir = tmp_path / "content"
+    content_dir.mkdir()
+    pages_dir = content_dir / "pages"
+    pages_dir.mkdir()
+    (pages_dir / "private.md").write_text("""---
+title: Private Page
+date: 2024-01-01
+type: page
+slug: private
+public: false
+---
+
+Private content.
+""", encoding="utf-8")
+    # Add grants.csv
+    (content_dir / "grants.csv").write_text(
+        "name,total,count,recent\n"
+        '"Test Org","XCG 5,000",1,2024\n',
+        encoding="utf-8"
+    )
+    
     staging = tmp_path / "staging"
     staging.mkdir()
-    written = SiteGenerator(CONTENT, staging).generate(include_private=True)
-    assert "history.html" in written
+    written = SiteGenerator(content_dir, staging).generate(include_private=True)
+    assert "private.html" in written
 
 
 def test_exclude_private_omits_private_pages(tmp_path):
+    # Create a test private page
+    content_dir = tmp_path / "content"
+    content_dir.mkdir()
+    pages_dir = content_dir / "pages"
+    pages_dir.mkdir()
+    (pages_dir / "private.md").write_text("""---
+title: Private Page
+date: 2024-01-01
+type: page
+slug: private
+public: false
+---
+
+Private content.
+""", encoding="utf-8")
+    # Add grants.csv
+    (content_dir / "grants.csv").write_text(
+        "name,total,count,recent\n"
+        '"Test Org","XCG 5,000",1,2024\n',
+        encoding="utf-8"
+    )
+    
     staging = tmp_path / "staging"
     staging.mkdir()
-    written = SiteGenerator(CONTENT, staging).generate(include_private=False)
-    assert "history.html" not in written
+    written = SiteGenerator(content_dir, staging).generate(include_private=False)
+    assert "private.html" not in written
 
 
 def test_include_private_still_writes_public_pages(tmp_path):

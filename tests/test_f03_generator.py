@@ -83,7 +83,12 @@ def test_generate_produces_grants_html(tmp_path):
     site = tmp_path / "site"
     content.mkdir()
     site.mkdir()
-    make_md(content, "grant.md", VALID_GRANT)
+    # Create CSV file with grant data
+    csv_file = content / "grants.csv"
+    csv_file.write_text(
+        "name,total,count,recent\n"
+        '"Test Grant","XCG 3,000",1,2024\n'
+    )
     SiteGenerator(content, site).generate()
     assert (site / "grants.html").exists()
 
@@ -93,12 +98,16 @@ def test_grants_html_contains_card(tmp_path):
     site = tmp_path / "site"
     content.mkdir()
     site.mkdir()
-    make_md(content, "grant.md", VALID_GRANT)
+    # Create CSV file with grant data
+    csv_file = content / "grants.csv"
+    csv_file.write_text(
+        "name,total,count,recent\n"
+        '"Test Grant","XCG 3,000",5,2024\n'
+    )
     SiteGenerator(content, site).generate()
     html = (site / "grants.html").read_text()
     assert "grant-card" in html
     assert "Test Grant" in html
-    assert "Pilot" in html
 
 
 def test_page_contains_title(tmp_path):

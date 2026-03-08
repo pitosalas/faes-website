@@ -12,9 +12,9 @@ ROOT = Path(__file__).parent.parent
 CONTENT = ROOT / "content"
 
 SAMPLE_CSV = """\
-recipient,times_awarded,status,grant_type,public,description
-Jane Doe,1,awarded,pilot,true,Supported a **reading** program.
-Org Name,2,awarded,primary,false,Funded restoration work.
+name,total,count,recent
+Jane Doe,"XCG 3,000",1,2024
+Org Name,"XCG 10,000",2,2023
 """
 
 
@@ -33,15 +33,17 @@ def test_csv_parses_two_rows(tmp_path):
 def test_csv_public_converted_to_bool(tmp_path):
     csv_path = write_csv(tmp_path, SAMPLE_CSV)
     items = CsvLoader().load(csv_path)
+    # New format: all grants are public
     assert items[0]["public"] is True
-    assert items[1]["public"] is False
+    assert items[1]["public"] is True
 
 
 def test_csv_times_awarded_converted_to_int(tmp_path):
     csv_path = write_csv(tmp_path, SAMPLE_CSV)
     items = CsvLoader().load(csv_path)
-    assert items[0]["times_awarded"] == 1
-    assert isinstance(items[0]["times_awarded"], int)
+    # New format: field is called 'count'
+    assert items[0]["count"] == 1
+    assert isinstance(items[0]["count"], int)
 
 
 def test_csv_type_is_grant(tmp_path):
@@ -51,9 +53,10 @@ def test_csv_type_is_grant(tmp_path):
 
 
 def test_csv_description_converted_to_html(tmp_path):
+    # New format: no description/body_html in simplified cards
     csv_path = write_csv(tmp_path, SAMPLE_CSV)
     items = CsvLoader().load(csv_path)
-    assert "<strong>reading</strong>" in items[0]["body_html"]
+    assert "body_html" not in items[0]
 
 
 def test_csv_missing_file_returns_empty(tmp_path):
@@ -62,14 +65,17 @@ def test_csv_missing_file_returns_empty(tmp_path):
 
 
 def test_csv_invalid_grant_type_raises(tmp_path):
-    bad = SAMPLE_CSV.replace("pilot", "unknown")
+    # New format: no grant_type validation needed
+    # Test that invalid count raises error instead
+    bad = "name,total,count,recent\nTest,XCG 1000,invalid,2024\n"
     csv_path = write_csv(tmp_path, bad)
-    with pytest.raises(ValueError, match="grant_type"):
+    with pytest.raises(ValueError):
         CsvLoader().load(csv_path)
 
 
 def test_csv_missing_required_field_raises(tmp_path):
-    bad = "recipient,times_awarded\nJane,1\n"
+    # New format: requires name, total, count, recent
+    bad = "name,total\nJane,XCG 1000\n"
     csv_path = write_csv(tmp_path, bad)
     with pytest.raises(KeyError):
         CsvLoader().load(csv_path)
@@ -98,4 +104,5 @@ def test_seed_csv_loads_correctly():
     items = CsvLoader().load(CONTENT / "grants.csv")
     assert len(items) >= 2
     assert all(i["type"] == "grant" for i in items)
-    assert all(isinstance(i["times_awarded"], int) for i in items)
+    # New format: field is called 'count'
+    assert all(isinstance(i["count"], int) for i in items)

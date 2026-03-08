@@ -15,27 +15,27 @@ class CsvLoader:
         results = []
         with csv_path.open(encoding="utf-8", newline="") as f:
             for row in csv.DictReader(f):
-                results.append(self._convert(row, csv_path))
+                converted = self._convert(row, csv_path)
+                if converted is not None:
+                    results.append(converted)
         return results
 
     def _convert(self, row: dict, source: Path) -> dict:
         self._validate(row, source)
+        # Skip the Grand Total row
+        if row["name"].strip() == "Grand Total":
+            return None
         return {
-            "title": row["recipient"],
-            "times_awarded": int(row["times_awarded"]),
+            "title": row["name"].strip(),
+            "count": int(row["count"]),
+            "most_recent_year": int(row["recent"]),
+            "total": row["total"].strip(),
             "type": "grant",
-            "status": row.get("status", ""),
-            "grant_type": row["grant_type"],
-            "public": row["public"].strip().lower() == "true",
-            "body_html": markdown.markdown(row.get("description", "")),
-            "logo": row.get("logo", ""),
-            "url": row.get("url", ""),
+            "public": True,
             "source_path": source,
         }
 
     def _validate(self, row: dict, source: Path) -> None:
-        for field in ("recipient", "times_awarded", "grant_type", "public"):
+        for field in ("name", "count", "recent"):
             if field not in row or not row[field].strip():
                 raise KeyError(f"Missing required field '{field}' in {source}")
-        if row["grant_type"] not in ("pilot", "primary"):
-            raise ValueError(f"Invalid grant_type '{row['grant_type']}' in {source}")

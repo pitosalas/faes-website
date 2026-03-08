@@ -78,4 +78,6 @@ def test_all_seed_content_loads():
     for item in items:
         assert "title" in item
         assert "type" in item
-        assert "body_html" in item
+        # CSV grants don't have body_html (simplified format)
+        if item["type"] != "grant":
+            assert "body_html" in item
