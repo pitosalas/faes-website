@@ -25,7 +25,7 @@ class CsvLoader:
         # Skip the Grand Total row
         if row["name"].strip() == "Grand Total":
             return None
-        return {
+        result = {
             "title": row["name"].strip(),
             "count": int(row["count"]),
             "most_recent_year": int(row["recent"]),
@@ -34,6 +34,9 @@ class CsvLoader:
             "public": True,
             "source_path": source,
         }
+        if "logo" in row and row["logo"] and row["logo"].strip():
+            result["logo"] = row["logo"].strip()
+        return result
 
     def _validate(self, row: dict, source: Path) -> None:
         for field in ("name", "count", "recent"):

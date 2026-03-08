@@ -91,9 +91,14 @@ class SiteGenerator:
 
     def _grant_card(self, g: dict) -> str:
         title = g["title"]
+        logo = g.get("logo", "")
+        logo_html = ""
+        if logo:
+            logo_html = f'<img src="static/logos/{logo}" alt="{title} logo" class="grantee-logo">'
         return f"""
         <div class="grant-card">
           <h3>{title}</h3>
+          {logo_html}
         </div>"""
 
     def _write_board(self, people: list):
@@ -103,13 +108,12 @@ class SiteGenerator:
         advisor_cards = "".join(self._person_card(p) for p in advisors)
         body = f"""
       <div class="board-page">
-        <h1>Board &amp; Advisors</h1>
-        <h2>Board Members</h2>
+        <h2>Board</h2>
         <div class="people-grid">{board_cards}</div>
         <h2>Advisors</h2>
         <div class="people-grid">{advisor_cards}</div>
       </div>"""
-        html = self._full_page("Board & Advisors", "board", body)
+        html = self._full_page("Board", "board", body)
         self._write("board.html", html)
 
     def _person_card(self, p: dict) -> str:

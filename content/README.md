@@ -26,6 +26,8 @@ All content files are markdown (`.md`) with YAML front matter.
 | status     | str    | awarded \| pending  | yes      |
 | grant_type | str    | pilot \| primary    | yes      |
 
+**Note:** Grants are now sourced from `grants.csv` with columns: `name`, `total`, `count`, `recent`, and optional `logo`.
+
 ## Example page
 
 ```markdown
@@ -55,3 +57,24 @@ grant_type: pilot
 
 Description of the grant and its impact.
 ```
+
+## Inline photos in markdown
+
+Use the photo shortcode on its own line:
+
+```markdown
+:photo "children-reading.jpg", "Students reading at the community center", 320, centered
+```
+
+Rules:
+- The filename is relative to `static/images/`.
+- Use double quotes around both filename and caption.
+- `pixel-height` must be an integer greater than 0.
+- `justify` must be one of: `left`, `right`, `centered`.
+- Keep the shortcode on its own line in markdown.
+- Whitespace around the comma is allowed.
+
+Common errors:
+- Bad syntax (missing quote/comma): raises a parsing error with file and line number.
+- Invalid `pixel-height` or `justify`: raises a parsing error with file and line number.
+- Missing image file: uses `placeholder-image.jpg` as a fallback (no error).

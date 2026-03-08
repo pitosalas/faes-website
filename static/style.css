@@ -321,6 +321,59 @@ main {
   max-width: var(--text-width);
 }
 
+.content-photo {
+  margin: 0.35rem 0 var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.82);
+  display: inline-block;
+  width: fit-content;
+  max-width: min(46%, 420px);
+  overflow: hidden;
+}
+
+.content-photo img {
+  max-width: 100%;
+}
+
+.content-photo.justify-left {
+  float: left;
+  clear: left;
+  margin-right: var(--space-md);
+}
+
+.content-photo.justify-right {
+  float: right;
+  clear: right;
+  margin-left: var(--space-md);
+}
+
+.content-photo.justify-centered {
+  display: block;
+  margin: var(--space-sm) auto;
+  max-width: min(70%, 560px);
+}
+
+.content-photo figcaption {
+  padding: 0.35rem 0.9rem;
+  font-size: 0.93rem;
+  line-height: 1.3;
+  color: var(--color-muted);
+  background: rgba(18, 57, 45, 0.04);
+}
+
+@media (max-width: 760px) {
+  .content-photo,
+  .content-photo.justify-left,
+  .content-photo.justify-right,
+  .content-photo.justify-centered {
+    float: none;
+    display: block;
+    margin: var(--space-sm) auto;
+    max-width: min(88%, 480px);
+  }
+}
+
 .bilingual-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -435,13 +488,11 @@ main {
 }
 
 .grantee-logo {
-  width: 74px;
-  height: 74px;
-  margin-bottom: 0.75rem;
+  max-width: 100%;
+  height: auto;
+  margin-top: 0.8rem;
   object-fit: contain;
   border-radius: var(--radius-sm);
-  background: #ffffff;
-  border: 1px solid rgba(18, 57, 45, 0.08);
 }
 
 .grant-card h3 {

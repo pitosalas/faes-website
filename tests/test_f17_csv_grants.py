@@ -166,8 +166,8 @@ def test_grants_sorted_by_count_descending(tmp_path):
     assert high_pos < medium_pos < low_pos
 
 
-def test_grant_card_no_logo_or_description(tmp_path):
-    """Grant card does not contain logo or description elements"""
+def test_grant_card_no_description(tmp_path):
+    """Grant card does not contain description elements"""
     content_dir = tmp_path / "content"
     content_dir.mkdir()
     site_dir = tmp_path / "site"
@@ -183,6 +183,66 @@ def test_grant_card_no_logo_or_description(tmp_path):
     gen.generate(include_private=False)
     
     grants_html = (site_dir / "grants.html").read_text()
-    assert "grantee-logo" not in grants_html
     assert "grant-body" not in grants_html
     assert "grant-type" not in grants_html
+
+
+def test_csv_loader_reads_optional_logo(tmp_path):
+    """CSV loader reads optional logo column"""
+    csv_file = tmp_path / "grants.csv"
+    csv_file.write_text(
+        "name,total,count,recent,logo\n"
+        '"Test Org","XCG 10,000",5,2025,testlogo.png\n'
+        '"No Logo Org","XCG 5,000",3,2024,\n'
+    )
+    loader = CsvLoader()
+    grants = loader.load(csv_file)
+    assert len(grants) == 2
+    assert grants[0]["logo"] == "testlogo.png"
+    assert "logo" not in grants[1]
+
+
+def test_grant_card_displays_logo_when_present(tmp_path):
+    """Grant card displays logo when present in CSV"""
+    content_dir = tmp_path / "content"
+    content_dir.mkdir()
+    site_dir = tmp_path / "site"
+    site_dir.mkdir()
+    
+    # Create placeholder logo
+    logos_dir = site_dir.parent / "static" / "logos"
+    logos_dir.mkdir(parents=True, exist_ok=True)
+    (logos_dir / "testlogo.png").write_text("")
+    
+    csv_file = content_dir / "grants.csv"
+    csv_file.write_text(
+        "name,total,count,recent,logo\n"
+        '"Test Org","XCG 5,000",3,2024,testlogo.png\n'
+    )
+    
+    gen = SiteGenerator(content_dir, site_dir)
+    gen.generate(include_private=False)
+    
+    grants_html = (site_dir / "grants.html").read_text()
+    assert 'class="grantee-logo"' in grants_html
+    assert 'src="static/logos/testlogo.png"' in grants_html
+
+
+def test_grant_card_no_logo_when_absent(tmp_path):
+    """Grant card does not display logo when absent in CSV"""
+    content_dir = tmp_path / "content"
+    content_dir.mkdir()
+    site_dir = tmp_path / "site"
+    site_dir.mkdir()
+    
+    csv_file = content_dir / "grants.csv"
+    csv_file.write_text(
+        "name,total,count,recent\n"
+        '"Test Org","XCG 5,000",3,2024\n'
+    )
+    
+    gen = SiteGenerator(content_dir, site_dir)
+    gen.generate(include_private=False)
+    
+    grants_html = (site_dir / "grants.html").read_text()
+    assert 'class="grantee-logo"' not in grants_html

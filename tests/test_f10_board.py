@@ -105,9 +105,9 @@ def test_board_and_advisors_in_separate_sections(tmp_path):
     gen = SiteGenerator(content_dir, site_dir)
     gen.generate()
     html = (site_dir / "board.html").read_text()
-    assert "Board Members" in html
+    assert "Board" in html
     assert "Advisors" in html
-    assert html.index("Board Members") < html.index("Jane Board")
+    assert html.index("Board") < html.index("Jane Board")
     assert html.index("Advisors") < html.index("Joe Advisor")
 
 

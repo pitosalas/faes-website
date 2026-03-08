@@ -10,21 +10,25 @@ public: true
 
 ### Who We Are
 
-The Fundashon Abram Edgardo Salas exists to support organizations that make a meaningful difference in their communities in Curaçao. We aim to identify, meet and support non-profit programs in Curaçao.
+The Fundashon Abram Edgardo Salas helps organizations that make a real difference in Curaçao. We find, meet with, and support non-profit programs across the island.
 
 ### What We Support
 
-We look for organizations who work to benefit the needy and less fortunate members of society — programs focused on supporting the health and wellbeing, safety, and security of children; and on combatting poverty, homelessness, drug addiction, illiteracy, hunger, child abuse, and alcohol abuse. In addition we aim to work with the Jewish community of Curaçao, with a focus on sustainability of the communities, preservation of history and culture, buildings, and artifacts.
+We look for organizations that help people in need. We support programs that focus on children's health, safety, and wellbeing. We also support programs fighting poverty, homelessness, drug addiction, illiteracy, hunger, child abuse, and alcohol abuse. 
+
+We also work with the Jewish community of Curaçao. We focus on helping the community stay strong, and on preserving their history, culture, buildings, and artifacts.
+
+:photo "punda1.jpg", "Downtown Curacao waterfront", 200, right
 
 ### What We Look For
 
-We value partner organizations which are relatively small, hands-on, and doing work on the ground themselves. We look at competence, professionalism, expertise, transparency, and high ethical standards.
+We value partner organizations that are small, hands-on, and doing the work themselves on the ground. We look for competence, professionalism, expertise, transparency, and high ethical standards.
 
 ### Our Grants
 
-**Pilot grants** of XCG 2,500 to XCG 10,000 for recipients we are getting to know. We do a basic amount of due diligence, with almost no paperwork or reporting requested.
+**Pilot grants** of XCG 2,500 to XCG 10,000 for recipients we are getting to know. We do basic research on these organizations, with very little paperwork or reporting required.
 
-**Primary grants** of XCG 10,000 up to XCG 100,000 for recipients we have gotten to know and are really comfortable with. We request a "Letter of Interest" to begin the process, followed by our own due diligence, reference checking, and follow up.
+**Primary grants** of XCG 10,000 up to XCG 100,000 for recipients we know well and trust. We request a "Letter of Interest" to begin the process, followed by our own research, reference checking, and follow up.
 
 [View our grants](grants.html) to see examples of the work we support.
 
