@@ -8,13 +8,13 @@ public: true
 
 # About the Foundation
 
-The Fundashon Abram Edgardo Salas is a grant-making organization based in Curaçao. We give money to small non-profits and foundations that larger donors often miss.
+Fundashon Abram Edgardo Salas is a grant-making organization based in Curaçao. We were founded in 2008 and since then we have given almost XCG 500.000 to small non-profits and foundations that larger donors often miss. 
 
 ## History
 
 :photo "bhs.jpg", "Boekhandel Salas where it all started", 300, right
 
-FAES was formed in 2010 by Pito Salas in honor of his father Abram Edgardo Salas. The first board members included Pito Salas, Margarita Salas, Virginia, and Janice. Our advisory board included Patricia Salas, Larry Salas, Harlan Cohen, and Chris Salas. Since we started, we have given out an average of XCG 100,000 every year. [Meet the current board](/board).
+FAES was formed in 2010 by Pito Salas in honor of his father Abram Edgardo Salas. The first board members included Pito Salas, Margarita Salas, Virginia Everts, and Janice Godschalk. Our advisory board included Patricia Salas, Larry Salas, and Harlan Cohen. [Meet the current board](/board).
 
 
 ## How We Operate

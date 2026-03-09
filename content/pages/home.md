@@ -12,9 +12,9 @@ public: true
 
 :photo "punda1.jpg", "Downtown Curacao waterfront", 200, right
 
-We are a grant-making organization started in Curaçao. We support many non-profits and foundations in Curaçao. We have been giving grants in Curacao for more than 10 years. During that time, we have given almost XCG 500,000! We are a small team and do our work quietly.
+We are a grant-making organization started in Curaçao in 2008. We support many non-profits and foundations in Curaçao. We have been giving grants in Curacao for more than 10 years. During that time, we have given almost XCG 500,000! 
 
-We focus on small organizations that don't get attention from large donors because they are new, small, and less well known. 
+We are a small team and do our work quietly. We focus on small organizations that don't get attention from large donors because they are new, small, and less well known. 
 
 ### Our Process
 
