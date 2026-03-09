@@ -40,7 +40,7 @@ def board_html(tmp_path, *person_texts):
     for i, text in enumerate(person_texts):
         suffix = "_papiamentu" if "lang: pap" in text else ""
         (content_dir / f"person{i}{suffix}.md").write_text(text, encoding="utf-8")
-    SiteGenerator(content_dir, site_dir).generate()
+    SiteGenerator(content_dir, site_dir).generate(False)
     return (site_dir / "board.html").read_text()
 
 

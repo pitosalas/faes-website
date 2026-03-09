@@ -31,7 +31,7 @@ class BasicAuthHandler(http.server.SimpleHTTPRequestHandler):
         return password == PASSWORD
 
     def log_message(self, format, *args):
-        pass
+        pass  # suppress per-request logging to keep console output clean
 
 
 class StagingServer:
@@ -39,7 +39,7 @@ class StagingServer:
         self.content_dir = root / "content"
         self.staging_dir = root / "staging"
 
-    def run(self, private: bool = False):
+    def run(self, private: bool):
         self.staging_dir.mkdir(exist_ok=True)
         written = SiteGenerator(self.content_dir, self.staging_dir).generate(include_private=private)
         for filename in written:

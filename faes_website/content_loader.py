@@ -6,9 +6,12 @@
 import markdown
 import yaml
 import re
-import html
 from pathlib import Path
+from jinja2 import Environment, FileSystemLoader
 from faes_website.csv_loader import CsvLoader
+
+_TEMPLATES_DIR = Path(__file__).parent.parent / "templates" / "html"
+_env = Environment(loader=FileSystemLoader(_TEMPLATES_DIR), autoescape=True)
 
 
 class ContentLoader:
@@ -45,15 +48,21 @@ class ContentLoader:
             if field not in data:
                 raise KeyError(f"Missing required field '{field}' in {path}")
         if data.get("type") == "grant":
-            if "grant_type" not in data:
-                raise KeyError(f"Missing required field 'grant_type' in {path}")
-            if data["grant_type"] not in ("pilot", "primary"):
-                raise ValueError(f"Invalid grant_type '{data['grant_type']}' in {path}")
+            self._validate_grant(data, path)
         if data.get("type") == "person":
-            if "role" not in data:
-                raise KeyError(f"Missing required field 'role' in {path}")
-            if data["role"] not in ("board", "advisor"):
-                raise ValueError(f"Invalid role '{data['role']}' in {path}")
+            self._validate_person(data, path)
+
+    def _validate_grant(self, data: dict, path: Path) -> None:
+        if "grant_type" not in data:
+            raise KeyError(f"Missing required field 'grant_type' in {path}")
+        if data["grant_type"] not in ("pilot", "primary"):
+            raise ValueError(f"Invalid grant_type '{data['grant_type']}' in {path}")
+
+    def _validate_person(self, data: dict, path: Path) -> None:
+        if "role" not in data:
+            raise KeyError(f"Missing required field 'role' in {path}")
+        if data["role"] not in ("board", "advisor"):
+            raise ValueError(f"Invalid role '{data['role']}' in {path}")
 
     def _preprocess_photos(self, body: str, source_path: Path, content_dir: Path) -> str:
         lines = body.splitlines()
@@ -66,10 +75,11 @@ class ContentLoader:
             if not stripped.startswith(":photo"):
                 processed.append(line)
                 continue
-            processed.append(self._photo_html(stripped, source_path, content_dir, idx))
+            processed.append(self._photo_html(stripped, (source_path, idx), content_dir))
         return "\n".join(processed)
 
-    def _photo_html(self, raw_line: str, source_path: Path, content_dir: Path, line_num: int) -> str:
+    def _photo_html(self, raw_line: str, location: tuple, content_dir: Path) -> str:
+        source_path, line_num = location
         pattern = '^:photo\\s+"([^"\\n]+)"\\s*,\\s*"([^"\\n]+)"\\s*,\\s*(\\d+)\\s*,\\s*(left|right|centered)\\s*$'
         match = re.match(pattern, raw_line)
         if match is None:
@@ -85,16 +95,13 @@ class ContentLoader:
         if height <= 0:
             raise ValueError(f"Invalid pixel-height in {source_path}:{line_num}. Must be > 0")
 
-        image_path = content_dir.parent / "static" / "images" / name
+        image_path = content_dir / "static" / "images" / name
         if not image_path.is_file():
             name = "placeholder-image.jpg"
 
-        safe_caption = html.escape(caption, quote=True)
-        safe_name = html.escape(name, quote=True)
-        safe_justify = html.escape(justify, quote=True)
-        return (
-            f'<figure class="content-photo justify-{safe_justify}">'
-            f'<img src="static/images/{safe_name}" alt="{safe_caption}" style="height: {height}px; width: auto;">'
-            f"<figcaption>{safe_caption}</figcaption>"
-            "</figure>"
-        )
+        return _env.get_template("photo_figure.html").render(
+            name=name,
+            caption=caption,
+            height=height,
+            justify=justify,
+        ).strip()

@@ -39,7 +39,7 @@ def setup_site(tmp_path, *person_texts):
         (content_dir / f"person{i}.md").write_text(text, encoding="utf-8")
     site_dir = tmp_path / "site"
     site_dir.mkdir()
-    SiteGenerator(content_dir, site_dir).generate()
+    SiteGenerator(content_dir, site_dir).generate(False)
     return (site_dir / "board.html").read_text()
 
 
@@ -73,4 +73,4 @@ def test_photo_and_no_photo_both_have_img(tmp_path):
 
 def test_static_photos_dir_exists():
     root = Path(__file__).parent.parent
-    assert (root / "static" / "photos").is_dir()
+    assert (root / "content" / "static" / "photos").is_dir()

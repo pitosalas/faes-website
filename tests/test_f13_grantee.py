@@ -21,7 +21,7 @@ def make_grants_page(tmp_path, csv_text):
     (content_dir / "grants.csv").write_text(csv_text, encoding="utf-8")
     site_dir = tmp_path / "site"
     site_dir.mkdir()
-    SiteGenerator(content_dir, site_dir).generate()
+    SiteGenerator(content_dir, site_dir).generate(False)
     return (site_dir / "grants.html").read_text()
 
 
@@ -67,4 +67,4 @@ def test_no_logo_omits_img(tmp_path):
 
 
 def test_static_logos_dir_exists():
-    assert (ROOT / "static" / "logos").is_dir()
+    assert (ROOT / "content" / "static" / "logos").is_dir()

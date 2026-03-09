@@ -2,6 +2,21 @@
 
 All content files are markdown (`.md`) with YAML front matter.
 
+## Directory layout
+
+```
+content/
+  pages/          — page markdown files
+  people/         — person markdown files
+  grants.csv      — grant recipients (name, total, count, recent, logo)
+  grantsdetailed.csv — per-year grant amounts (Year, Recipient, Amount)
+  static/
+    style.css     — site stylesheet
+    images/       — photos used in page content via :photo shortcode
+    logos/        — grantee logo images
+    photos/       — board/advisor portrait photos
+```
+
 ## Front matter schema
 
 ### All content types
@@ -9,24 +24,21 @@ All content files are markdown (`.md`) with YAML front matter.
 |--------|--------|-----------------|----------|
 | title  | str    | any             | yes      |
 | date   | str    | YYYY-MM-DD      | yes      |
-| type   | str    | page \| grant   | yes      |
+| type   | str    | page \| person  | yes      |
 | public | bool   | true \| false   | yes      |
 
 ### Pages (type: page)
 | Field  | Type   | Description              | Required |
 |--------|--------|--------------------------|----------|
 | slug   | str    | URL path segment         | yes      |
+| lang   | str    | en \| pap (default: en)  | no       |
 
-### Grants (type: grant)
-| Field      | Type   | Values              | Required |
-|------------|--------|---------------------|----------|
-| recipient  | str    | name of recipient   | yes      |
-| amount     | str    | e.g. "XCG 3,000"   | yes      |
-| year       | int    | e.g. 2024           | yes      |
-| status     | str    | awarded \| pending  | yes      |
-| grant_type | str    | pilot \| primary    | yes      |
-
-**Note:** Grants are now sourced from `grants.csv` with columns: `name`, `total`, `count`, `recent`, and optional `logo`.
+### People (type: person)
+| Field  | Type   | Values              | Required |
+|--------|--------|---------------------|----------|
+| role   | str    | board \| advisor    | yes      |
+| photo  | str    | filename in static/photos/ | no  |
+| lang   | str    | en \| pap (default: en)    | no  |
 
 ## Example page
 
@@ -36,26 +48,10 @@ title: About Us
 date: 2024-01-01
 type: page
 slug: about
+public: true
 ---
 
 Content here in markdown.
-```
-
-## Example grant
-
-```markdown
----
-title: 2024 Community Support Grant
-date: 2024-03-15
-type: grant
-recipient: Jane Doe
-amount: "XCG 3,000"
-year: 2024
-status: awarded
-grant_type: pilot
----
-
-Description of the grant and its impact.
 ```
 
 ## Inline photos in markdown

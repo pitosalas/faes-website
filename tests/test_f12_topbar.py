@@ -14,7 +14,7 @@ def make_site(tmp_path):
     content_dir.mkdir()
     site_dir = tmp_path / "site"
     site_dir.mkdir()
-    SiteGenerator(content_dir, site_dir).generate()
+    SiteGenerator(content_dir, site_dir).generate(False)
     return site_dir
 
 
@@ -44,6 +44,6 @@ def test_topbar_inside_hero(tmp_path):
 
 
 def test_topbar_css_exists():
-    css = (Path(__file__).parent.parent / "static" / "style.css").read_text()
+    css = (Path(__file__).parent.parent / "content" / "static" / "style.css").read_text()
     assert ".site-topbar" in css
     assert ".site-topbar" in css

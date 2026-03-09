@@ -42,7 +42,7 @@ def test_workflow_has_pages_permissions():
 
 
 def test_static_source_exists():
-    assert (ROOT / "static" / "style.css").is_file()
+    assert (ROOT / "content" / "static" / "style.css").is_file()
 
 
 def test_generator_copies_static(tmp_path):
@@ -50,5 +50,5 @@ def test_generator_copies_static(tmp_path):
     content = ROOT / "content"
     site = tmp_path / "site"
     site.mkdir()
-    SiteGenerator(content, site).generate()
+    SiteGenerator(content, site).generate(False)
     assert (site / "static" / "style.css").is_file()

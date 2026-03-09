@@ -25,14 +25,14 @@ public: true
 
 
 def make_image(tmp_path: Path, name: str) -> None:
-    images = tmp_path / "static" / "images"
+    images = tmp_path / "content" / "static" / "images"
     images.mkdir(parents=True, exist_ok=True)
     (images / name).write_text("image", encoding="utf-8")
 
 
 def load_one_item(tmp_path: Path, body: str) -> dict:
     content_dir = tmp_path / "content"
-    content_dir.mkdir()
+    content_dir.mkdir(exist_ok=True)
     make_page(content_dir, body)
     return ContentLoader().load(content_dir)[0]
 
@@ -111,7 +111,7 @@ def test_site_generation_contains_processed_photo_html(tmp_path):
     make_image(tmp_path, "story.jpg")
     make_page(content_dir, ':photo "story.jpg", "Story image", 280, centered\n\nParagraph text.')
 
-    SiteGenerator(content_dir, site_dir).generate()
+    SiteGenerator(content_dir, site_dir).generate(False)
     html = (site_dir / "photo-page.html").read_text(encoding="utf-8")
     assert 'class="content-photo justify-centered"' in html
     assert 'src="static/images/story.jpg"' in html

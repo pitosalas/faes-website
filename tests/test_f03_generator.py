@@ -64,7 +64,7 @@ def test_generate_produces_page_files(tmp_path):
     content.mkdir()
     site.mkdir()
     make_md(content, "page.md", VALID_PAGE)
-    SiteGenerator(content, site).generate()
+    SiteGenerator(content, site).generate(False)
     assert (site / "testpage.html").exists()
 
 
@@ -74,7 +74,7 @@ def test_private_content_not_written(tmp_path):
     content.mkdir()
     site.mkdir()
     make_md(content, "private.md", PRIVATE_PAGE)
-    SiteGenerator(content, site).generate()
+    SiteGenerator(content, site).generate(False)
     assert not (site / "privatepage.html").exists()
 
 
@@ -89,7 +89,7 @@ def test_generate_produces_grants_html(tmp_path):
         "name,total,count,recent\n"
         '"Test Grant","XCG 3,000",1,2024\n'
     )
-    SiteGenerator(content, site).generate()
+    SiteGenerator(content, site).generate(False)
     assert (site / "grants.html").exists()
 
 
@@ -104,7 +104,7 @@ def test_grants_html_contains_card(tmp_path):
         "name,total,count,recent\n"
         '"Test Grant","XCG 3,000",5,2024\n'
     )
-    SiteGenerator(content, site).generate()
+    SiteGenerator(content, site).generate(False)
     html = (site / "grants.html").read_text()
     assert "grant-card" in html
     assert "Test Grant" in html
@@ -116,7 +116,7 @@ def test_page_contains_title(tmp_path):
     content.mkdir()
     site.mkdir()
     make_md(content, "page.md", VALID_PAGE)
-    SiteGenerator(content, site).generate()
+    SiteGenerator(content, site).generate(False)
     html = (site / "testpage.html").read_text()
     assert "Test Page" in html
 
@@ -127,7 +127,7 @@ def test_page_contains_body_html(tmp_path):
     content.mkdir()
     site.mkdir()
     make_md(content, "page.md", VALID_PAGE)
-    SiteGenerator(content, site).generate()
+    SiteGenerator(content, site).generate(False)
     html = (site / "testpage.html").read_text()
     assert "<h1>" in html
     assert "Some content here" in html
@@ -140,14 +140,14 @@ def test_generate_returns_written_filenames(tmp_path):
     site.mkdir()
     make_md(content, "page.md", VALID_PAGE)
     make_md(content, "grant.md", VALID_GRANT)
-    written = SiteGenerator(content, site).generate()
+    written = SiteGenerator(content, site).generate(False)
     assert "testpage.html" in written
     assert "grants.html" in written
 
 
 def test_generate_real_content():
     site = ROOT / "site"
-    written = SiteGenerator(CONTENT, site).generate()
+    written = SiteGenerator(CONTENT, site).generate(False)
     assert "index.html" in written
     assert "about.html" in written
     assert "mission.html" in written

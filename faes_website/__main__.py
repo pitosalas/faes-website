@@ -15,7 +15,7 @@ def main():
     if "--serve" in sys.argv:
         StagingServer(ROOT).run(private="--private" in sys.argv)
     else:
-        written = SiteGenerator(ROOT / "content", ROOT / "site").generate()
+        written = SiteGenerator(ROOT / "content", ROOT / "site").generate(False)
         for filename in written:
             print(f"  wrote {filename}")
         print(f"Done — {len(written)} files written to {ROOT / 'site'}")

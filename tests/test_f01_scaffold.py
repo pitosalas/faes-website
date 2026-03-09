@@ -11,7 +11,7 @@ ROOT = Path(__file__).parent.parent
 
 
 def test_required_directories_exist():
-    for d in ["content", "faes_website", "templates", "static"]:
+    for d in ["content", "faes_website", "templates", "content/static"]:
         assert (ROOT / d).is_dir(), f"Missing directory: {d}"
 
 

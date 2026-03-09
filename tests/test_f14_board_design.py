@@ -39,7 +39,7 @@ def board_html(tmp_path, *person_texts):
         (content_dir / f"p{i}.md").write_text(text, encoding="utf-8")
     site_dir = tmp_path / "site"
     site_dir.mkdir()
-    SiteGenerator(content_dir, site_dir).generate()
+    SiteGenerator(content_dir, site_dir).generate(False)
     return (site_dir / "board.html").read_text()
 
 
@@ -70,11 +70,11 @@ def test_card_has_card_body(tmp_path):
 
 
 def test_default_svg_exists():
-    assert (ROOT / "static" / "photos" / "default-person.svg").exists()
+    assert (ROOT / "content" / "static" / "photos" / "default-person.svg").exists()
 
 
 def test_people_grid_css_exists():
-    css = (ROOT / "static" / "style.css").read_text()
+    css = (ROOT / "content" / "static" / "style.css").read_text()
     assert ".people-grid" in css
     assert ".person-card" in css
     assert ".person-photo" in css

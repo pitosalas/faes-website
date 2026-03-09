@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} — Fundashon Abram Edgardo Salas</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body class="page-{{ active }}">
+  <div class="site-hero">
+    <div class="site-banner"></div>
+    <div class="site-topbar">Fundashon Abram Edgardo Salas</div>
+  </div>
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <nav>
+          {% for slug, label, href in nav_items %}
+          <a href="{{ href }}"{% if slug == active %} class="active"{% endif %}>{{ label }}</a>
+          {% endfor %}
+          {% if lang == "en" %}
+          <a href="{{ translation_url or 'index_pap.html' }}" class="nav-lang-switch">Papiamentu</a>
+          {% else %}
+          <a href="{{ translation_url or 'index.html' }}" class="nav-lang-switch">English</a>
+          {% endif %}
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">{{ body | safe }}
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span>Fundashon Abram Edgardo Salas</span>
+        <nav>
+          <a href="about.html">About</a> &middot;
+          <a href="mission.html">Mission</a> &middot;
+          <a href="grants.html">Grants</a> &middot;
+          <a href="board.html">Board</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
