@@ -128,7 +128,7 @@ def test_seed_people_load():
     names = [p["title"] for p in people]
     assert "Pito Salas" in names
     assert "Janice Godschalk" in names
-    assert "Virginia Everts" in names
+    assert "Virginia Evers-Kleinmoedig" in names
     assert "Patricia Salas" in names
     assert "Larry Salas" in names
     assert "Harlan Cohen" in names
