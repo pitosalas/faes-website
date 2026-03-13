@@ -99,7 +99,7 @@ class SiteGenerator:
     def _write_grants(self, grants: list, by_year: dict):
         self._lang = "en"
         self._translation_url = None
-        grants = [g for g in grants if g is not None]
+        grants = [g for g in grants if g is not None and g.get("most_recent_year", 0) > 2022]
         grants.sort(key=lambda g: g["count"], reverse=True)
         cards_html = "".join(self._render_grant_card(g) for g in grants)
         chart_html = self._render_chart(by_year)

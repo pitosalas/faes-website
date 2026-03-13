@@ -1,50 +1,45 @@
-name,total,count,recent,logo
-Mikve Israel Emanuel,"XCG 72,320",22,2025
-Citro,"XCG 32,423",10,2025
-Ronald McDonald House,"XCG 25,000",9,2025
-Mami Sa,"XCG 15,300",7,2021
-Instituto Buena Bista,"XCG 40,500",7,2025
-Wilhelmina Fonds,"XCG 18,000",6,2018
-Cliniclowns,"XCG 17,500",6,2025
-Mucha Pa Mucha,"XCG 17,500",5,2025
-Bos di Hubentut,"XCG 30,000",5,2025
-Hospice Arco Cavent,"XCG 30,000",4,2025,arcologo.jpg
-Alton Paas,"XCG 25,000",4,2025
-Stichting Alzheimer,"XCG 16,000",3,2025
-Pro Bista,"XCG 5,500",3,2016
-Lechi di Mama,"XCG 7,500",3,2025
-Brigada di Seguridat,"XCG 15,000",3,2025
-Bethesda,"XCG 5,000",3,2023
-Ambulans Deseo Korsou,"XCG 20,000",3,2025
-VillaMaria,"XCG 1,250",2,2016
-Totolika,"XCG 3,000",2,2012
-Stichting Shimaruku,"XCG 10,000",2,2022
-Sokuri,"XCG 2,500",2,2023
-Snoa Piano Concert,XCG 525,2,2019
-Shimaruku,"XCG 7,500",2,2025
-Ride for the Roses,"XCG 1,100",2,2014
-Pro Alfa,"XCG 4,000",2,2018
-Negoshi Pikina,"XCG 15,000",2,2025
-Kura di Arte,"XCG 7,500",2,2025
-Hospice Arco Cavent.,"XCG 2,200",2,2018
-Fundashon Lech’i Mama ,"XCG 2,500",2,2023
-Winthrop Curiel ,"XCG 1,000",1,2018
-Verriet,XCG 500,1,2012
-Unknown,"XCG 1,000",1,2012
-Thuisz. Banda Abao,"XCG 5,000",1,2019
-SVDP,"XCG 2,000",1,2009
-Siloam,"XCG 7,500",1,2025
-Seru Fortuna School,"XCG 1,000",1,2014
-Mediaton,"XCG 5,100",1,2010
-LDTCC,XCG 750,1,2012
-Fundashon Negotia Pikinja,"XCG 5,000",1,2023
-Fundashon Mami Sa,"XCG 2,500",1,2022
-Fundashon Ambulans ,"XCG 5,000",1,2022
-FMA,XCG 500,1,2012
-Dun'e un chens,"XCG 1,000",1,2009
-Copernicia,XCG 200,1,2014
-Childrens Museum,"XCG 2,000",1,2016
-Casa Manita,XCG 300,1,2009
-CARF,"XCG 1,000",1,2018
-Brakkeput,"XCG 5,000",1,2012
-Grand Total,"XCG 495,967",146,2025
+name,total,count,recent,Logo
+Mikve Israel Emanuel,"XCG 72,320",22,2025,snoa.png
+Citro,"XCG 32,423",10,2025,citro.jpeg
+Ronald McDonald House,"XCG 25,000",9,2025,ronaldmacdonald.png
+Fundashon Mami Sa,"XCG 17,800",8,2022,
+Instituto Buena Bista,"XCG 40,500",7,2025,ibb.png
+Wilhelmina Fonds,"XCG 18,000",6,2018,
+Hospice Arco Cavent,"XCG 32,200",6,2025,arcologo.jpg
+Cliniclowns,"XCG 17,500",6,2025,
+Mucha Pa Mucha,"XCG 17,500",5,2025,
+Bos di Hubentut,"XCG 30,000",5,2025,
+Stichting Shimaruku,"XCG 17,500",4,2025,
+Ambulans Deseo Korsou,"XCG 25,000",4,2025,
+Alton Paas,"XCG 25,000",4,2025,
+Stichting Alzheimer,"XCG 16,000",3,2025,
+Pro Bista,"XCG 5,500",3,2016,
+Lechi di Mama,"XCG 7,500",3,2025,
+Fundashon Negoshi Pikiña,"XCG 20,000",3,2025,
+Brigada di Seguridat,"XCG 15,000",3,2025,
+VillaMaria,"XCG 1,250",2,2016,
+Totolika,"XCG 3,000",2,2012,
+Snoa Piano Concert,XCG 525,2,2019,
+Ride for the Roses,"XCG 1,100",2,2014,
+Pro Alfa,"XCG 4,000",2,2018,
+Kura di Arte,"XCG 7,500",2,2025,
+Bethesda,"XCG 5,000",2,2023,
+Winthrop Curiel ,"XCG 1,000",1,2018,
+Unknown,"XCG 1,000",1,2012,
+Thuisz. Banda Abao,"XCG 5,000",1,2019,
+Sokudi,"XCG 2,500",1,2022,
+Siloam,"XCG 7,500",1,2025,
+Seru Fortuna School,"XCG 1,000",1,2014,
+San Vincente De Paul,"XCG 2,000",1,2009,
+Orkán Thomas,"XCG 5,100",1,2010,
+Monseigneur Verriet,XCG 500,1,2012,
+Kinderoorden Brakkeput,"XCG 5,000",1,2012,
+Greta Trappenberg,XCG 750,1,2012,
+FMA,XCG 500,1,2012,
+Dun'e un chens (schoolboeken),"XCG 1,000",1,2009,
+Dividivi,"XCG 8,000",1,2009,
+Copernicia,XCG 200,1,2014,
+Childrens Museum,"XCG 2,000",1,2016,
+Casa Manita,XCG 300,1,2009,
+CARF,"XCG 1,000",1,2018,
+Grand Total,"XCG 501,467",143,2025,

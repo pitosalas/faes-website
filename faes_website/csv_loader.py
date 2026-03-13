@@ -35,8 +35,9 @@ class CsvLoader:
             "public": True,
             "source_path": source,
         }
-        if "logo" in row and row["logo"] and row["logo"].strip():
-            result["logo"] = row["logo"].strip()
+        logo_key = next((k for k in row if k.strip().lower() == "logo"), None)
+        if logo_key and row[logo_key].strip():
+            result["logo"] = row[logo_key].strip()
         return result
 
     def _validate(self, row: dict, source: Path) -> None:
