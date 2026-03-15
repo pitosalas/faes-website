@@ -1,6 +1,11 @@
+{% if url %}<a href="{{ url }}" target="_blank" rel="noopener noreferrer" class="grant-card-link">{% endif %}
 <div class="grant-card">
   <h3>{{ title }}</h3>
   {% if logo %}
   <img src="static/logos/{{ logo }}" alt="{{ title }} logo" class="grantee-logo" style="height: 75px; width: auto;">
   {% endif %}
+  {% if blurb %}
+  <p class="grant-blurb">{{ blurb }}</p>
+  {% endif %}
 </div>
+{% if url %}</a>{% endif %}

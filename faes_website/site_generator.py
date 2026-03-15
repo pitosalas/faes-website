@@ -113,6 +113,8 @@ class SiteGenerator:
                 "most_recent_year": summary["most_recent_year"],
                 "total": summary["total"],
                 "logo": org["logo"],
+                "url": org.get("url", ""),
+                "blurb": org.get("blurb", ""),
                 "grant_type": org["grant_type"],
                 "public": org["public"],
             })
@@ -150,6 +152,8 @@ class SiteGenerator:
         return self._env.get_template("grant_card.html").render(
             title=g["title"],
             logo=g.get("logo", ""),
+            url=g.get("url", ""),
+            blurb=g.get("blurb", ""),
         )
 
     def _write_board(self, people: list):

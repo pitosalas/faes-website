@@ -37,6 +37,7 @@ class OrgLoader:
             "public": data["public"],
             "logo": logo,
             "url": data.get("url", ""),
+            "blurb": data.get("blurb", ""),
         }
 
     IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg"}
@@ -53,6 +54,8 @@ class OrgLoader:
             lines.append(f"logo: {logo}")
         if data.get("url"):
             lines.append(f"url: {data['url']}")
+        if data.get("blurb"):
+            lines.append(f"blurb: {data['blurb']}")
         lines += ["---", ""]
         path.write_text("\n".join(lines), encoding="utf-8")
 
