@@ -8,8 +8,6 @@ import yaml
 import re
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
-from faes_website.csv_loader import CsvLoader
-
 _TEMPLATES_DIR = Path(__file__).parent.parent / "templates" / "html"
 _env = Environment(loader=FileSystemLoader(_TEMPLATES_DIR), autoescape=True)
 
@@ -20,8 +18,9 @@ class ContentLoader:
         for path in sorted(directory.rglob("*.md")):
             if path.name == "README.md":
                 continue
+            if (directory / "orgs") in path.parents:
+                continue
             results.append(self._parse_file(path, directory))
-        results.extend(CsvLoader().load(directory / "grants.csv"))
         return results
 
     def _parse_file(self, path: Path, content_dir: Path) -> dict:

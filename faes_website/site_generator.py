@@ -8,6 +8,7 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 from faes_website.content_loader import ContentLoader
 from faes_website.csv_loader import CsvLoader
+from faes_website.org_loader import OrgLoader
 
 NAV_ITEMS = [
     ("index", "Home", "index.html"),
@@ -37,10 +38,14 @@ class SiteGenerator:
         people = [i for i in items if i["type"] == "person"]
 
         csv_loader = CsvLoader()
-        csv_path = self.content_dir / "grants.csv"
-        grants = csv_loader.load(csv_path)
         detailed_path = self.content_dir / "grantsdetailed.csv"
+        summaries = csv_loader.summarise_by_org(detailed_path)
         by_year = csv_loader.load_by_year(detailed_path)
+        org_loader = OrgLoader(self.content_dir)
+        org_loader.validate(set(summaries.keys()))
+        orgs = org_loader.load()
+        self._copy_org_logos(orgs)
+        grants = self._build_grants(summaries, orgs, include_private)
 
         pages_by_slug = {}
         for page in pages:
@@ -95,6 +100,33 @@ class SiteGenerator:
         filename = f"{slug}_pap.html" if lang == "pap" else f"{slug}.html"
         body = self._env.get_template("content_page.html").render(body_html=item["body_html"])
         self._write(filename, self._render_page(item["title"], slug, body))
+
+    def _build_grants(self, summaries: dict, orgs: dict, include_private: bool) -> list:
+        result = []
+        for name, summary in summaries.items():
+            org = orgs[name]
+            if not include_private and not org["public"]:
+                continue
+            result.append({
+                "title": name,
+                "count": summary["count"],
+                "most_recent_year": summary["most_recent_year"],
+                "total": summary["total"],
+                "logo": org["logo"],
+                "grant_type": org["grant_type"],
+                "public": org["public"],
+            })
+        return result
+
+    def _copy_org_logos(self, orgs: dict):
+        logos_dir = self.site_dir / "static" / "logos"
+        logos_dir.mkdir(parents=True, exist_ok=True)
+        for name, meta in orgs.items():
+            if not meta["logo"]:
+                continue
+            src = self.content_dir / "orgs" / name / meta["logo"]
+            if src.is_file():
+                shutil.copy2(src, logos_dir / meta["logo"])
 
     def _write_grants(self, grants: list, by_year: dict):
         self._lang = "en"
