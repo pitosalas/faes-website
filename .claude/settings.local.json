@@ -5,7 +5,8 @@
       "Bash(uv:*)",
       "Bash(git push:*)",
       "Bash(git:*)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "Bash(python3 -c \"\nfrom pathlib import Path\nfrom faes_website.csv_loader import CsvLoader\n\nsummaries = CsvLoader\\(\\).summarise_by_org\\(Path\\('content/grantsdetailed.csv'\\)\\)\nprint\\(f'Total orgs: {len\\(summaries\\)}'\\)\nprint\\('Mikve:', summaries['Mikve Israel Emanuel']\\)\nprint\\('Citro:', summaries['Citro']\\)\nprint\\('Unknown:', summaries['Unknown']\\)\n\")"
     ]
   }
 }
