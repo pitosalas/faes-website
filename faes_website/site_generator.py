@@ -157,17 +157,28 @@ class SiteGenerator:
         )
 
     def _write_board(self, people: list):
+        board_en = [p for p in people if p.get("role") == "board" and p.get("lang", "en") == "en"]
+        advisors_en = [p for p in people if p.get("role") == "advisor" and p.get("lang", "en") == "en"]
+        board_pap = [p for p in people if p.get("role") == "board" and p.get("lang") == "pap"]
+        advisors_pap = [p for p in people if p.get("role") == "advisor" and p.get("lang") == "pap"]
+        has_pap = bool(board_pap or advisors_pap)
+
         self._lang = "en"
-        self._translation_url = None
-        board = [p for p in people if p.get("role") == "board" and p.get("lang", "en") == "en"]
-        advisors = [p for p in people if p.get("role") == "advisor" and p.get("lang", "en") == "en"]
-        board_cards_html = "".join(self._render_person_card(p) for p in board)
-        advisor_cards_html = "".join(self._render_person_card(p) for p in advisors)
+        self._translation_url = "board_pap.html" if has_pap else None
         body = self._env.get_template("board_page.html").render(
-            board_cards_html=board_cards_html,
-            advisor_cards_html=advisor_cards_html,
+            board_cards_html="".join(self._render_person_card(p) for p in board_en),
+            advisor_cards_html="".join(self._render_person_card(p) for p in advisors_en),
         )
         self._write("board.html", self._render_page("Board", "board", body))
+
+        if has_pap:
+            self._lang = "pap"
+            self._translation_url = "board.html"
+            body = self._env.get_template("board_page.html").render(
+                board_cards_html="".join(self._render_person_card(p) for p in board_pap),
+                advisor_cards_html="".join(self._render_person_card(p) for p in advisors_pap),
+            )
+            self._write("board_pap.html", self._render_page("Board", "board", body))
 
     def _render_person_card(self, p: dict) -> str:
         photo = p.get("photo") or "default-person.svg"

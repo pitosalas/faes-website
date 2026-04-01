@@ -9,5 +9,4 @@ photo: janice.jpg
 <br/>
 **Secretary**
 <br/>
-
 Janice is the Secretary of FAES. Janice is both a relative and close friend of the founder and his family. She is truly honored to be part of the board of the Foundation Abram Edgardo Salas, contributing to the Foundation's mission, supporting the valuable work of different foundations in Curaçao.
