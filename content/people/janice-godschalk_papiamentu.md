@@ -5,6 +5,7 @@ type: person
 role: board
 public: true
 lang: pap
+photo: janice.jpg
 ---
 
 Coming soon
