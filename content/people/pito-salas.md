@@ -7,6 +7,6 @@ public: true
 photo: pitosalas.jpeg
 ---
 
-**Founder**
+**Founder and President**
 
 Pito is the founder of FAES. He is the son of Abram Edgardo Salas. He grew up in Curaçao but has lived in the USA for most of his life with his wife Chris. He returns regularly and is grateful to have the chance to support and help his fellow yu di Korsou.
