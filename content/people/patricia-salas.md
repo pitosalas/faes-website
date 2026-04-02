@@ -4,6 +4,7 @@ date: 2024-01-01
 type: person
 role: advisor
 public: true
+photo: patty.jpg
 ---
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+**Advisor**
+Pattricia Salas is an advisor the the foundation. We will consult with him from time to time for ideas for new grants.
