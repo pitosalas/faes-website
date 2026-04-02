@@ -6,5 +6,7 @@ role: advisor
 public: true
 photo: patty.jpg
 ---
+<br/>
 **Advisor**
+<br/>
 Pattricia Salas is an advisor the the foundation. We will consult with him from time to time for ideas for new grants.
