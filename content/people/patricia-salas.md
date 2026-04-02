@@ -9,4 +9,4 @@ photo: patty.jpg
 <br/>
 **Advisor**
 <br/>
-Pattricia Salas is an advisor the the foundation. We will consult with her from time to time for ideas for new grants.
+Pattricia Salas is an advisor to the foundation. We will consult with her from time to time for ideas for new grants.

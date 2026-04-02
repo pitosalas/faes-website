@@ -9,4 +9,4 @@ photo: harlan.jpg
 <br/>
 **Advisor**
 <br/>
-Harlan Cohen is an advisor the the foundation. We will consult with him from time to time for ideas for new grants.
+Harlan Cohen is an advisor to the foundation. We will consult with him from time to time for ideas for new grants.
