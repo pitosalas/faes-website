@@ -21,7 +21,7 @@ class CsvLoader:
                 year = row.get("Year", "").strip()
                 if not name or not year.isdigit():
                     continue
-                amount = self._parse_amount(row.get("Amount", ""))
+                amount = self._parse_amount(row.get("Amount_NAf", ""))
                 totals[name] += amount
                 counts[name] += 1
                 recents[name] = max(recents[name], int(year))
@@ -44,7 +44,7 @@ class CsvLoader:
         with csv_path.open(encoding="utf-8", newline="") as f:
             for row in csv.DictReader(f):
                 year = row.get("Year", "").strip()
-                amount = self._parse_amount(row.get("Amount", ""))
+                amount = self._parse_amount(row.get("Amount_NAf", ""))
                 if year.isdigit():
                     totals[int(year)] += amount
         return dict(sorted(totals.items()))

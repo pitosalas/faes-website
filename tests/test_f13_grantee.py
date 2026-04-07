@@ -12,8 +12,8 @@ ROOT = Path(__file__).parent.parent
 def make_grants_page(tmp_path, logo=""):
     content_dir = tmp_path / "content"
     content_dir.mkdir()
-    (content_dir / "grantsdetailed.csv").write_text(
-        "Year,Recipient,Amount\n2024,Org Name,XCG 5000.\n", encoding="utf-8"
+    (content_dir / "grants_claude.csv").write_text(
+        "Date,Year,Recipient,Amount_NAf,Notes\n,2024,Org Name,5000.00,\n", encoding="utf-8"
     )
     org_dir = content_dir / "orgs" / "Org Name"
     org_dir.mkdir(parents=True)

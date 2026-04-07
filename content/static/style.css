@@ -473,6 +473,34 @@ main {
   color: var(--color-muted);
 }
 
+.grants-filter {
+  display: flex;
+  gap: 1.2rem;
+  margin: 0.4rem 0 1.2rem;
+}
+
+.filter-link {
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+.filter-link:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.filter-link.active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
 .grants-list-header {
   margin: 2rem 0 1rem;
   font-size: 1.2rem;
@@ -511,8 +539,15 @@ main {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
 
+.grant-card-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .grant-card-link {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   text-decoration: none;
   color: inherit;
 }
@@ -530,6 +565,7 @@ main {
 }
 
 .grant-card {
+  flex: 1;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);

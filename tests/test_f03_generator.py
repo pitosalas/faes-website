@@ -92,8 +92,8 @@ def test_grants_html_contains_card(tmp_path):
     site = tmp_path / "site"
     content.mkdir()
     site.mkdir()
-    (content / "grantsdetailed.csv").write_text(
-        "Year,Recipient,Amount\n2024,Test Grant,XCG 3000.\n", encoding="utf-8"
+    (content / "grants_claude.csv").write_text(
+        "Date,Year,Recipient,Amount_NAf,Notes\n,2024,Test Grant,3000.00,\n", encoding="utf-8"
     )
     org_dir = content / "orgs" / "Test Grant"
     org_dir.mkdir(parents=True)

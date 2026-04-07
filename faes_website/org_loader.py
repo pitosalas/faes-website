@@ -69,11 +69,11 @@ class OrgLoader:
         if not extra_dirs and not missing_dirs:
             return
         if extra_dirs:
-            print("ERROR: orgs/ directories with no matching grantsdetailed.csv recipient:")
+            print("ERROR: orgs/ directories with no matching grants_claude.csv recipient:")
             for name in sorted(extra_dirs):
                 print(f"  + {name}")
         if missing_dirs:
-            print("ERROR: grantsdetailed.csv recipients with no matching orgs/ directory:")
+            print("ERROR: grants_claude.csv recipients with no matching orgs/ directory:")
             for name in sorted(missing_dirs):
                 print(f"  - {name}")
         raise SystemExit(1)

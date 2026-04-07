@@ -38,7 +38,7 @@ class SiteGenerator:
         people = [i for i in items if i["type"] == "person"]
 
         csv_loader = CsvLoader()
-        detailed_path = self.content_dir / "grantsdetailed.csv"
+        detailed_path = self.content_dir / "grants_claude.csv"
         summaries = csv_loader.summarise_by_org(detailed_path)
         by_year = csv_loader.load_by_year(detailed_path)
         org_loader = OrgLoader(self.content_dir)
@@ -133,13 +133,15 @@ class SiteGenerator:
     def _write_grants(self, grants: list, by_year: dict):
         self._lang = "en"
         self._translation_url = None
-        grants = [g for g in grants if g is not None and g.get("most_recent_year", 0) > 2022]
+        grants = [g for g in grants if g is not None]
         grants.sort(key=lambda g: g["count"], reverse=True)
+        max_year = max(by_year.keys()) if by_year else 0
         cards_html = "".join(self._render_grant_card(g) for g in grants)
         chart_html = self._render_chart(by_year)
         body = self._env.get_template("grants_page.html").render(
             chart_html=chart_html,
             cards_html=cards_html,
+            max_year=max_year,
         )
         self._write("grants.html", self._render_page("Grants", "grants", body))
 
@@ -154,6 +156,7 @@ class SiteGenerator:
             logo=g.get("logo", ""),
             url=g.get("url", ""),
             blurb=g.get("blurb", ""),
+            most_recent_year=g.get("most_recent_year", 0),
         )
 
     def _write_board(self, people: list):

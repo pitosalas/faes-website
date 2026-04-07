@@ -21,8 +21,8 @@ def make_org(orgs_dir: Path, name: str, grant_type="pilot", public=True, logo=""
 
 
 def make_detailed_csv(content_dir: Path, rows: list):
-    lines = ["Year,Recipient,Amount"] + [f"{y},{r},{a}" for y, r, a in rows]
-    (content_dir / "grantsdetailed.csv").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    lines = ["Date,Year,Recipient,Amount_NAf,Notes"] + [f",{y},{r},{a}," for y, r, a in rows]
+    (content_dir / "grants_claude.csv").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def make_grants_page(tmp_path, rows, orgs=None, include_private=False):

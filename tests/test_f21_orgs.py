@@ -24,8 +24,8 @@ def make_org(orgs_dir: Path, name: str, grant_type="pilot", public=True, logo=""
 
 
 def make_detailed_csv(content_dir: Path, rows: list):
-    lines = ["Year,Recipient,Amount"] + [f"{y},{r},{a}" for y, r, a in rows]
-    (content_dir / "grantsdetailed.csv").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    lines = ["Date,Year,Recipient,Amount_NAf,Notes"] + [f",{y},{r},{a}," for y, r, a in rows]
+    (content_dir / "grants_claude.csv").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 # --- OrgLoader.load() ---
@@ -118,25 +118,25 @@ def test_validate_passes_when_both_empty(tmp_path):
 
 def test_summarise_computes_count(tmp_path):
     make_detailed_csv(tmp_path, [(2023, "Org A", "XCG 1000."), (2023, "Org A", "XCG 500.")])
-    result = CsvLoader().summarise_by_org(tmp_path / "grantsdetailed.csv")
+    result = CsvLoader().summarise_by_org(tmp_path / "grants_claude.csv")
     assert result["Org A"]["count"] == 2
 
 
 def test_summarise_computes_total(tmp_path):
     make_detailed_csv(tmp_path, [(2023, "Org A", "XCG 1000."), (2023, "Org A", "XCG 500.")])
-    result = CsvLoader().summarise_by_org(tmp_path / "grantsdetailed.csv")
+    result = CsvLoader().summarise_by_org(tmp_path / "grants_claude.csv")
     assert result["Org A"]["total"] == "XCG 1,500"
 
 
 def test_summarise_computes_most_recent_year(tmp_path):
     make_detailed_csv(tmp_path, [(2020, "Org A", "XCG 500."), (2023, "Org A", "XCG 1000.")])
-    result = CsvLoader().summarise_by_org(tmp_path / "grantsdetailed.csv")
+    result = CsvLoader().summarise_by_org(tmp_path / "grants_claude.csv")
     assert result["Org A"]["most_recent_year"] == 2023
 
 
 def test_summarise_multiple_orgs(tmp_path):
     make_detailed_csv(tmp_path, [(2023, "Org A", "XCG 1000."), (2023, "Org B", "XCG 500.")])
-    result = CsvLoader().summarise_by_org(tmp_path / "grantsdetailed.csv")
+    result = CsvLoader().summarise_by_org(tmp_path / "grants_claude.csv")
     assert "Org A" in result
     assert "Org B" in result
 
@@ -191,5 +191,5 @@ def test_generate_validates_orgs_match(tmp_path, capsys):
 def test_real_content_orgs_match_grantsdetailed():
     loader = OrgLoader(CONTENT)
     csv_loader = CsvLoader()
-    summaries = csv_loader.summarise_by_org(CONTENT / "grantsdetailed.csv")
+    summaries = csv_loader.summarise_by_org(CONTENT / "grants_claude.csv")
     loader.validate(set(summaries.keys()))  # should not raise
