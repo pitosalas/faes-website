@@ -12,11 +12,11 @@ ROOT = Path(__file__).parent.parent
 CONTENT = ROOT / "content"
 
 SAMPLE_DETAILED = """\
-Date,Year,Recipient,Amount_NAf,Notes
-,2020,Org A,5000.00,
-,2020,Org B,500.00,
-,2021,Org A,10000.00,
-,2022,Org C,0.00,
+date,nonprofit,amount,notes
+2020-01-01,Org A,5000.00,
+2020-06-01,Org B,500.00,
+2021-03-01,Org A,10000.00,
+2022-07-01,Org C,0.00,
 """
 
 
@@ -66,42 +66,34 @@ def test_parse_amount_dollar_format():
 
 
 def test_load_by_year_skips_non_year_rows(tmp_path):
-    csv_text = "Date,Year,Recipient,Amount_NAf,Notes\n,2023,Org A,1000.00,\n,,,999.00,\n"
+    csv_text = "date,nonprofit,amount,notes\n2023-01-01,Org A,1000.00,\nno-date,Org B,999.00,\n"
     p = write_detailed(tmp_path, csv_text)
     result = CsvLoader().load_by_year(p)
     assert list(result.keys()) == [2023]
 
 
 def test_real_detailed_csv_loads():
-    result = CsvLoader().load_by_year(CONTENT / "grants_claude.csv")
+    result = CsvLoader().load_by_year(CONTENT / "reconciled_double.csv")
     assert len(result) > 10
     assert all(isinstance(k, int) for k in result.keys())
     assert all(v >= 0 for v in result.values())
 
 
-def test_chart_html_in_generated_grants_page(tmp_path):
-    content_dir = tmp_path / "content"
-    content_dir.mkdir()
-    (content_dir / "grants.csv").write_text(
-        "name,total,count,recent\nOrg A,XCG 1000,1,2023\n", encoding="utf-8"
-    )
-    (content_dir / "grants_claude.csv").write_text(
-        "Date,Year,Recipient,Amount_NAf,Notes\n,2023,Org A,1000.00,\n", encoding="utf-8"
-    )
+def test_chart_html_in_secret_page(tmp_path):
     site_dir = tmp_path / "site"
     site_dir.mkdir()
-    gen = SiteGenerator(content_dir, site_dir)
-    gen._write_grants([], {2023: 1000.0})
-    html = (site_dir / "grants.html").read_text()
+    gen = SiteGenerator(tmp_path / "content", site_dir)
+    gen._write_secret({2023: 1000.0}, [])
+    html = (site_dir / "secret.html").read_text()
     assert "grantsChart" in html
     assert "2023" in html
     assert "1000" in html
 
 
-def test_chart_title_in_grants_page(tmp_path):
+def test_chart_title_in_secret_page(tmp_path):
     site_dir = tmp_path / "site"
     site_dir.mkdir()
     gen = SiteGenerator(tmp_path / "content", site_dir)
-    gen._write_grants([], {2024: 5000.0})
-    html = (site_dir / "grants.html").read_text()
+    gen._write_secret({2024: 5000.0}, [])
+    html = (site_dir / "secret.html").read_text()
     assert "Total Grants by Year" in html

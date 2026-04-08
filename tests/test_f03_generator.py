@@ -93,7 +93,7 @@ def test_grants_html_contains_card(tmp_path):
     content.mkdir()
     site.mkdir()
     (content / "grants_claude.csv").write_text(
-        "Date,Year,Recipient,Amount_NAf,Notes\n,2024,Test Grant,3000.00,\n", encoding="utf-8"
+        "date,nonprofit,amount,notes\n2024-01-01,Test Grant,3000.00,\n", encoding="utf-8"
     )
     org_dir = content / "orgs" / "Test Grant"
     org_dir.mkdir(parents=True)
@@ -140,7 +140,7 @@ def test_generate_returns_written_filenames(tmp_path):
 
 def test_generate_real_content():
     site = ROOT / "site"
-    written = SiteGenerator(CONTENT, site).generate(False, "grants_claude.csv")
+    written = SiteGenerator(CONTENT, site).generate(False, "reconciled_double.csv")
     assert "index.html" in written
     assert "about.html" in written
     assert "mission.html" in written

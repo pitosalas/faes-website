@@ -39,7 +39,7 @@ Private content.
     
     staging = tmp_path / "staging"
     staging.mkdir()
-    written = SiteGenerator(content_dir, staging).generate(include_private=True, csv_name="grants_claude.csv")
+    written = SiteGenerator(content_dir, staging).generate(include_private=True, csv_name="reconciled_double.csv")
     assert "private.html" in written
 
 
@@ -68,14 +68,14 @@ Private content.
     
     staging = tmp_path / "staging"
     staging.mkdir()
-    written = SiteGenerator(content_dir, staging).generate(include_private=False, csv_name="grants_claude.csv")
+    written = SiteGenerator(content_dir, staging).generate(include_private=False, csv_name="reconciled_double.csv")
     assert "private.html" not in written
 
 
 def test_include_private_still_writes_public_pages(tmp_path):
     staging = tmp_path / "staging"
     staging.mkdir()
-    written = SiteGenerator(CONTENT, staging).generate(include_private=True, csv_name="grants_claude.csv")
+    written = SiteGenerator(CONTENT, staging).generate(include_private=True, csv_name="reconciled_double.csv")
     for page in ["index.html", "about.html", "mission.html", "grants.html"]:
         assert page in written
 

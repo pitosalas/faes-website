@@ -24,7 +24,7 @@ def make_org(orgs_dir: Path, name: str, grant_type="pilot", public=True, logo=""
 
 
 def make_detailed_csv(content_dir: Path, rows: list):
-    lines = ["Date,Year,Recipient,Amount_NAf,Notes"] + [f",{y},{r},{a}," for y, r, a in rows]
+    lines = ["date,nonprofit,amount,notes"] + [f"{y}-01-01,{r},{a}," for y, r, a in rows]
     (content_dir / "grants_claude.csv").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
@@ -191,5 +191,5 @@ def test_generate_validates_orgs_match(tmp_path, capsys):
 def test_real_content_orgs_match_grantsdetailed():
     loader = OrgLoader(CONTENT)
     csv_loader = CsvLoader()
-    summaries = csv_loader.summarise_by_org(CONTENT / "grants_claude.csv")
+    summaries = csv_loader.summarise_by_org(CONTENT / "reconciled_double.csv")
     loader.validate(set(summaries.keys()))  # should not raise

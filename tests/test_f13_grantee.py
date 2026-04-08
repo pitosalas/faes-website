@@ -13,7 +13,7 @@ def make_grants_page(tmp_path, logo=""):
     content_dir = tmp_path / "content"
     content_dir.mkdir()
     (content_dir / "grants_claude.csv").write_text(
-        "Date,Year,Recipient,Amount_NAf,Notes\n,2024,Org Name,5000.00,\n", encoding="utf-8"
+        "date,nonprofit,amount,notes\n2024-01-01,Org Name,5000.00,\n", encoding="utf-8"
     )
     org_dir = content_dir / "orgs" / "Org Name"
     org_dir.mkdir(parents=True)
@@ -58,5 +58,5 @@ def test_no_logo_omits_img(tmp_path):
     assert 'class="grantee-logo"' not in html
 
 
-def test_static_logos_dir_exists():
-    assert (ROOT / "content" / "static" / "logos").is_dir()
+def test_orgs_dir_exists():
+    assert (ROOT / "content" / "orgs").is_dir()

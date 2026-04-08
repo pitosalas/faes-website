@@ -33,7 +33,7 @@ def test_pyproject_dependencies():
 
 def test_uv_run_exits_zero():
     result = subprocess.run(
-        ["uv", "run", "faes-website", "--csv", "grants_claude.csv"],
+        ["uv", "run", "faes-website", "--csv", "reconciled_double.csv"],
         cwd=ROOT,
         capture_output=True,
         text=True,

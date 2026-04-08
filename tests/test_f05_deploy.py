@@ -50,5 +50,5 @@ def test_generator_copies_static(tmp_path):
     content = ROOT / "content"
     site = tmp_path / "site"
     site.mkdir()
-    SiteGenerator(content, site).generate(False, "grants_claude.csv")
+    SiteGenerator(content, site).generate(False, "reconciled_double.csv")
     assert (site / "static" / "style.css").is_file()
