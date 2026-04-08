@@ -873,19 +873,24 @@ footer {
 /* Admin unlock */
 .admin-btn {
   position: fixed;
-  top: 0.6rem;
-  right: 0.75rem;
-  font-size: 0.65rem;
-  padding: 0.15rem 0.5rem;
-  background: transparent;
-  border: 1px solid rgba(18, 57, 45, 0.3);
+  top: 0;
+  right: 0;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  background: rgba(18, 57, 45, 0.08);
+  border: none;
+  border-left: 1px solid rgba(18, 57, 45, 0.2);
+  border-bottom: 1px solid rgba(18, 57, 45, 0.2);
+  border-bottom-left-radius: 4px;
   color: var(--color-accent, #1f5a46);
-  border-radius: 3px;
+  text-decoration: none;
   cursor: pointer;
   z-index: 9999;
-  opacity: 0.45;
+  opacity: 0.75;
+  font-weight: 600;
+  letter-spacing: 0.03em;
 }
-.admin-btn:hover { opacity: 1; }
+.admin-btn:hover { opacity: 1; background: rgba(18, 57, 45, 0.15); text-decoration: none; }
 .admin-nav-link { display: none; }
 body.admin-unlocked .admin-nav-link { display: inline; }
 .grant-card-wrapper[data-private="true"] { display: none; }

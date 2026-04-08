@@ -28,7 +28,8 @@
     unlock();
   }
 
-  document.getElementById("admin-btn").addEventListener("click", function () {
+  document.getElementById("admin-btn").addEventListener("click", function (e) {
+    e.preventDefault();
     if (document.body.classList.contains("admin-unlocked")) {
       lock();
       return;
