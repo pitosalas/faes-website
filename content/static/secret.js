@@ -53,7 +53,7 @@
   });
 
   // Org-by-year matrix
-  var allYears = Array.from(new Set(ALL_ROWS.map(function (r) { return r.year; }))).sort();
+  var allYears = Array.from(new Set(ALL_ROWS.map(function (r) { return r.year; }))).sort().reverse();
   var allOrgs  = Array.from(new Set(ALL_ROWS.map(function (r) { return r.nonprofit; }))).sort();
   var sums = {};
   allOrgs.forEach(function (o) { sums[o] = {}; });
