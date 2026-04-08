@@ -1,0 +1,500 @@
+================================================================
+FAES FOUNDATION WEBSITE — TRANSLATION FILE
+================================================================
+
+INSTRUCTIONS FOR TRANSLATOR:
+- Fill in or correct the [PAPIAMENTU] sections below.
+- Do NOT change any [ENGLISH] sections.
+- Do NOT change lines that start with "===" — the computer uses these.
+- Do NOT change lines that say [ENGLISH] or [PAPIAMENTU].
+- Keep any special codes like :photo "..." exactly as they appear.
+- Keep any links like [text](/page) exactly as they appear in Papiamentu.
+- Sections marked "*** NEEDS TRANSLATION ***" are empty and need your work.
+
+================================================================
+PAGES
+================================================================
+
+=== PAGE: home ===
+
+[ENGLISH]
+# Fundashon Abram Edgardo Salas
+
+### Who We Are
+
+:photo "punda1.jpg", "Downtown Curacao waterfront", 200, right
+
+We are a grant-making organization started in Curaçao in 2008. We support many non-profits and foundations in Curaçao. We have been giving grants in Curacao for more than 10 years. During that time, we have given almost XCG 500,000!
+
+We are a small team and do our work quietly. We focus on small organizations that don't get attention from large donors because they are new, small, and less well known.
+
+### Our Process
+
+Our process is personal, based on connections and recommendations. All our grantees were recommended to us directly by people in our network in Curaçao and abroad.
+
+### What To Do
+
+If your organization matches our goals, reach out to one of our board members through your network and connections. We will ask for a referral from our network of advisors, board members, and other grantees. Once the connection is made, we will talk and explain the next steps.
+
+[PAPIAMENTU]
+# Fundashon Abram Edgardo Salas
+
+### Kiko Nos Ta
+
+:photo "punda1.jpg", "Downtown Curacao waterfront", 200, right
+
+Nos ta un organisashon ku ta duna beurs ku a kuminsá na Kòrsou na 2008. Nos ta apoyá hopi organisashonnan sin fin di lucro i fundashonnan na Kòrsou. Nos ta dunando beurs na Kòrsou pa mas ku 10 aña. Durante e tempu ei, nos a duna kasi XCG 500.000!
+
+Nos ta un ekipo chikitu i nos ta hasi nos trabou sin hasi hopi ruido. Nos ta enfoka nos mes riba organisashonnan chikitu ku no ta risibí atenshon di donadornan grandi pasobra nan ta nobo, chikitu, i menos konosí.
+
+### Nos Proseso
+
+Nos proseso ta personal, basá riba konekshonnan i rekomendashonnan. Tur nos resepientnan di beurs a wòrdu rekomendá na nos direktamente pa hende den nos red na Kòrsou i afor.
+
+### Kiko Bo Mester Hasi
+
+Si bo organisashon ta kòrda ku nos metanan, kontaktá uno di nos miembronan di direktiva atraves di bo red i konekshonnan. Nos lo pidi un referenshia for di nos red di asesornan, miembronan di direktiva, i otro resepientnan di beurs. Ora ku e konekshon a wòrdu hasi, nos lo papia i splika e próksimo pasonan.
+
+=== PAGE: about ===
+
+[ENGLISH]
+# About the Foundation
+
+Fundashon Abram Edgardo Salas is a grant-making organization based in Curaçao. We were founded in 2008 and since then we have given almost XCG 500.000 to small non-profits and foundations that larger donors often miss.
+
+## History
+
+:photo "bhs.jpg", "Boekhandel Salas where it all started", 300, right
+
+FAES was formed in 2010 by Pito Salas in honor of his father Abram Edgardo Salas. The first board members included Pito Salas, Margarita Salas, Virginia Evers-Kleinmoedig, and Janice Godschalk. Our advisory board included Patricia Salas, Larry Salas, and Harlan Cohen. [Meet the current board](/board).
+
+## How We Operate
+
+The foundation is managed by a small board of directors who review grant applications every year. Our criteria and values are described on our [mission page](/mission).
+
+[PAPIAMENTU]
+# Tokante e Fundashon
+
+Fundashon Abram Edgardo Salas ta un organisashon ku ta duna beurs basá na Kòrsou. Nos a wòrdu fundá na 2008 i for di e momentu ei nos a duna kasi XCG 500.000 na organisashonnan chikitu sin fin di lucro i fundashonnan ku donadornan mas grandi hopi biaha ta falta di nota.
+
+## Historia
+
+:photo "bhs.jpg", "Boekhandel Salas onde tur kos a kuminsá", 300, right
+
+FAES a wòrdu formá na 2010 pa Pito Salas na onó di su tata Abram Edgardo Salas. E promé miembronan di direktiva a inkluí Pito Salas, Margarita Salas, Virginia Evers-Kleinmoedig, i Janice Godschalk. Nos konseho di asesoria a inkluí Patricia Salas, Larry Salas, i Harlan Cohen. [Konosé e direktiva aktual](/board).
+
+## Kon Nos Ta Operá
+
+E fundashon ta wòrdu maneha pa un direktiva chikitu ku ta revisa aplikashonnan di beurs kada aña. Nos kriterianan i valornan ta wòrdu deskribí riba nos [páhina di mision](/mission).
+
+=== PAGE: mission ===
+
+[ENGLISH]
+# Our Mission and Process
+
+### Who We Are
+
+[Fundashon Abram Edgardo Salas](/about) helps organizations that make a real difference in Curaçao. We find, meet with, and support non-profit programs across the island.
+
+### Who We Support
+
+We look for organizations who directly help people in need. We support programs that focus on programs fighting poverty, homelessness, drug addiction, illiteracy, hunger, child abuse, and alcohol abuse. We also support children's health, safety, and wellbeing. We also work with the Jewish community of Curaçao. We focus on helping the community stay strong, and on preserving their history, culture, buildings, and artifacts.
+
+:photo "punda1.jpg", "Downtown Curacao waterfront", 200, right
+
+### What We Look For
+
+We value partner organizations that are small, hands-on, and doing the work themselves on the ground. We look for competence, professionalism, expertise, transparency, and high ethical standards.
+
+### Our Grants
+
+**Pilot grants** of XCG 2,500 to XCG 10,000 for recipients we are getting to know. We do basic research on these organizations, with very little paperwork or reporting required.
+
+**Primary grants** of XCG 10,000 up to XCG 100,000 for recipients we know well and trust. We request a "Letter of Interest" to begin the process, followed by our own research, reference checking, and follow up.
+
+---
+
+[View our grants](grants.html) • [Read about who we are](about.html) • [Meet our board](board.html)
+
+[PAPIAMENTU]
+# Nos Mision i Proseso
+
+### Kiko Nos Ta
+
+[Fundashon Abram Edgardo Salas](/about) ta yuda organisashonnan ku ta hasi un diferensia real na Kòrsou. Nos ta buska, topa ku, i apoyá programanan sin fin di lucro pa henter e isla.
+
+### Ken Nos Ta Apoyá
+
+Nos ta buska organisashonnan ku ta yuda direktamente hendenan ku mester di yuda. Nos ta apoyá programanan ku ta lubra kòntra pobreza, falta di kas, adikshon na droga, analfabetismo, hamber, abuso di mucha, i abuso di alkohòl. Nos tambe ta apoyá salú, siguridad, i bienestar di mucha. Nos tambe ta traha ku e komunidad judío di Kòrsou. Nos ta enfoka nos mes riba yuda e komunidad keda fuerte, i riba preservá nan historia, kultura, edifisionan, i artifaktonan.
+
+### Kiko Nos Ta Buska
+
+:photo "punda1.jpg", "Downtown Curacao waterfront", 200, right
+
+Nos ta valorá organisashonnan partner ku ta chikitu, práktikonan, i ku ta hasi e trabou nan mes riba e tereno. Nos ta buska kompetenshia, profesionalismo, ekspertisia, transparensia, i estandarnan étikonan haltu.
+
+### Nos Beurs
+
+**Beurs piloto** di XCG 2.500 pa XCG 10.000 pa resepientnan ku nos ta kuminsá konosé. Nos ta hasi investigashon básiko riba e organisashonnan aki, ku masha poko papelnan òf reporte rekerí.
+
+**Beurs primario** di XCG 10.000 te ku XCG 100.000 pa resepientnan ku nos ta konosé bon i ku nos ta konfía aden. Nos ta pidi un "Karta di Interes" pa kuminsá e proseso, sigú pa nos propio investigashon, chèk di referenshia, i seguimento.
+
+---
+
+[Mira nos beurs](grants.html) • [Lesa tokante ken nos ta](about.html) • [Konosé nos direktiva](board.html)
+
+================================================================
+ORGANIZATION DESCRIPTIONS (short blurbs shown on the grants page)
+================================================================
+
+=== ORG: Bethesda ===
+
+[ENGLISH]
+Verpleeghuis Betèsda, a nursing home operating since 1988 in Willemstad, Curaçao, providing long-term residential care for elderly residents.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: CARF ===
+
+[ENGLISH]
+Curaçao's oldest no-kill animal rescue, founded 2008. Rescues, rehabilitates, and rehomes abandoned and stray dogs, relying entirely on volunteers and donations with no government funding.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Casa Manita ===
+
+[ENGLISH]
+Temporary boarding home for girls and boys ages 4–14, founded over 50 years ago. Provides after-school activities, homework help, and life skills while supporting children's return to stable home environments.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Children's Museum ===
+
+[ENGLISH]
+Stichting Kindermuseum Curaçao, founded 2014. Brings children ages 1–10 and their families together through 17 indoor and outdoor interactive exhibits promoting learning through play.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: CineKids Curacao ===
+
+[ENGLISH]
+CineKids Curaçao introduces children to the world of film, supporting youth participation in cinema and screen culture on the island.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: CITRO ===
+
+[ENGLISH]
+CITRO is a volunteer sea-rescue nonprofit in Curaçao that operates 24/7 to assist people in distress along the coast. They work under Coast Guard coordination, run medical evacuations, and rely entirely on donations to keep their rescue crews and boats active.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Copernicia ===
+
+[ENGLISH]
+Asosiashon di Patfenderei di Adulto di Curaçao — the National Scout and Guide Fellowship of Curaçao — affiliated with the International Scout and Guide Fellowship (ISGF).
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Dividivi ===
+
+[ENGLISH]
+Community-serving foundation in Curaçao supporting local education and youth development initiatives.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Dun'e un Chens ===
+
+[ENGLISH]
+Foundation in Curaçao working to give disadvantaged families and individuals a second chance through housing and community assistance.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: FMA ===
+
+[ENGLISH]
+Fundashon pa Maneho di Adikshon — Curaçao's knowledge center for addiction prevention and care since 1995. Now part of GGZ Curaçao, providing voluntary addiction treatment, youth programs, and a walk-in center.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Fundashon Alton Paas ===
+
+[ENGLISH]
+Founded 2012 by spinal cord injury survivor Alton Paas. Improves quality of life for people with spinal cord injuries and neurological conditions through exercise facilities, the Wheelee accessible transport service, and support groups.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Fundashon Ambulans Deseo Korsou ===
+
+[ENGLISH]
+Volunteer foundation that fulfills the last wishes of immobile and terminal patients, free of charge. Inspired by the Dutch Ambulance Wens, fulfilling 2–4 wishes per month using a specially equipped ambulance with trained volunteers.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Fundashon Bos di Hubentut ===
+
+[ENGLISH]
+Fundashon Bos di Hubentut is dedicated to promoting children's rights, with a strong emphasis on preventing sexual abuse and domestic violence in all its forms.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Fundashon Kura di Arte ===
+
+[ENGLISH]
+Performing arts and cultural education foundation in Otrobanda, Willemstad, developing creative talent through workshops, training, and performances.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Fundashon Lechi di Mama ===
+
+[ENGLISH]
+Promotes and supports breastfeeding in Curaçao for over 35 years. Provides one-on-one lactation support, classes, and community awareness campaigns, run mainly by volunteers.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Fundashon Mami Sa ===
+
+[ENGLISH]
+Supports young single mothers and their children through a 2-year day program including Teduki craft workshops, budget management, cooking, and life skills training to achieve self-sufficiency.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Fundashon Mucha Pa Mucha ===
+
+[ENGLISH]
+Founded 2014 by St. Elisabeth Hospital children's department staff. Raises funds through events and donations to purchase modern equipment and materials for the SEHOS pediatric ward.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Fundashon Negoshi Pikiña ===
+
+[ENGLISH]
+Junior Achievement Curaçao franchise (established 2000) promoting entrepreneurship education from age 9 through adults. Organizes Global Entrepreneurship Week for Curaçao and neighboring islands, reaching 20–25% of elementary school students annually.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Instituto Buena Bista ===
+
+[ENGLISH]
+Center for contemporary art in Curaçao, founded by David Bade and Tirzo Martha. Offers a two-year creative preparatory program for youth, international artist residencies, and community art projects.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Kinderoorden Brakkeput ===
+
+[ENGLISH]
+Children's home for boys with complex needs ages 6–18, founded 1968. Closed in 2025 after 50+ years due to subsidy cuts; clients were transferred to Fundashon Guia, Eduká i Forma.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: LDTCC ===
+
+[ENGLISH]
+Liberata Dance Theatre Curaçao Connection, founded 2008. Local affiliate of Liberata Dance Theatre (NYC), using dance to explore the history and culture of Caribbean and African-diaspora communities.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Mediaton (Orkán Thomas) ===
+
+[ENGLISH]
+Foundation in Curaçao providing mediation and social support services to the community.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Mikve Israel Emanuel ===
+
+[ENGLISH]
+The Mikvé Israel-Emanuel synagogue in Curaçao was consecrated in 1732. It is the oldest synagogue in continuous use in the Americas.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Monseigneur Verriet ===
+
+[ENGLISH]
+Provides residential care, daytime activities, and therapy to people with physical and/or mental disabilities, autism, and non-congenital brain injuries on Curaçao. Part of the SGR-Groep.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Moving Innovation (Winklaar) ===
+
+[ENGLISH]
+Community innovation initiative based in the Winklaar neighborhood of Curaçao, focused on social and economic development.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Oudervereniging Totolika ===
+
+[ENGLISH]
+Association of parents and friends of people with intellectual disabilities, founded 1973. Runs a toy library and Information Center, and organizes lectures, workshops, and seminars to support families and advocate for provisions.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Pro Alfa ===
+
+[ENGLISH]
+Founded 1989, provides basic literacy, language, and vocational training — including reading, writing, cooking, computer skills, and administration — to young people and adults from disadvantaged backgrounds.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Pro Bista ===
+
+[ENGLISH]
+Professional care institution for visually impaired and blind people, operating since 1999. Serves approximately 250 active clients with guidance and assistive support, funded through social contributions and donations.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Ride for the Roses ===
+
+[ENGLISH]
+Annual charity event where participants cycle, walk, run, or swim to raise funds for cancer patients and their families through the Princess Wilhelmina Fund. Now in its 20th+ edition.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Ronald McDonald House ===
+
+[ENGLISH]
+Provides essential support to families of seriously ill or hospitalized children, helping 1,800–2,000 families annually. Keeps families close to their sick child in the hospital through programs and resources.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Seru Fortuna School ===
+
+[ENGLISH]
+Educational institution serving children in Seru Fortuna, one of Curaçao's most underserved neighborhoods, providing schooling and support to the local community.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Siloam St. Klein Jerusalem ===
+
+[ENGLISH]
+Christian family replacement home for children in Curaçao since 1997. Cares for disadvantaged and chronically ill children and serves the surrounding community with food, clothing, and daily necessities.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Sint Vincentiusvereniging (SVDP) ===
+
+[ENGLISH]
+Local chapter of the international Society of Saint Vincent de Paul, providing charitable assistance — including food, clothing, and social support — to people in need in Curaçao.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Sokudi ===
+
+[ENGLISH]
+Sosiedat Kurasoleño di Diabétiko — the Curaçao Diabetes Association — providing information, support groups, and advocacy for people living with diabetes on the island.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Stichting Alzheimer Curacao ===
+
+[ENGLISH]
+Founded 2001, supports people with Alzheimer's disease and other forms of dementia and their families. Works to improve care quality and has been developing a National Dementia Plan since 2012.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Stichting CliniClowns Curacao ===
+
+[ENGLISH]
+Trained professional clowns who visit sick children and elderly with dementia in hospitals and care facilities across Curaçao, free of charge. Relies entirely on donations and public support.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Stichting Hospice Arco Cavent ===
+
+[ENGLISH]
+Curaçao's first hospice providing palliative and terminal care, founded 2012. Six-bed facility run entirely by trained volunteers, helping patients live their final phase with dignity. Funded entirely by donations.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Stichting Prinses Wilhelmina Fonds ===
+
+[ENGLISH]
+Stichting Prinses Wilhelmina Fonds, founded 1949 to support the fight against cancer. Provides psycho-social assistance and support to cancer patients and their families throughout treatment on Curaçao.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Stichting Shimaruku ===
+
+[ENGLISH]
+Since 1996, provides food, sports activities, and after-school care for children and young mothers in the poverty-stricken Seru Fortuna neighborhood of Willemstad.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Thuiszorg Banda Bou ===
+
+[ENGLISH]
+Professional home healthcare foundation serving the western districts of Curaçao from Boka St. Michiel to Westpunt, providing nursing care, specialist treatments, diabetes and wound care, and preventative education.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: VillaMaria ===
+
+[ENGLISH]
+Casa Cuna Villa Maria, day care and early education center for children up to four years old, established 1951. Serves 130 children with structured educational activities throughout the day.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Voedselbank ===
+
+[ENGLISH]
+Distributes food parcels to thousands of vulnerable families in Curaçao weekly, run entirely by volunteers and funded by donations. During COVID-19 distributed over 85,000 food parcels in a single year.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Winthrop Curiel ===
+
+[ENGLISH]
+Foundation in Curaçao supporting cultural and community initiatives in the Willemstad area.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
+
+=== ORG: Youth in Development Foundation (Brigada di Seguridat) ===
+
+[ENGLISH]
+Brigada di Seguridat i Formashon (BSF) is a Curaçao-based youth development program that builds discipline, self-esteem, and life skills through physical training, leadership development, and social-emotional support for around 400 young members.
+
+[PAPIAMENTU]
+*** NEEDS TRANSLATION ***
