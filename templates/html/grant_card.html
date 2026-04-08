@@ -1,9 +1,9 @@
-<div class="grant-card-wrapper" data-year="{{ most_recent_year }}">
+<div class="grant-card-wrapper" data-year="{{ most_recent_year }}" data-date="{{ most_recent_date }}">
 {% if url %}<a href="{{ url }}" target="_blank" rel="noopener noreferrer" class="grant-card-link">{% endif %}
 <div class="grant-card">
   <h3>{{ title }}</h3>
   {% if logo %}
-  <img src="static/logos/{{ logo }}" alt="{{ title }} logo" class="grantee-logo" style="height: 75px; width: auto;">
+  <img src="{{ logo }}" alt="{{ title }} logo" class="grantee-logo" style="height: 75px; width: auto;">
   {% endif %}
   {% if blurb %}
   <p class="grant-blurb">{{ blurb }}</p>

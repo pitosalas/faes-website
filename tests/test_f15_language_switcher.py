@@ -70,7 +70,7 @@ def test_generator_creates_separate_html_files_for_languages(tmp_path):
     site.mkdir()
     make_md(content, "page.md", ENGLISH_PAGE)
     make_md(content, "page_papiamentu.md", PAPIAMENTU_PAGE)
-    SiteGenerator(content, site).generate(False)
+    SiteGenerator(content, site).generate(False, "grants_claude.csv")
     assert (site / "testpage.html").exists()
     assert (site / "testpage_pap.html").exists()
 
@@ -82,7 +82,7 @@ def test_lang_switcher_appears_on_bilingual_pages(tmp_path):
     site.mkdir()
     make_md(content, "page.md", ENGLISH_PAGE)
     make_md(content, "page_papiamentu.md", PAPIAMENTU_PAGE)
-    SiteGenerator(content, site).generate(False)
+    SiteGenerator(content, site).generate(False, "grants_claude.csv")
     en_html = (site / "testpage.html").read_text()
     pap_html = (site / "testpage_pap.html").read_text()
     assert "nav-lang-switch" in en_html
@@ -96,7 +96,7 @@ def test_lang_switcher_links_to_correct_file(tmp_path):
     site.mkdir()
     make_md(content, "page.md", ENGLISH_PAGE)
     make_md(content, "page_papiamentu.md", PAPIAMENTU_PAGE)
-    SiteGenerator(content, site).generate(False)
+    SiteGenerator(content, site).generate(False, "grants_claude.csv")
     en_html = (site / "testpage.html").read_text()
     pap_html = (site / "testpage_pap.html").read_text()
     assert 'href="testpage_pap.html"' in en_html
@@ -110,7 +110,7 @@ def test_lang_switcher_shows_correct_label(tmp_path):
     site.mkdir()
     make_md(content, "page.md", ENGLISH_PAGE)
     make_md(content, "page_papiamentu.md", PAPIAMENTU_PAGE)
-    SiteGenerator(content, site).generate(False)
+    SiteGenerator(content, site).generate(False, "grants_claude.csv")
     en_html = (site / "testpage.html").read_text()
     pap_html = (site / "testpage_pap.html").read_text()
     assert "Papiamentu" in en_html
@@ -123,7 +123,7 @@ def test_no_lang_switcher_on_monolingual_pages(tmp_path):
     content.mkdir()
     site.mkdir()
     make_md(content, "page.md", ENGLISH_PAGE)
-    SiteGenerator(content, site).generate(False)
+    SiteGenerator(content, site).generate(False, "grants_claude.csv")
     html = (site / "testpage.html").read_text()
     assert "nav-lang-switch" in html
     assert 'href="index_pap.html"' in html

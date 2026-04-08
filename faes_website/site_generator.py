@@ -30,7 +30,7 @@ class SiteGenerator:
         self._translation_url = None
         self._env = Environment(loader=FileSystemLoader(_TEMPLATES_DIR), autoescape=False)
 
-    def generate(self, include_private: bool):
+    def generate(self, include_private: bool, csv_name: str):
         self._copy_static()
         loader = ContentLoader()
         items = loader.load(self.content_dir) if include_private else loader.load_public(self.content_dir)
@@ -38,7 +38,7 @@ class SiteGenerator:
         people = [i for i in items if i["type"] == "person"]
 
         csv_loader = CsvLoader()
-        detailed_path = self.content_dir / "grants_claude.csv"
+        detailed_path = self.content_dir / csv_name
         summaries = csv_loader.summarise_by_org(detailed_path)
         by_year = csv_loader.load_by_year(detailed_path)
         org_loader = OrgLoader(self.content_dir)
@@ -107,12 +107,14 @@ class SiteGenerator:
             org = orgs[name]
             if not include_private and not org["public"]:
                 continue
+            logo = f"orgs/{name}/{org['logo']}" if org["logo"] else ""
             result.append({
                 "title": name,
                 "count": summary["count"],
                 "most_recent_year": summary["most_recent_year"],
+                "most_recent_date": summary["most_recent_date"],
                 "total": summary["total"],
-                "logo": org["logo"],
+                "logo": logo,
                 "url": org.get("url", ""),
                 "blurb": org.get("blurb", ""),
                 "grant_type": org["grant_type"],
@@ -121,14 +123,15 @@ class SiteGenerator:
         return result
 
     def _copy_org_logos(self, orgs: dict):
-        logos_dir = self.site_dir / "static" / "logos"
-        logos_dir.mkdir(parents=True, exist_ok=True)
         for name, meta in orgs.items():
             if not meta["logo"]:
                 continue
             src = self.content_dir / "orgs" / name / meta["logo"]
-            if src.is_file():
-                shutil.copy2(src, logos_dir / meta["logo"])
+            if not src.is_file():
+                continue
+            dst_dir = self.site_dir / "orgs" / name
+            dst_dir.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, dst_dir / meta["logo"])
 
     def _write_grants(self, grants: list, by_year: dict):
         self._lang = "en"
@@ -157,6 +160,7 @@ class SiteGenerator:
             url=g.get("url", ""),
             blurb=g.get("blurb", ""),
             most_recent_year=g.get("most_recent_year", 0),
+            most_recent_date=g.get("most_recent_date", ""),
         )
 
     def _write_board(self, people: list):

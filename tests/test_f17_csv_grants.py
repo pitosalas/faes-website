@@ -33,7 +33,7 @@ def make_grants_page(tmp_path, rows, orgs=None, include_private=False):
     make_detailed_csv(content_dir, rows)
     for org_kwargs in (orgs or []):
         make_org(content_dir / "orgs", **org_kwargs)
-    SiteGenerator(content_dir, site_dir).generate(include_private)
+    SiteGenerator(content_dir, site_dir).generate(include_private, "grants_claude.csv")
     return (site_dir / "grants.html").read_text()
 
 
@@ -84,7 +84,7 @@ def test_grant_card_displays_logo_when_present(tmp_path):
     html = make_grants_page(tmp_path, [(2024, "Test Org", "XCG 5000.")],
                             [{"name": "Test Org", "logo": "testlogo.png"}])
     assert 'class="grantee-logo"' in html
-    assert 'src="static/logos/testlogo.png"' in html
+    assert 'src="orgs/Test Org/testlogo.png"' in html
 
 
 def test_grant_card_no_logo_when_absent(tmp_path):

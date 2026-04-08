@@ -15,7 +15,7 @@ EXPECTED_PAGES = ["index.html", "about.html", "mission.html", "grants.html"]
 def test_staging_generates_to_staging_dir(tmp_path):
     staging = tmp_path / "staging"
     staging.mkdir()
-    SiteGenerator(CONTENT, staging).generate(False)
+    SiteGenerator(CONTENT, staging).generate(False, "grants_claude.csv")
     for page in EXPECTED_PAGES:
         assert (staging / page).exists(), f"Missing {page} in staging"
 
@@ -25,14 +25,14 @@ def test_staging_does_not_touch_site_dir(tmp_path):
     site = tmp_path / "site"
     staging.mkdir()
     site.mkdir()
-    SiteGenerator(CONTENT, staging).generate(False)
+    SiteGenerator(CONTENT, staging).generate(False, "grants_claude.csv")
     assert list(site.iterdir()) == []
 
 
 def test_staging_copies_css(tmp_path):
     staging = tmp_path / "staging"
     staging.mkdir()
-    SiteGenerator(CONTENT, staging).generate(False)
+    SiteGenerator(CONTENT, staging).generate(False, "grants_claude.csv")
     assert (staging / "static" / "style.css").is_file()
 
 

@@ -64,7 +64,7 @@ def test_generate_produces_page_files(tmp_path):
     content.mkdir()
     site.mkdir()
     make_md(content, "page.md", VALID_PAGE)
-    SiteGenerator(content, site).generate(False)
+    SiteGenerator(content, site).generate(False, "grants_claude.csv")
     assert (site / "testpage.html").exists()
 
 
@@ -74,7 +74,7 @@ def test_private_content_not_written(tmp_path):
     content.mkdir()
     site.mkdir()
     make_md(content, "private.md", PRIVATE_PAGE)
-    SiteGenerator(content, site).generate(False)
+    SiteGenerator(content, site).generate(False, "grants_claude.csv")
     assert not (site / "privatepage.html").exists()
 
 
@@ -83,7 +83,7 @@ def test_generate_produces_grants_html(tmp_path):
     site = tmp_path / "site"
     content.mkdir()
     site.mkdir()
-    SiteGenerator(content, site).generate(False)
+    SiteGenerator(content, site).generate(False, "grants_claude.csv")
     assert (site / "grants.html").exists()
 
 
@@ -98,7 +98,7 @@ def test_grants_html_contains_card(tmp_path):
     org_dir = content / "orgs" / "Test Grant"
     org_dir.mkdir(parents=True)
     (org_dir / "org.md").write_text("---\ngrant_type: pilot\npublic: true\n---\n", encoding="utf-8")
-    SiteGenerator(content, site).generate(False)
+    SiteGenerator(content, site).generate(False, "grants_claude.csv")
     html = (site / "grants.html").read_text()
     assert "grant-card" in html
     assert "Test Grant" in html
@@ -110,7 +110,7 @@ def test_page_contains_title(tmp_path):
     content.mkdir()
     site.mkdir()
     make_md(content, "page.md", VALID_PAGE)
-    SiteGenerator(content, site).generate(False)
+    SiteGenerator(content, site).generate(False, "grants_claude.csv")
     html = (site / "testpage.html").read_text()
     assert "Test Page" in html
 
@@ -121,7 +121,7 @@ def test_page_contains_body_html(tmp_path):
     content.mkdir()
     site.mkdir()
     make_md(content, "page.md", VALID_PAGE)
-    SiteGenerator(content, site).generate(False)
+    SiteGenerator(content, site).generate(False, "grants_claude.csv")
     html = (site / "testpage.html").read_text()
     assert "<h1>" in html
     assert "Some content here" in html
@@ -133,14 +133,14 @@ def test_generate_returns_written_filenames(tmp_path):
     content.mkdir()
     site.mkdir()
     make_md(content, "page.md", VALID_PAGE)
-    written = SiteGenerator(content, site).generate(False)
+    written = SiteGenerator(content, site).generate(False, "grants_claude.csv")
     assert "testpage.html" in written
     assert "grants.html" in written
 
 
 def test_generate_real_content():
     site = ROOT / "site"
-    written = SiteGenerator(CONTENT, site).generate(False)
+    written = SiteGenerator(CONTENT, site).generate(False, "grants_claude.csv")
     assert "index.html" in written
     assert "about.html" in written
     assert "mission.html" in written

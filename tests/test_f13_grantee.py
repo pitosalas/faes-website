@@ -22,7 +22,7 @@ def make_grants_page(tmp_path, logo=""):
         (org_dir / logo).write_bytes(b"")
     site_dir = tmp_path / "site"
     site_dir.mkdir()
-    SiteGenerator(content_dir, site_dir).generate(False)
+    SiteGenerator(content_dir, site_dir).generate(False, "grants_claude.csv")
     return (site_dir / "grants.html").read_text()
 
 
@@ -45,12 +45,12 @@ def test_no_url_keeps_title_plain(tmp_path):
 def test_logo_renders_img(tmp_path):
     html = make_grants_page(tmp_path, logo="testlogo.png")
     assert 'class="grantee-logo"' in html
-    assert 'src="static/logos/testlogo.png"' in html
+    assert 'src="orgs/Org Name/testlogo.png"' in html
 
 
-def test_logo_uses_static_logos_path(tmp_path):
+def test_logo_uses_orgs_path(tmp_path):
     html = make_grants_page(tmp_path, logo="testlogo.png")
-    assert "static/logos" in html
+    assert "orgs/Org Name/testlogo.png" in html
 
 
 def test_no_logo_omits_img(tmp_path):

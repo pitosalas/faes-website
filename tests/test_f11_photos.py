@@ -39,7 +39,7 @@ def setup_site(tmp_path, *person_texts):
         (content_dir / f"person{i}.md").write_text(text, encoding="utf-8")
     site_dir = tmp_path / "site"
     site_dir.mkdir()
-    SiteGenerator(content_dir, site_dir).generate(False)
+    SiteGenerator(content_dir, site_dir).generate(False, "grants_claude.csv")
     return (site_dir / "board.html").read_text()
 
 

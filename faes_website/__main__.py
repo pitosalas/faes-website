@@ -11,11 +11,22 @@ from faes_website.staging_server import StagingServer
 ROOT = Path(__file__).parent.parent
 
 
+def _get_csv_name(args: list[str]) -> str:
+    for i, arg in enumerate(args):
+        if arg == "--csv" and i + 1 < len(args):
+            return args[i + 1]
+    print("Error: --csv <filename> is required")
+    sys.exit(1)
+
+
 def main():
-    if "--serve" in sys.argv:
-        StagingServer(ROOT).run(private="--private" in sys.argv)
+    args = sys.argv[1:]
+    if "--serve" in args:
+        csv_name = _get_csv_name(args)
+        StagingServer(ROOT).run(private="--private" in args, csv_name=csv_name)
     else:
-        written = SiteGenerator(ROOT / "content", ROOT / "site").generate(False)
+        csv_name = _get_csv_name(args)
+        written = SiteGenerator(ROOT / "content", ROOT / "site").generate(False, csv_name)
         for filename in written:
             print(f"  wrote {filename}")
         print(f"Done — {len(written)} files written to {ROOT / 'site'}")

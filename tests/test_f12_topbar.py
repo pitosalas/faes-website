@@ -14,7 +14,7 @@ def make_site(tmp_path):
     content_dir.mkdir()
     site_dir = tmp_path / "site"
     site_dir.mkdir()
-    SiteGenerator(content_dir, site_dir).generate(False)
+    SiteGenerator(content_dir, site_dir).generate(False, "grants_claude.csv")
     return site_dir
 
 

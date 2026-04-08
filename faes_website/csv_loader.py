@@ -15,6 +15,7 @@ class CsvLoader:
         totals = defaultdict(float)
         counts = defaultdict(int)
         recents = defaultdict(int)
+        recent_dates = defaultdict(str)
         with csv_path.open(encoding="utf-8", newline="") as f:
             for row in csv.DictReader(f):
                 name = row.get("Recipient", "").strip()
@@ -25,14 +26,23 @@ class CsvLoader:
                 totals[name] += amount
                 counts[name] += 1
                 recents[name] = max(recents[name], int(year))
+                date = self._parse_date(row.get("Date", "").strip(), year)
+                if date > recent_dates[name]:
+                    recent_dates[name] = date
         return {
             name: {
                 "total": self._format_total(totals[name]),
                 "count": counts[name],
                 "most_recent_year": recents[name],
+                "most_recent_date": recent_dates[name],
             }
             for name in totals
         }
+
+    def _parse_date(self, date_str: str, year: str) -> str:
+        if len(date_str) == 10 and date_str[4] == "-":
+            return date_str
+        return f"{year}-12-31"
 
     def _format_total(self, amount: float) -> str:
         return f"XCG {amount:,.0f}"

@@ -67,7 +67,7 @@ def test_board_html_is_generated(tmp_path):
     site_dir = tmp_path / "site"
     site_dir.mkdir()
     gen = SiteGenerator(tmp_path / "content", site_dir)
-    gen.generate(False)
+    gen.generate(False, "grants_claude.csv")
     assert (site_dir / "board.html").exists()
 
 
@@ -78,7 +78,7 @@ def test_board_html_contains_board_member(tmp_path):
     site_dir = tmp_path / "site"
     site_dir.mkdir()
     gen = SiteGenerator(content_dir, site_dir)
-    gen.generate(False)
+    gen.generate(False, "grants_claude.csv")
     html = (site_dir / "board.html").read_text()
     assert "Jane Board" in html
 
@@ -90,7 +90,7 @@ def test_board_html_contains_advisor(tmp_path):
     site_dir = tmp_path / "site"
     site_dir.mkdir()
     gen = SiteGenerator(content_dir, site_dir)
-    gen.generate(False)
+    gen.generate(False, "grants_claude.csv")
     html = (site_dir / "board.html").read_text()
     assert "Joe Advisor" in html
 
@@ -103,7 +103,7 @@ def test_board_and_advisors_in_separate_sections(tmp_path):
     site_dir = tmp_path / "site"
     site_dir.mkdir()
     gen = SiteGenerator(content_dir, site_dir)
-    gen.generate(False)
+    gen.generate(False, "grants_claude.csv")
     html = (site_dir / "board.html").read_text()
     assert "Board" in html
     assert "Advisors" in html
@@ -117,7 +117,7 @@ def test_board_in_navigation(tmp_path):
     site_dir = tmp_path / "site"
     site_dir.mkdir()
     gen = SiteGenerator(content_dir, site_dir)
-    gen.generate(False)
+    gen.generate(False, "grants_claude.csv")
     html = (site_dir / "board.html").read_text()
     assert "board.html" in html
 

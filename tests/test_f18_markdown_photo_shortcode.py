@@ -111,7 +111,7 @@ def test_site_generation_contains_processed_photo_html(tmp_path):
     make_image(tmp_path, "story.jpg")
     make_page(content_dir, ':photo "story.jpg", "Story image", 280, centered\n\nParagraph text.')
 
-    SiteGenerator(content_dir, site_dir).generate(False)
+    SiteGenerator(content_dir, site_dir).generate(False, "grants_claude.csv")
     html = (site_dir / "photo-page.html").read_text(encoding="utf-8")
     assert 'class="content-photo justify-centered"' in html
     assert 'src="static/images/story.jpg"' in html

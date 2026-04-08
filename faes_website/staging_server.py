@@ -39,9 +39,9 @@ class StagingServer:
         self.content_dir = root / "content"
         self.staging_dir = root / "staging"
 
-    def run(self, private: bool):
+    def run(self, private: bool, csv_name: str):
         self.staging_dir.mkdir(exist_ok=True)
-        written = SiteGenerator(self.content_dir, self.staging_dir).generate(include_private=private)
+        written = SiteGenerator(self.content_dir, self.staging_dir).generate(include_private=private, csv_name=csv_name)
         for filename in written:
             print(f"  wrote {filename}")
         print(f"Staging site ready — {len(written)} files in {self.staging_dir}")

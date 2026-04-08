@@ -155,7 +155,7 @@ def test_generate_uses_orgs_not_grants_csv(tmp_path):
     site_dir.mkdir()
     make_detailed_csv(content_dir, [(2024, "Test Org", "XCG 5000.")])
     make_org(content_dir / "orgs", "Test Org", grant_type="pilot", public=True)
-    SiteGenerator(content_dir, site_dir).generate(include_private=False)
+    SiteGenerator(content_dir, site_dir).generate(include_private=False, csv_name="grants_claude.csv")
     html = (site_dir / "grants.html").read_text()
     assert "Test Org" in html
 
@@ -171,7 +171,7 @@ def test_generate_excludes_private_orgs(tmp_path):
     ])
     make_org(content_dir / "orgs", "Public Org", public=True)
     make_org(content_dir / "orgs", "Private Org", public=False)
-    SiteGenerator(content_dir, site_dir).generate(include_private=False)
+    SiteGenerator(content_dir, site_dir).generate(include_private=False, csv_name="grants_claude.csv")
     html = (site_dir / "grants.html").read_text()
     assert "Public Org" in html
     assert "Private Org" not in html
@@ -185,7 +185,7 @@ def test_generate_validates_orgs_match(tmp_path, capsys):
     make_detailed_csv(content_dir, [(2024, "Known Org", "XCG 5000.")])
     make_org(content_dir / "orgs", "Wrong Org")  # mismatch
     with pytest.raises(SystemExit):
-        SiteGenerator(content_dir, site_dir).generate(include_private=False)
+        SiteGenerator(content_dir, site_dir).generate(include_private=False, csv_name="grants_claude.csv")
 
 
 def test_real_content_orgs_match_grantsdetailed():
