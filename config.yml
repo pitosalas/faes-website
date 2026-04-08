@@ -2,7 +2,7 @@
 # Consulted only at site generation time.
 
 # Source data
-csv_file: reconciled_double.csv
+csv_file: reconcile_tripple.csv
 
 # Grants-by-organization matrix (org-year table)
 org_year_table:
