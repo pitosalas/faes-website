@@ -3,6 +3,7 @@
 # Author: Pito Salas and Claude Code
 # Open Source Under MIT license
 
+import json
 import shutil
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
@@ -41,6 +42,7 @@ class SiteGenerator:
         detailed_path = self.content_dir / csv_name
         summaries = csv_loader.summarise_by_org(detailed_path)
         by_year = csv_loader.load_by_year(detailed_path)
+        all_rows = csv_loader.load_all_rows(detailed_path)
         org_loader = OrgLoader(self.content_dir)
         org_loader.validate(set(summaries.keys()))
         orgs = org_loader.load()
@@ -64,7 +66,8 @@ class SiteGenerator:
                     translation_url = f"{slug}_pap.html" if other_lang == "pap" else f"{slug}.html"
                 self._write_page(page, lang, translation_url)
 
-        self._write_grants(grants, by_year)
+        self._write_grants(grants)
+        self._write_secret(by_year, all_rows)
         self._write_board(people)
         return self.written
 
@@ -133,20 +136,26 @@ class SiteGenerator:
             dst_dir.mkdir(parents=True, exist_ok=True)
             shutil.copy2(src, dst_dir / meta["logo"])
 
-    def _write_grants(self, grants: list, by_year: dict):
+    def _write_grants(self, grants: list):
         self._lang = "en"
         self._translation_url = None
         grants = [g for g in grants if g is not None]
         grants.sort(key=lambda g: g["count"], reverse=True)
-        max_year = max(by_year.keys()) if by_year else 0
         cards_html = "".join(self._render_grant_card(g) for g in grants)
-        chart_html = self._render_chart(by_year)
-        body = self._env.get_template("grants_page.html").render(
-            chart_html=chart_html,
-            cards_html=cards_html,
-            max_year=max_year,
-        )
+        body = self._env.get_template("grants_page.html").render(cards_html=cards_html)
         self._write("grants.html", self._render_page("Grants", "grants", body))
+
+    def _write_secret(self, by_year: dict, all_rows: list):
+        self._lang = "en"
+        self._translation_url = None
+        years = sorted(by_year.keys(), reverse=True)
+        chart_html = self._render_chart(by_year)
+        body = self._env.get_template("secret_page.html").render(
+            chart_html=chart_html,
+            years=years,
+            rows_json=json.dumps(all_rows),
+        )
+        self._write("secret.html", self._render_page("Secret", "secret", body))
 
     def _render_chart(self, by_year: dict) -> str:
         labels = list(by_year.keys())

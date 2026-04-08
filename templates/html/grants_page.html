@@ -1,17 +1,14 @@
 <div class="grants-header">
   <h1>Grants</h1>
 </div>
-{{ chart_html | safe }}
 <h2 class="grants-list-header">Grant Recipients</h2>
 <div class="grants-filter">
-  <a class="filter-link" data-filter="current" href="#">Last 12 Months</a>
-  <a class="filter-link active" data-filter="last5" href="#">Last 5 Years</a>
-  <a class="filter-link" data-filter="all" href="#">All Time</a>
+  <a class="filter-link active" data-filter="recent" href="#">Recent</a>
+  <a class="filter-link" data-filter="all" href="#">All</a>
 </div>
 <div class="grants-grid">{{ cards_html | safe }}</div>
 <script>
 (function () {
-  var MAX_YEAR = {{ max_year }};
   var links = document.querySelectorAll('.filter-link');
   var cards = document.querySelectorAll('.grant-card-wrapper');
 
@@ -20,15 +17,7 @@
 
   function applyFilter(filter) {
     cards.forEach(function (card) {
-      var show;
-      if (filter === 'current') {
-        var d = new Date(card.dataset.date);
-        show = d >= TWELVE_MONTHS_AGO;
-      } else if (filter === 'last5') {
-        show = parseInt(card.dataset.year, 10) >= MAX_YEAR - 4;
-      } else {
-        show = true;
-      }
+      var show = filter === 'all' || new Date(card.dataset.date) >= TWELVE_MONTHS_AGO;
       card.style.display = show ? '' : 'none';
     });
   }
@@ -42,6 +31,6 @@
     });
   });
 
-  applyFilter('last5');
+  applyFilter('recent');
 }());
 </script>

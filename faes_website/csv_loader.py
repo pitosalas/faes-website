@@ -18,15 +18,16 @@ class CsvLoader:
         recent_dates = defaultdict(str)
         with csv_path.open(encoding="utf-8", newline="") as f:
             for row in csv.DictReader(f):
-                name = row.get("Recipient", "").strip()
-                year = row.get("Year", "").strip()
+                name = row.get("nonprofit", "").strip()
+                date_str = row.get("date", "").strip()
+                year = date_str[:4] if len(date_str) >= 4 else ""
                 if not name or not year.isdigit():
                     continue
-                amount = self._parse_amount(row.get("Amount_NAf", ""))
+                amount = self._parse_amount(row.get("amount", ""))
                 totals[name] += amount
                 counts[name] += 1
                 recents[name] = max(recents[name], int(year))
-                date = self._parse_date(row.get("Date", "").strip(), year)
+                date = self._parse_date(date_str, year)
                 if date > recent_dates[name]:
                     recent_dates[name] = date
         return {
@@ -53,11 +54,32 @@ class CsvLoader:
         totals = defaultdict(float)
         with csv_path.open(encoding="utf-8", newline="") as f:
             for row in csv.DictReader(f):
-                year = row.get("Year", "").strip()
-                amount = self._parse_amount(row.get("Amount_NAf", ""))
+                date_str = row.get("date", "").strip()
+                year = date_str[:4] if len(date_str) >= 4 else ""
+                amount = self._parse_amount(row.get("amount", ""))
                 if year.isdigit():
                     totals[int(year)] += amount
         return dict(sorted(totals.items()))
+
+    def load_all_rows(self, csv_path: Path) -> list:
+        if not csv_path.exists():
+            return []
+        rows = []
+        with csv_path.open(encoding="utf-8", newline="") as f:
+            for row in csv.DictReader(f):
+                date_str = row.get("date", "").strip()
+                year = date_str[:4] if len(date_str) >= 4 else ""
+                if not year.isdigit():
+                    continue
+                rows.append({
+                    "date": date_str,
+                    "nonprofit": row.get("nonprofit", "").strip(),
+                    "notes": row.get("notes", "").strip(),
+                    "amount": self._parse_amount(row.get("amount", "")),
+                    "year": int(year),
+                })
+        rows.sort(key=lambda r: r["date"], reverse=True)
+        return rows
 
     def _parse_amount(self, raw: str) -> float:
         cleaned = raw.strip().replace("XCG", "").replace(",", "").replace("$", "").strip().rstrip(".")
