@@ -21,12 +21,14 @@
           <a href="{{ href }}"{% if slug == active %} class="active"{% endif %}>{{ label }}</a>
           {% endfor %}
           <a href="admin.html" class="admin-nav-link">Admin</a>
-          {% if lang == "en" %}
-          <a href="{{ translation_url or 'index_pap.html' }}" class="nav-lang-switch">Papiamentu</a>
-          {% else %}
-          <a href="{{ translation_url or 'index.html' }}" class="nav-lang-switch">English</a>
-          {% endif %}
-          <a href="#" id="admin-btn" class="nav-lang-switch">Admin</a>
+          <span class="nav-right-group">
+            {% if lang == "en" %}
+            <a href="{{ translation_url or 'index_pap.html' }}" class="nav-lang-switch">Papiamentu</a>
+            {% else %}
+            <a href="{{ translation_url or 'index.html' }}" class="nav-lang-switch">English</a>
+            {% endif %}
+            <a href="#" id="admin-btn" class="nav-lang-switch">Admin</a>
+          </span>
         </nav>
       </div>
     </div>

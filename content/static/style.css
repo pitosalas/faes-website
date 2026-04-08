@@ -234,8 +234,14 @@ nav a.active::after {
   align-items: center;
 }
 
-.header-inner nav .nav-lang-switch {
+.header-inner nav .nav-right-group {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-inner nav .nav-lang-switch {
   color: var(--color-accent);
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -768,7 +774,7 @@ footer {
     row-gap: 0.5rem;
   }
 
-  .header-inner nav .nav-lang-switch {
+  .header-inner nav .nav-right-group {
     margin-left: 0;
   }
 
