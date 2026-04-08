@@ -59,7 +59,7 @@ class OrgLoader:
         lines += ["---", ""]
         path.write_text("\n".join(lines), encoding="utf-8")
 
-    def validate(self, recipients: set) -> None:
+    def validate(self, recipients: set, csv_name: str) -> None:
         if self._orgs_dir.exists():
             org_names = {d.name for d in self._orgs_dir.iterdir() if d.is_dir()}
         else:
@@ -69,11 +69,11 @@ class OrgLoader:
         if not extra_dirs and not missing_dirs:
             return
         if extra_dirs:
-            print("ERROR: orgs/ directories with no matching grants_claude.csv recipient:")
+            print(f"ERROR: orgs/ directories with no matching {csv_name} recipient:")
             for name in sorted(extra_dirs):
                 print(f"  + {name}")
         if missing_dirs:
-            print("ERROR: grants_claude.csv recipients with no matching orgs/ directory:")
+            print(f"ERROR: {csv_name} recipients with no matching orgs/ directory:")
             for name in sorted(missing_dirs):
                 print(f"  - {name}")
         raise SystemExit(1)

@@ -88,14 +88,14 @@ def test_org_loader_missing_orgs_dir_returns_empty(tmp_path):
 def test_validate_passes_when_sets_match(tmp_path):
     make_org(tmp_path / "orgs", "Org A")
     make_org(tmp_path / "orgs", "Org B")
-    OrgLoader(tmp_path).validate({"Org A", "Org B"})  # should not raise
+    OrgLoader(tmp_path).validate({"Org A", "Org B"}, "test.csv")  # should not raise
 
 
 def test_validate_raises_on_extra_dir(tmp_path, capsys):
     make_org(tmp_path / "orgs", "Org A")
     make_org(tmp_path / "orgs", "Extra Org")
     with pytest.raises(SystemExit) as exc:
-        OrgLoader(tmp_path).validate({"Org A"})
+        OrgLoader(tmp_path).validate({"Org A"}, "test.csv")
     assert exc.value.code == 1
     output = capsys.readouterr().out
     assert "Extra Org" in output
@@ -104,14 +104,14 @@ def test_validate_raises_on_extra_dir(tmp_path, capsys):
 def test_validate_raises_on_missing_dir(tmp_path, capsys):
     make_org(tmp_path / "orgs", "Org A")
     with pytest.raises(SystemExit) as exc:
-        OrgLoader(tmp_path).validate({"Org A", "Missing Org"})
+        OrgLoader(tmp_path).validate({"Org A", "Missing Org"}, "test.csv")
     assert exc.value.code == 1
     output = capsys.readouterr().out
     assert "Missing Org" in output
 
 
 def test_validate_passes_when_both_empty(tmp_path):
-    OrgLoader(tmp_path).validate(set())  # missing orgs dir + empty set → ok
+    OrgLoader(tmp_path).validate(set(), "test.csv")  # missing orgs dir + empty set → ok
 
 
 # --- CsvLoader.summarise_by_org() ---
@@ -194,4 +194,4 @@ def test_real_content_orgs_match_grantsdetailed():
     loader = OrgLoader(CONTENT)
     csv_loader = CsvLoader()
     summaries = csv_loader.summarise_by_org(CONTENT / "reconciled_double.csv")
-    loader.validate(set(summaries.keys()))  # should not raise
+    loader.validate(set(summaries.keys()), "reconciled_double.csv")  # should not raise

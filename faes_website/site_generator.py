@@ -50,7 +50,7 @@ class SiteGenerator:
         by_year = csv_loader.load_by_year(detailed_path)
         all_rows = csv_loader.load_all_rows(detailed_path)
         org_loader = OrgLoader(self.content_dir)
-        org_loader.validate(set(summaries.keys()))
+        org_loader.validate(set(summaries.keys()), csv_name)
         orgs = org_loader.load()
         self._copy_org_logos(orgs)
         grants = self._build_grants(summaries, orgs)
