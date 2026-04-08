@@ -871,17 +871,6 @@ footer {
 #org-year-grid td:last-child, #org-year-grid th:last-child { font-weight: 700; background: rgba(31, 90, 70, 0.04); }
 
 /* Admin unlock */
-.admin-btn {
-  position: fixed;
-  top: 0.3rem;
-  right: 0.6rem;
-  font-size: 0.7rem;
-  color: var(--color-accent, #1f5a46);
-  text-decoration: underline;
-  opacity: 0.6;
-  z-index: 9999;
-}
-.admin-btn:hover { opacity: 1; }
 .admin-nav-link { display: none; }
 body.admin-unlocked .admin-nav-link { display: inline; }
 .grant-card-wrapper[data-private="true"] { display: none; }
