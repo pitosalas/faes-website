@@ -1,0 +1,22 @@
+# faes-website build configuration
+# Consulted only at site generation time.
+
+# Source data
+csv_file: reconciled_double.csv
+
+# Grants-by-organization matrix (org-year table)
+org_year_table:
+  font_size: "0.65rem"
+  year_column_width: "32px"
+  org_column_width: "100px"
+  cell_padding: "0.02rem 0.08rem"
+
+# Detail grants table (Grid.js)
+grants_table:
+  pagination_limit: 50
+  default_filter: recent      # recent | all
+
+# Staging server
+staging:
+  port: 8000
+  password: xyzzy

@@ -7,6 +7,7 @@ import json
 import shutil
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
+from faes_website.config_loader import ConfigLoader
 from faes_website.content_loader import ContentLoader
 from faes_website.csv_loader import CsvLoader
 from faes_website.org_loader import OrgLoader
@@ -32,6 +33,8 @@ class SiteGenerator:
         self._env = Environment(loader=FileSystemLoader(_TEMPLATES_DIR), autoescape=False)
 
     def generate(self, include_private: bool, csv_name: str):
+        config = ConfigLoader().load(self.content_dir.parent / "config.yml")
+        self._write_config_css(config)
         self._copy_static()
         loader = ContentLoader()
         items = loader.load(self.content_dir) if include_private else loader.load_public(self.content_dir)
@@ -70,6 +73,11 @@ class SiteGenerator:
         self._write_secret(by_year, all_rows)
         self._write_board(people)
         return self.written
+
+    def _write_config_css(self, config: dict):
+        css = ConfigLoader().css_vars(config)
+        (self.site_dir / "config.css").write_text(css, encoding="utf-8")
+        self.written.append("config.css")
 
     def _copy_static(self):
         src = self.content_dir / "static"

@@ -861,12 +861,12 @@ footer {
 }
 
 #org-year-grid { overflow-x: auto; }
-#org-year-grid .gridjs-wrapper { font-size: 0.65rem; }
-#org-year-grid th.gridjs-th { padding: 0.08rem 0.08rem; white-space: nowrap; }
-#org-year-grid td.gridjs-td { padding: 0.02rem 0.08rem; text-align: right; white-space: nowrap; line-height: 1.1; }
-#org-year-grid td.gridjs-td:first-child { text-align: left; white-space: normal; width: 100px; min-width: 100px; max-width: 100px; word-break: break-word; line-height: 1.2; }
-#org-year-grid th.gridjs-th:first-child { width: 100px; min-width: 100px; max-width: 100px; }
-#org-year-grid th.gridjs-th:not(:first-child) { width: 32px; min-width: 32px; max-width: 32px; text-align: right; }
+#org-year-grid .gridjs-wrapper { font-size: var(--org-year-font-size, 0.65rem); }
+#org-year-grid th.gridjs-th { padding: var(--org-year-cell-padding, 0.02rem 0.08rem); white-space: nowrap; }
+#org-year-grid td.gridjs-td { padding: var(--org-year-cell-padding, 0.02rem 0.08rem); text-align: right; white-space: nowrap; line-height: 1.1; }
+#org-year-grid td.gridjs-td:first-child { text-align: left; white-space: normal; width: var(--org-year-org-width, 100px); min-width: var(--org-year-org-width, 100px); max-width: var(--org-year-org-width, 100px); word-break: break-word; line-height: 1.2; }
+#org-year-grid th.gridjs-th:first-child { width: var(--org-year-org-width, 100px); min-width: var(--org-year-org-width, 100px); max-width: var(--org-year-org-width, 100px); }
+#org-year-grid th.gridjs-th:not(:first-child) { width: var(--org-year-col-width, 32px); min-width: var(--org-year-col-width, 32px); max-width: var(--org-year-col-width, 32px); text-align: right; }
 #org-year-grid .gridjs-tr:last-child td { font-weight: 700; background: rgba(31, 90, 70, 0.06); }
 #org-year-grid td:last-child, #org-year-grid th:last-child { font-weight: 700; background: rgba(31, 90, 70, 0.04); }
 
