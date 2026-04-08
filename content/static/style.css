@@ -873,17 +873,17 @@ footer {
 /* Admin unlock */
 .admin-btn {
   position: fixed;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 0.6rem;
+  right: 0.75rem;
   font-size: 0.65rem;
-  padding: 0.15rem 0.4rem;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.4);
-  color: #fff;
+  padding: 0.15rem 0.5rem;
+  background: transparent;
+  border: 1px solid rgba(18, 57, 45, 0.3);
+  color: var(--color-accent, #1f5a46);
   border-radius: 3px;
   cursor: pointer;
   z-index: 9999;
-  opacity: 0.6;
+  opacity: 0.45;
 }
 .admin-btn:hover { opacity: 1; }
 .admin-nav-link { display: none; }
