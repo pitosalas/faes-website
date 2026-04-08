@@ -30,7 +30,7 @@ jobs:
         run: uv run pytest --cov=faes_website --cov-report=term-missing --cov-fail-under=70
 
       - name: Generate site
-        run: uv run faes-website
+        run: uv run faes-website --csv reconciled_double.csv
 
       - name: Add custom domain
         run: echo "faesfoundation.com" > site/CNAME
