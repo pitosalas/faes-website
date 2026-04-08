@@ -1,4 +1,4 @@
-<div class="grant-card-wrapper" data-year="{{ most_recent_year }}" data-date="{{ most_recent_date }}">
+<div class="grant-card-wrapper" data-year="{{ most_recent_year }}" data-date="{{ most_recent_date }}"{% if not public %} data-private="true"{% endif %}>
 {% if url %}<a href="{{ url }}" target="_blank" rel="noopener noreferrer" class="grant-card-link">{% endif %}
 <div class="grant-card">
   <h3>{{ title }}</h3>

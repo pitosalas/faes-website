@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="config.css">
   <script defer src="https://cloud.umami.is/script.js" data-website-id="46c459df-67a3-4ef6-a215-50e3d4428020"></script>
 </head>
-<body class="page-{{ active }}">
+<body class="page-{{ active }}" data-admin-hash="{{ admin_hash }}">
   <div class="site-hero">
     <div class="site-banner"></div>
     <div class="site-topbar">Fundashon Abram Edgardo Salas</div>
@@ -20,12 +20,14 @@
           {% for slug, label, href in nav_items %}
           <a href="{{ href }}"{% if slug == active %} class="active"{% endif %}>{{ label }}</a>
           {% endfor %}
+          <a href="admin.html" class="admin-nav-link">Admin</a>
           {% if lang == "en" %}
           <a href="{{ translation_url or 'index_pap.html' }}" class="nav-lang-switch">Papiamentu</a>
           {% else %}
           <a href="{{ translation_url or 'index.html' }}" class="nav-lang-switch">English</a>
           {% endif %}
         </nav>
+        <button id="admin-btn" class="admin-btn">Admin</button>
       </div>
     </div>
   </header>
@@ -46,5 +48,6 @@
       </div>
     </div>
   </footer>
+  <script src="static/admin-unlock.js"></script>
 </body>
 </html>

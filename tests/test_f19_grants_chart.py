@@ -79,21 +79,21 @@ def test_real_detailed_csv_loads():
     assert all(v >= 0 for v in result.values())
 
 
-def test_chart_html_in_secret_page(tmp_path):
+def test_chart_html_in_admin_page(tmp_path):
     site_dir = tmp_path / "site"
     site_dir.mkdir()
     gen = SiteGenerator(tmp_path / "content", site_dir)
-    gen._write_secret({2023: 1000.0}, [])
-    html = (site_dir / "secret.html").read_text()
+    gen._write_admin({2023: 1000.0}, [])
+    html = (site_dir / "admin.html").read_text()
     assert "grantsChart" in html
     assert "2023" in html
     assert "1000" in html
 
 
-def test_chart_title_in_secret_page(tmp_path):
+def test_chart_title_in_admin_page(tmp_path):
     site_dir = tmp_path / "site"
     site_dir.mkdir()
     gen = SiteGenerator(tmp_path / "content", site_dir)
-    gen._write_secret({2024: 5000.0}, [])
-    html = (site_dir / "secret.html").read_text()
+    gen._write_admin({2024: 5000.0}, [])
+    html = (site_dir / "admin.html").read_text()
     assert "Total Grants by Year" in html

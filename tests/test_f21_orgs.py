@@ -174,7 +174,9 @@ def test_generate_excludes_private_orgs(tmp_path):
     SiteGenerator(content_dir, site_dir).generate(include_private=False, csv_name="grants_claude.csv")
     html = (site_dir / "grants.html").read_text()
     assert "Public Org" in html
-    assert "Private Org" not in html
+    # Private orgs are always in HTML (hidden via CSS), marked with data-private
+    assert "Private Org" in html
+    assert 'data-private="true"' in html
 
 
 def test_generate_validates_orgs_match(tmp_path, capsys):

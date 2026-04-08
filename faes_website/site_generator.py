@@ -3,6 +3,7 @@
 # Author: Pito Salas and Claude Code
 # Open Source Under MIT license
 
+import hashlib
 import json
 import shutil
 from pathlib import Path
@@ -30,11 +31,13 @@ class SiteGenerator:
         self.written = []
         self._lang = "en"
         self._translation_url = None
+        self._admin_hash = ""
         self._env = Environment(loader=FileSystemLoader(_TEMPLATES_DIR), autoescape=False)
 
     def generate(self, include_private: bool, csv_name: str):
         config = ConfigLoader().load(self.content_dir.parent / "config.yml")
         self._write_config_css(config)
+        self._admin_hash = self._hash_password(config)
         self._copy_static()
         loader = ContentLoader()
         items = loader.load(self.content_dir) if include_private else loader.load_public(self.content_dir)
@@ -50,7 +53,7 @@ class SiteGenerator:
         org_loader.validate(set(summaries.keys()))
         orgs = org_loader.load()
         self._copy_org_logos(orgs)
-        grants = self._build_grants(summaries, orgs, include_private)
+        grants = self._build_grants(summaries, orgs)
 
         pages_by_slug = {}
         for page in pages:
@@ -70,9 +73,13 @@ class SiteGenerator:
                 self._write_page(page, lang, translation_url)
 
         self._write_grants(grants)
-        self._write_secret(by_year, all_rows)
+        self._write_admin(by_year, all_rows)
         self._write_board(people)
         return self.written
+
+    def _hash_password(self, config: dict) -> str:
+        password = config.get("staging", {}).get("password", "")
+        return hashlib.sha256(password.encode()).hexdigest()
 
     def _write_config_css(self, config: dict):
         css = ConfigLoader().css_vars(config)
@@ -102,6 +109,7 @@ class SiteGenerator:
             lang=self._lang,
             translation_url=self._translation_url,
             nav_items=NAV_ITEMS,
+            admin_hash=self._admin_hash,
         )
 
     def _write_page(self, item: dict, lang: str, translation_url):
@@ -112,12 +120,10 @@ class SiteGenerator:
         body = self._env.get_template("content_page.html").render(body_html=item["body_html"])
         self._write(filename, self._render_page(item["title"], slug, body))
 
-    def _build_grants(self, summaries: dict, orgs: dict, include_private: bool) -> list:
+    def _build_grants(self, summaries: dict, orgs: dict) -> list:
         result = []
         for name, summary in summaries.items():
             org = orgs[name]
-            if not include_private and not org["public"]:
-                continue
             logo = f"orgs/{name}/{org['logo']}" if org["logo"] else ""
             result.append({
                 "title": name,
@@ -153,17 +159,17 @@ class SiteGenerator:
         body = self._env.get_template("grants_page.html").render(cards_html=cards_html)
         self._write("grants.html", self._render_page("Grants", "grants", body))
 
-    def _write_secret(self, by_year: dict, all_rows: list):
+    def _write_admin(self, by_year: dict, all_rows: list):
         self._lang = "en"
         self._translation_url = None
         years = sorted(by_year.keys(), reverse=True)
         chart_html = self._render_chart(by_year)
-        body = self._env.get_template("secret_page.html").render(
+        body = self._env.get_template("admin_page.html").render(
             chart_html=chart_html,
             years=years,
             rows_json=json.dumps(all_rows),
         )
-        self._write("secret.html", self._render_page("Secret", "secret", body))
+        self._write("admin.html", self._render_page("Admin", "admin", body))
 
     def _render_chart(self, by_year: dict) -> str:
         labels = list(by_year.keys())
@@ -178,6 +184,7 @@ class SiteGenerator:
             blurb=g.get("blurb", ""),
             most_recent_year=g.get("most_recent_year", 0),
             most_recent_date=g.get("most_recent_date", ""),
+            public=g.get("public", True),
         )
 
     def _write_board(self, people: list):
