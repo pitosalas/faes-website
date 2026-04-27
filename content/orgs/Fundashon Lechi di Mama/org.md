@@ -1,4 +1,6 @@
 ---
+name: "Fundashon Lechi di Mama"
+contact: "Martha Gillen"
 grant_type: pilot
 public: true
 url: https://lechimama.com/

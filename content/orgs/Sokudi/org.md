@@ -1,4 +1,5 @@
 ---
+name: "Sokudi"
 grant_type: pilot
 public: true
 url: https://sokudi.org/

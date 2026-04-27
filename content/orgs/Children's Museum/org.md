@@ -1,4 +1,5 @@
 ---
+name: "Children's Museum"
 grant_type: pilot
 public: true
 logo: logo.png

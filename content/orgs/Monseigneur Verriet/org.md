@@ -1,4 +1,5 @@
 ---
+name: "Monseigneur Verriet"
 grant_type: pilot
 public: true
 url: https://www.sgr-groep.org/en/the-verriet-foundation

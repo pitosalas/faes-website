@@ -1,4 +1,6 @@
 ---
+name: "Fundashon Ambulans Deseo Korsou"
+contact: "Klaas Domburg"
 grant_type: pilot
 public: true
 logo: logo.jpg

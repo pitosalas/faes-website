@@ -1,4 +1,6 @@
 ---
+name: "Fundashon Alton Paas"
+contact: "Alton Paas"
 grant_type: pilot
 public: true
 logo: logo.png

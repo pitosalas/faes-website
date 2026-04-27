@@ -1,4 +1,5 @@
 ---
+name: "Pro Bista"
 grant_type: pilot
 public: true
 logo: logo.png

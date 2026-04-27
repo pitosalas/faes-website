@@ -1,4 +1,6 @@
 ---
+name: "Siloam St. Klein Jerusalem"
+contact: "Robert de Vries"
 grant_type: pilot
 public: true
 url: https://siloamcuracao.org/en/

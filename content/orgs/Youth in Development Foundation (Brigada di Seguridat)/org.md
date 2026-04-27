@@ -1,4 +1,6 @@
 ---
+name: "Youth in Development Foundation (Brigada di Seguridat)"
+contact: "Rashel Hawker"
 grant_type: primary
 public: true
 logo: bds.jpg

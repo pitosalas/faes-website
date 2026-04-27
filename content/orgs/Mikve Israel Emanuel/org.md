@@ -1,4 +1,6 @@
 ---
+name: "Mikve Israel Emanuel"
+contact: "Rabbi Martin Hirsch"
 grant_type: primary
 public: true
 logo: snoa.png

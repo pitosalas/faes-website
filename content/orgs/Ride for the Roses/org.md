@@ -1,4 +1,5 @@
 ---
+name: "Ride for the Roses"
 grant_type: pilot
 public: true
 logo: logo.png

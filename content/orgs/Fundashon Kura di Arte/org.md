@@ -1,4 +1,6 @@
 ---
+name: "Fundashon Kura di Arte"
+contact: "Omayra Leeflang"
 grant_type: pilot
 public: true
 url: https://www.facebook.com/kuradiartecuracao/

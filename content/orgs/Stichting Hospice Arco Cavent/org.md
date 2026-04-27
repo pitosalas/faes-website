@@ -1,4 +1,6 @@
 ---
+name: "Stichting Hospice Arco Cavent"
+contact: "Richeline Martina-Joe"
 grant_type: pilot
 public: true
 logo: arcologo.jpg

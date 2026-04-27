@@ -1,4 +1,5 @@
 ---
+name: "Stichting Prinses Wilhelmina Fonds"
 grant_type: pilot
 public: true
 logo: logo.png

@@ -1,4 +1,6 @@
 ---
+name: "Fundashon Bos di Hubentut"
+contact: "Anne-Sheila Albertoe"
 grant_type: primary
 public: true
 url: https://www.bosdihubentut.com

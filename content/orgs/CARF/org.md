@@ -1,4 +1,5 @@
 ---
+name: "CARF"
 grant_type: pilot
 public: true
 logo: carf.png

@@ -1,4 +1,6 @@
 ---
+name: "Fundashon Negoshi Pikina"
+contact: "Yules Kolf"
 grant_type: pilot
 public: true
 url: https://fundashonnegoshipikina.org/

@@ -1,4 +1,5 @@
 ---
+name: "Casa Manita"
 grant_type: pilot
 public: true
 url: https://www.facebook.com/stichtingcasamanita/

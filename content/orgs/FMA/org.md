@@ -1,4 +1,5 @@
 ---
+name: "FMA"
 grant_type: pilot
 public: true
 logo: logo.png

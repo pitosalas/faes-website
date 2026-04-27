@@ -1,4 +1,5 @@
 ---
+name: "CITRO"
 grant_type: pilot
 public: true
 logo: citro.jpeg

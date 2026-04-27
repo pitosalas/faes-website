@@ -1,4 +1,6 @@
 ---
+name: "Stichting Alzheimer Curacao"
+contact: "Chanerika (Chani) Hellement"
 grant_type: pilot
 public: true
 logo: logo.png

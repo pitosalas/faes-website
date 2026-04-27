@@ -1,4 +1,6 @@
 ---
+name: "Stichting CliniClowns Curacao"
+contact: "Jet Thoonen"
 grant_type: pilot
 public: true
 logo: cliniclowns.png
