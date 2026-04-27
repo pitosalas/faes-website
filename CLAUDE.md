@@ -37,3 +37,11 @@ The app is a Python static site generator that reads markdown+YAML content files
 **Deployment** is via `.github/workflows/deploy.yml` — pushes to `main` trigger site generation and GitHub Pages deployment to `faesfoundation.com`.
 
 **Tests** in `tests/` are organized by feature (e.g. `test_f03_generator.py`). All 8 features are complete and tested.
+
+Read and follow all rules in the `.claude/` folder:
+- `.claude/process.md` — development workflow and feature/task tracking rules
+- `.claude/codereview.md` — coding standards, style rules, and review checklist
+- `md/current.md` - latest status
+- `md/notes.md` - semi-permanent project notes (architecture decisions, research, calibration)
+
+We are developing an repo called oak-roboflow. Read the files in the process/ folder to understand the development.

@@ -13,9 +13,14 @@ process/
   features/
     notdone/
     done/
+    deferred/
   tasks/
     notdone/
     done/
+    deferred/
+  bugs/
+    found/
+    fixed/
 ```
 ### LICENSE
 Copy from `.claude/templates/LICENSE.template` and replace `<YEAR>` and `<AUTHOR NAME>`.
