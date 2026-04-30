@@ -1,5 +1,5 @@
 name,email,contact,confirmed
-"CITRO","president@citrocuracao.com","Eunice Saleh",false
+"CITRO","president@citrocuracao.com","Eunice Saleh",true
 "Fundashon Alton Paas","info@fundashonaltonpaas.org","Alton Paas",true
 "Fundashon Ambulans Deseo Korsou","info@fadk.info","Klaas Domburg",false
 "Fundashon Bos di Hubentut","info@bosdihubentut.com","Anne-Sheila Albertoe",false
@@ -13,7 +13,7 @@ name,email,contact,confirmed
 "Ronald McDonald House Charities Curacao","rolando.galarraga@rmhc-curacao.org","Rolando Galarraga",false
 "Siloam St. Klein Jerusalem","robertendurkje@gmail.com","Robert de Vries",false
 "Stichting Alzheimer Curacao","alzheimercuracao@gmail.com","Chanerika (Chani) Hellement",true
-"Stichting CliniClowns Curacao","info@cliniclowns.cw","Jet Thoonen",false
+"Stichting CliniClowns Curacao","jet@cliniclowns.cw","Jet Thoonen",true
 "Stichting Hospice Arco Cavent","info@arcocavent.com","Richeline Martina-Joe",true
 "Stichting Shimaruku","stichtingshimaruku@gmail.com","I. Christiaan",true
 "Youth in Development Foundation (Brigada di Seguridat)","R.hawker@yidfoundation.com","Rashel Hawker",true
