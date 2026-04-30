@@ -1,7 +1,7 @@
 ---
 name: "Dun'e un Chens"
-grant_type: pilot
+grant_type: "pilot"
 public: true
 blurb: "Foundation in Curaçao working to give disadvantaged families and individuals a second chance through housing and community assistance."
-current: false
+2025_recipient: false
 ---

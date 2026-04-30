@@ -1,11 +1,13 @@
 ---
 name: "Stichting Alzheimer Curacao"
 contact: "Chanerika (Chani) Hellement"
-grant_type: pilot
+grant_type: "pilot"
 public: true
-logo: logo.png
-url: https://www.alzint.org/member/stichting-alzheimer-curacao/
+logo: "logo.png"
+url: "https://www.alzint.org/member/stichting-alzheimer-curacao/"
 blurb: "Founded 2001, supports people with Alzheimer's disease and other forms of dementia and their families. Works to improve care quality and has been developing a National Dementia Plan since 2012."
-email: alzheimercuracao@gmail.com
-current: true
+email: "alzheimercuracao@gmail.com"
+2025_recipient: true
+2026_plan: 7500
+email_confirmed: true
 ---

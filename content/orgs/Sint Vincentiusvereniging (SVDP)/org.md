@@ -1,7 +1,7 @@
 ---
 name: "Sint Vincentiusvereniging (SVDP)"
-grant_type: pilot
+grant_type: "pilot"
 public: true
 blurb: "Local chapter of the international Society of Saint Vincent de Paul, providing charitable assistance — including food, clothing, and social support — to people in need in Curaçao."
-current: false
+2025_recipient: false
 ---

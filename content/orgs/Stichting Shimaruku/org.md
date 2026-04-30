@@ -1,9 +1,11 @@
 ---
 name: "Stichting Shimaruku"
-grant_type: pilot
+grant_type: "pilot"
 public: true
 blurb: "Since 1996, provides food, sports activities, and after-school care for children and young mothers in the poverty-stricken Seru Fortuna neighborhood of Willemstad."
-email: stichtingshimaruku@gmail.com
+email: "stichtingshimaruku@gmail.com"
 contact: "I. Christiaan"
-current: true
+2025_recipient: true
+2026_plan: 2500
+email_confirmed: true
 ---

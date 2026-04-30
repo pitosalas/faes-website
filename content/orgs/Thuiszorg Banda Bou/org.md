@@ -1,9 +1,9 @@
 ---
 name: "Thuiszorg Banda Bou"
-grant_type: pilot
+grant_type: "pilot"
 public: true
-logo: logo.jpg
-url: https://www.thuiszorgbandabou.com/
+logo: "logo.jpg"
+url: "https://www.thuiszorgbandabou.com/"
 blurb: "Professional home healthcare foundation serving the western districts of Curaçao from Boka St. Michiel to Westpunt, providing nursing care, specialist treatments, diabetes and wound care, and preventative education."
-current: false
+2025_recipient: false
 ---

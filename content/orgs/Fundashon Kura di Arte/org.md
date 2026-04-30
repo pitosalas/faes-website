@@ -1,10 +1,12 @@
 ---
 name: "Fundashon Kura di Arte"
 contact: "Omayra Leeflang"
-grant_type: pilot
+grant_type: "pilot"
 public: true
-url: https://www.facebook.com/kuradiartecuracao/
+url: "https://www.facebook.com/kuradiartecuracao/"
 blurb: "Performing arts and cultural education foundation in Otrobanda, Willemstad, developing creative talent through workshops, training, and performances."
-email: omayraleeflang@gmail.com
-current: true
+email: "omayraleeflang@gmail.com"
+2025_recipient: true
+2026_plan: 7500
+email_confirmed: false
 ---

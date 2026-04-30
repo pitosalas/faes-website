@@ -1,7 +1,7 @@
 ---
 name: "Winthrop Curiel"
-grant_type: pilot
+grant_type: "pilot"
 public: true
 blurb: "Foundation in Curaçao supporting cultural and community initiatives in the Willemstad area."
-current: false
+2025_recipient: false
 ---

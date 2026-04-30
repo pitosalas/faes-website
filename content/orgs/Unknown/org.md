@@ -1,5 +1,5 @@
 ---
-grant_type: pilot
+grant_type: "pilot"
 public: false
-current: false
+2025_recipient: false
 ---

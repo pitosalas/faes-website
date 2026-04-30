@@ -1,9 +1,9 @@
 ---
 name: "Stichting Prinses Wilhelmina Fonds"
-grant_type: pilot
+grant_type: "pilot"
 public: true
-logo: logo.png
-url: https://prinseswilhelminafonds.cw/
+logo: "logo.png"
+url: "https://prinseswilhelminafonds.cw/"
 blurb: "Stichting Prinses Wilhelmina Fonds, founded 1949 to support the fight against cancer. Provides psycho-social assistance and support to cancer patients and their families throughout treatment on Curaçao."
-current: false
+2025_recipient: false
 ---
