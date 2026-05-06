@@ -8,5 +8,5 @@ blurb: "Christian family replacement home for children in Curaçao since 1997. C
 email: "robertendurkje@gmail.com"
 2025_recipient: true
 2026_plan: 7500
-email_confirmed: false
+email_confirmed: true
 ---

@@ -1,5 +1,5 @@
 ---
-name: "Fundashon Negoshi Pikina"
+name: "Fundashon Negoshi Pikiña"
 contact: "Elgenia Pieternella"
 grant_type: "pilot"
 public: true

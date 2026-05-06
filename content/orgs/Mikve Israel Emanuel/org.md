@@ -9,5 +9,5 @@ blurb: "The Mikvé Israel-Emanuel synagogue in Curaçao was consecrated in 1732.
 email: "mali@candybarrel.net"
 2025_recipient: true
 2026_plan: 10000
-email_confirmed: false
+email_confirmed: true
 ---
