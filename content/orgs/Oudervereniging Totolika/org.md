@@ -11,5 +11,5 @@ contact: "Willy Harms"
 alt_contact: "Miranda Linzey"
 alt_email: "info@totolika.com"
 2026_plan: 5000
-email_confirmed: false
+email_confirmed: true
 ---

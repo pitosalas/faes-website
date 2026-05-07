@@ -34,3 +34,6 @@ site/*
 
 # Local staging output (never deployed)
 staging/
+
+# Private data (contains real names, emails, grant amounts)
+content/contacts.csv
