@@ -1,7 +1,0 @@
----
-name: "Dividivi"
-grant_type: "pilot"
-public: true
-blurb: "Community-serving foundation in Curaçao supporting local education and youth development initiatives."
-2025_recipient: false
----
