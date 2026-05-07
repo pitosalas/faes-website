@@ -197,8 +197,8 @@ def test_real_content_orgs_match_grantsdetailed():
     loader.validate(set(summaries.keys()), "reconciled_double.csv")  # should not raise
 
 
-def test_real_content_orgs_match_reconcile_tripple():
+def test_real_content_orgs_match_all_bank_transactions():
     loader = OrgLoader(CONTENT)
     csv_loader = CsvLoader()
-    summaries = csv_loader.summarise_by_org(CONTENT / "reconcile_tripple.csv")
-    loader.validate(set(summaries.keys()), "reconcile_tripple.csv")  # should not raise
+    summaries = csv_loader.summarise_by_org(CONTENT / "all_bank_transactions.csv")
+    loader.validate(set(summaries.keys()), "all_bank_transactions.csv")  # should not raise
