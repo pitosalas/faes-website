@@ -195,3 +195,10 @@ def test_real_content_orgs_match_grantsdetailed():
     csv_loader = CsvLoader()
     summaries = csv_loader.summarise_by_org(CONTENT / "reconciled_double.csv")
     loader.validate(set(summaries.keys()), "reconciled_double.csv")  # should not raise
+
+
+def test_real_content_orgs_match_reconcile_tripple():
+    loader = OrgLoader(CONTENT)
+    csv_loader = CsvLoader()
+    summaries = csv_loader.summarise_by_org(CONTENT / "reconcile_tripple.csv")
+    loader.validate(set(summaries.keys()), "reconcile_tripple.csv")  # should not raise
