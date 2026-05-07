@@ -8,14 +8,22 @@ All content files are markdown (`.md`) with YAML front matter.
 content/
   pages/          — page markdown files
   people/         — person markdown files
-  grants.csv      — grant recipients (name, total, count, recent, logo)
-  grantsdetailed.csv — per-year grant amounts (Year, Recipient, Amount)
+  orgs/           — one subdirectory per grantee org
+    <Org Name>/
+      org.md      — org metadata (grant_type, public, email, blurb, …)
+      logo.jpg    — logo image (auto-detected, any .png/.jpg/.jpeg)
+  all_bank_transactions.csv  — authoritative grants ledger (active)
+  reconciled_double.csv      — legacy reconciled ledger
   static/
     style.css     — site stylesheet
     images/       — photos used in page content via :photo shortcode
     logos/        — grantee logo images
     photos/       — board/advisor portrait photos
 ```
+
+> **Privacy note:** `orgs/*/org.md` files contain contact names and
+> email addresses for org staff. This repo is public — do not add
+> personal emails that should not be publicly indexed.
 
 ## Front matter schema
 
@@ -34,11 +42,27 @@ content/
 | lang   | str    | en \| pap (default: en)  | no       |
 
 ### People (type: person)
-| Field  | Type   | Values              | Required |
-|--------|--------|---------------------|----------|
-| role   | str    | board \| advisor    | yes      |
-| photo  | str    | filename in static/photos/ | no  |
-| lang   | str    | en \| pap (default: en)    | no  |
+| Field  | Type   | Values                     | Required |
+|--------|--------|----------------------------|----------|
+| role   | str    | board \| advisor           | yes      |
+| photo  | str    | filename in static/photos/ | no       |
+| lang   | str    | en \| pap (default: en)    | no       |
+
+### Orgs (orgs/<Name>/org.md)
+| Field           | Type   | Values              | Required |
+|-----------------|--------|---------------------|----------|
+| grant_type      | str    | pilot \| primary    | yes      |
+| public          | bool   | true \| false       | yes      |
+| logo            | str    | image filename      | auto     |
+| url             | str    | org website URL     | no       |
+| blurb           | str    | short description   | no       |
+| email           | str    | contact email       | no       |
+| 2025_recipient  | bool   | true \| false       | no       |
+| 2026_plan       | int    | planned grant amt   | no       |
+| email_confirmed | bool   | true \| false       | no       |
+
+Org names in `orgs/` must exactly match recipient names in
+`all_bank_transactions.csv`. A mismatch fails the build.
 
 ## Example page
 
