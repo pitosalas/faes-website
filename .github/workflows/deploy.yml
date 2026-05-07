@@ -21,6 +21,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Remove content symlink
+        run: rm -rf content
+
       - name: Checkout content
         uses: actions/checkout@v4
         with:
