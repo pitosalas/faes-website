@@ -21,6 +21,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Checkout content
+        uses: actions/checkout@v4
+        with:
+          repository: pitosalas/faes-content
+          token: ${{ secrets.CONTENT_PAT }}
+          path: content
+
       - name: Install uv
         uses: astral-sh/setup-uv@v4
 
