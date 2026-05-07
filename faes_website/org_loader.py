@@ -38,6 +38,7 @@ class OrgLoader:
             "logo": logo,
             "url": data.get("url", ""),
             "blurb": data.get("blurb", ""),
+            "recipient_2025": data.get("2025_recipient", False),
         }
 
     IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg"}

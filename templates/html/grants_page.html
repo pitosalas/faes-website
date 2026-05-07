@@ -11,12 +11,9 @@
   var links = document.querySelectorAll('.filter-link');
   var cards = document.querySelectorAll('.grant-card-wrapper');
 
-  var TWELVE_MONTHS_AGO = new Date();
-  TWELVE_MONTHS_AGO.setFullYear(TWELVE_MONTHS_AGO.getFullYear() - 1);
-
   function applyFilter(filter) {
     cards.forEach(function (card) {
-      var show = filter === 'all' || new Date(card.dataset.date) >= TWELVE_MONTHS_AGO;
+      var show = filter === 'all' || card.dataset.recipient2025 === 'true';
       card.style.display = show ? '' : 'none';
     });
   }

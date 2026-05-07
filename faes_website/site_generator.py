@@ -136,6 +136,7 @@ class SiteGenerator:
                 "blurb": org.get("blurb", ""),
                 "grant_type": org["grant_type"],
                 "public": org["public"],
+                "recipient_2025": org.get("recipient_2025", False),
             })
         return result
 
@@ -185,6 +186,7 @@ class SiteGenerator:
             most_recent_year=g.get("most_recent_year", 0),
             most_recent_date=g.get("most_recent_date", ""),
             public=g.get("public", True),
+            recipient_2025=g.get("recipient_2025", False),
         )
 
     def _write_board(self, people: list):
