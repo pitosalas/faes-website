@@ -124,7 +124,7 @@ def test_board_in_navigation(tmp_path):
 
 def test_seed_people_load():
     items = ContentLoader().load(CONTENT)
-    people = [i for i in items if i["type"] == "person"]
+    people = [i for i in items if i.get("type") == "person"]
     names = [p["title"] for p in people]
     assert "Pito Salas" in names
     assert "Janice Godschalk" in names
@@ -136,7 +136,7 @@ def test_seed_people_load():
 
 def test_seed_board_roles():
     items = ContentLoader().load(CONTENT)
-    people = [i for i in items if i["type"] == "person" and i.get("lang", "en") == "en"]
+    people = [i for i in items if i.get("type") == "person" and i.get("lang", "en") == "en"]
     board = [p for p in people if p["role"] == "board"]
     advisors = [p for p in people if p["role"] == "advisor"]
     assert len(board) == 3

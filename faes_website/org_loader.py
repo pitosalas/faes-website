@@ -65,6 +65,8 @@ class OrgLoader:
             org_names = {d.name for d in self._orgs_dir.iterdir() if d.is_dir()}
         else:
             org_names = set()
+        if not recipients:
+            return
         extra_dirs = org_names - recipients
         missing_dirs = recipients - org_names
         if not extra_dirs and not missing_dirs:

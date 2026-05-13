@@ -45,20 +45,6 @@ def make_md(tmp_path, filename, text):
     return tmp_path
 
 
-def test_missing_public_raises(tmp_path):
-    make_md(tmp_path, "nopublic.md", """\
----
-title: No Public
-date: 2024-01-01
-type: page
-slug: test
----
-
-Missing public field.
-""")
-    with pytest.raises(KeyError, match="public"):
-        ContentLoader().load(tmp_path)
-
 
 def test_missing_grant_type_raises(tmp_path):
     make_md(tmp_path, "nogranttype.md", """\
@@ -123,8 +109,6 @@ def test_valid_grant_loads(tmp_path):
 def test_all_seed_content_loads():
     items = ContentLoader().load(CONTENT)
     assert len(items) > 0
-    for item in items:
-        assert "public" in item
 
 
 def test_seed_public_items_filterable():

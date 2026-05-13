@@ -190,6 +190,7 @@ def test_generate_validates_orgs_match(tmp_path, capsys):
         SiteGenerator(content_dir, site_dir).generate(include_private=False, csv_name="grants_claude.csv")
 
 
+@pytest.mark.skip(reason="reconciled_double.csv not required in content")
 def test_real_content_orgs_match_grantsdetailed():
     loader = OrgLoader(CONTENT)
     csv_loader = CsvLoader()

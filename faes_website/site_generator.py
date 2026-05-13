@@ -41,8 +41,8 @@ class SiteGenerator:
         self._copy_static()
         loader = ContentLoader()
         items = loader.load(self.content_dir) if include_private else loader.load_public(self.content_dir)
-        pages = [i for i in items if i["type"] == "page"]
-        people = [i for i in items if i["type"] == "person"]
+        pages = [i for i in items if i.get("type") == "page"]
+        people = [i for i in items if i.get("type") == "person"]
 
         csv_loader = CsvLoader()
         detailed_path = self.content_dir / csv_name

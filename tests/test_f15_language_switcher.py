@@ -131,7 +131,7 @@ def test_no_lang_switcher_on_monolingual_pages(tmp_path):
 
 def test_real_content_has_bilingual_pages():
     items = ContentLoader().load(CONTENT)
-    pages = [i for i in items if i["type"] == "page"]
+    pages = [i for i in items if i.get("type") == "page"]
     slugs_by_lang = {}
     for page in pages:
         slug = page.get("slug")

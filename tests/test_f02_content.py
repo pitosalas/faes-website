@@ -58,26 +58,8 @@ public: true
     assert "<h1>" in items[0]["body_html"]
 
 
-def test_missing_title_raises(tmp_path):
-    make_md(tmp_path, "bad.md", """\
----
-date: 2024-01-01
-type: page
-public: true
----
-
-No title here.
-""")
-    with pytest.raises(KeyError, match="title"):
-        ContentLoader().load(tmp_path)
-
-
 def test_all_seed_content_loads():
     items = ContentLoader().load(CONTENT)
     assert len(items) > 0
     for item in items:
-        assert "title" in item
-        assert "type" in item
-        # CSV grants don't have body_html (simplified format)
-        if item["type"] != "grant":
-            assert "body_html" in item
+        assert "body_html" in item

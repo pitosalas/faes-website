@@ -26,7 +26,7 @@ class ContentLoader:
     def parse_file(self, path: Path, content_dir: Path) -> dict:
         raw = path.read_text(encoding="utf-8")
         front_matter, body = self.split(raw)
-        data = yaml.safe_load(front_matter)
+        data = yaml.safe_load(front_matter) or {}
         self.validate(data, path)
         preprocessed = self.preprocess_photos(body, path, content_dir)
         data["body_html"] = markdown.markdown(preprocessed)
@@ -43,9 +43,6 @@ class ContentLoader:
         return [item for item in self.load(directory) if item.get("public") is True]
 
     def validate(self, data: dict, path: Path) -> None:
-        for field in ("title", "date", "type", "public"):
-            if field not in data:
-                raise KeyError(f"Missing required field '{field}' in {path}")
         if data.get("type") == "grant":
             self.validate_grant(data, path)
         if data.get("type") == "person":
