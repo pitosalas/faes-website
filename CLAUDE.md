@@ -7,8 +7,8 @@ We are developing an app called faes-website. Read the files in the process/ fol
 The following steps are required when Claude Code first launches:
 
 1. If there is no folder called `process/` then this is the first time running — read and follow: @.claude/bootstrap.md
-2. If writing new code or doing a code review, read and follow: @.claude/coding.md
-3. For all other prompts in this session: @.claude/method.md
+2. If writing new code or doing a code review, read and follow: @.claude/codereview.md
+3. For all other prompts in this session: @.claude/process.md
 
 ## Commands
 
@@ -39,9 +39,9 @@ The app is a Python static site generator that reads markdown+YAML content files
 **Tests** in `tests/` are organized by feature (e.g. `test_f03_generator.py`). All 8 features are complete and tested.
 
 Read and follow all rules in the `.claude/` folder:
-- `.claude/process.md` — development workflow and feature/task tracking rules
-- `.claude/codereview.md` — coding standards, style rules, and review checklist
-- `md/current.md` - latest status
-- `md/notes.md` - semi-permanent project notes (architecture decisions, research, calibration)
+- @.claude/how_to_be.md — working principles and conduct (apply every session)
+- @.claude/process.md — development workflow and feature/task tracking rules
+- @.claude/codereview.md — coding standards, style rules, and review checklist
+- `process/spec.md` — app description and goals
 
-We are developing an repo called oak-roboflow. Read the files in the process/ folder to understand the development.
+Development is tracked in `process/`: features in `process/features/`, tasks in `process/tasks/`, spec in `process/spec.md`.
