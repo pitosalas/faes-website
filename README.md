@@ -2,12 +2,13 @@
 
 Static site generator for Fundashon Abram Edgardo Salas.
 
-The project builds a public website from markdown content and CSV grant data, then deploys it to GitHub Pages.
+The project builds a public website from markdown content and org data, then deploys it to GitHub Pages.
 
 ## What this project does
 
-- Converts `content/**/*.md` pages and people profiles into static HTML.
-- Imports grants from `content/grants.csv`.
+- Converts `content/pages/*.md` pages and `content/people/*.md` profiles into static HTML.
+- Loads grant recipient data from `content/orgs/` subdirectories (one per org, each with `org.md`).
+- Loads grant transaction history from `content/all_bank_transactions.csv`.
 - Supports English and Papiamentu page variants.
 - Supports public/private preview modes for local staging.
 - Adds inline photo shortcodes in markdown content.
@@ -41,7 +42,7 @@ Public content:
 uv run faes-website --serve
 ```
 
-Private preview (HTTP Basic Auth):
+Private preview (HTTP Basic Auth, password: xyzzy):
 
 ```bash
 uv run faes-website --serve --private
@@ -60,16 +61,16 @@ uv run pytest
 Run one test file:
 
 ```bash
-uv run pytest tests/test_f18_markdown_photo_shortcode.py
+uv run pytest tests/test_f21_orgs.py
 ```
 
 ## Content system
 
 All author-managed content lives under `content/`.
 
-### Markdown files
+### Pages and people
 
-Markdown files use YAML front matter. Required keys for markdown items:
+Markdown files in `content/pages/` and `content/people/` use YAML front matter. Required keys:
 
 - `title`
 - `date`
@@ -81,17 +82,21 @@ Additional rules:
 - `type: page` requires `slug`.
 - `type: person` requires `role` (`board` or `advisor`).
 
-### Grants CSV
+### Orgs
 
-Grants are loaded from `content/grants.csv` with schema:
+Each grant recipient has a subdirectory under `content/orgs/<Org Name>/` containing:
 
-- `name` (required)
-- `total` (required)
-- `count` (required)
-- `recent` (required)
-- `logo` (optional) - filename relative to `static/logos/`
+- `org.md` — YAML front matter with required fields `grant_type` (`pilot` or `primary`) and `public`; optional fields `name`, `url`, `blurb`, `logo`, `2025_recipient`
+- An optional logo image (`.png`, `.jpg`, or `.jpeg`); detected automatically
 
-The generated grants page currently renders simplified cards with recipient names and optional logos.
+### Transactions CSV
+
+Grant transaction history is loaded from `content/all_bank_transactions.csv` with columns:
+
+- `date` (YYYY-MM-DD)
+- `nonprofit` — must match an `orgs/` subdirectory name exactly
+- `amount`
+- `notes`
 
 ## Inline photo shortcode
 
@@ -127,25 +132,32 @@ Failure behavior:
 Key directories and files:
 
 - `faes_website/content_loader.py`: parses front matter, preprocesses photo shortcodes, converts markdown to HTML.
-- `faes_website/csv_loader.py`: loads grants from CSV.
+- `faes_website/csv_loader.py`: loads and summarises transaction data from CSV files.
+- `faes_website/org_loader.py`: reads per-org metadata from `content/orgs/` subdirectories.
+- `faes_website/config_loader.py`: reads and validates `config.yml`.
 - `faes_website/site_generator.py`: writes HTML pages and copies/symlinks static assets.
 - `faes_website/staging_server.py`: local HTTP server with optional auth.
 - `faes_website/__main__.py`: CLI entrypoint.
-- `content/`: markdown pages and people plus `grants.csv`.
+- `content/pages/`: markdown pages (home, about, mission, language variants).
+- `content/people/`: markdown profiles for board members and advisors.
+- `content/orgs/`: one subdirectory per grant recipient with `org.md` and optional logo.
+- `content/all_bank_transactions.csv`: full grant transaction history.
 - `static/`: CSS, logos, photos, and general images (`static/images/`).
-- `templates/`: template assets (if used by feature changes).
-- `tests/`: feature-aligned test files (`test_f01_*` through `test_f18_*`).
+- `tests/`: feature-aligned test files (`test_f01_*` through `test_f21_*`).
 - `process/`: feature and task tracking docs.
 
 ## Generation pipeline
 
 Pipeline overview:
 
-1. Read markdown and CSV content.
-2. Preprocess photo shortcodes inside markdown bodies.
-3. Convert markdown to HTML.
-4. Build pages (`index`, `about`, `mission`, `board`, `grants`, and language variants).
-5. Write output into `site/` (or `staging/` for serve flows).
+1. Load config from `config.yml`.
+2. Read markdown content from `content/pages/` and `content/people/`.
+3. Preprocess photo shortcodes inside markdown bodies.
+4. Convert markdown to HTML.
+5. Load org metadata from `content/orgs/`.
+6. Load transaction summaries from `content/all_bank_transactions.csv`.
+7. Build pages (`index`, `about`, `mission`, `board`, `grants`, and language variants).
+8. Write output into `site/` (or `staging/` for serve flows).
 
 ## Deployment
 
@@ -157,3 +169,4 @@ Deployment is handled by GitHub Actions on push to `main`, publishing generated 
 - Put person photos in `static/photos/` when using person front-matter `photo` fields.
 - Put inline body images for `:photo` shortcode in `static/images/`.
 - Use descriptive captions because they are also used as alt text.
+- The `nonprofit` field in `all_bank_transactions.csv` must match an `orgs/` directory name exactly.
