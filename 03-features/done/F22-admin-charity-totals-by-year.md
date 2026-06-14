@@ -2,6 +2,7 @@
 ## F22 — Admin page: charity totals for selected year-to-date
 **Priority**: Medium
 **Done:** yes
+**Tasks File Created:** yes
 **Tests Written:** yes
 **Test Passing:** yes
 **Description**: Add a new section to `admin.html` that shows the total amount

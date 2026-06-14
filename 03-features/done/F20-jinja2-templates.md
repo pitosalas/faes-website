@@ -2,6 +2,7 @@
 ## F20 — Extract inline HTML to Jinja2 templates
 **Priority**: Medium
 **Done:** yes
+**Tasks File Created:** yes
 **Tests Written:** yes
 **Test Passing:** yes
 **Description**: Move all inline HTML out of Python source files into Jinja2 template files. The rule enforced is: no HTML or CSS block longer than 2 lines may live inside a Python f-string. Jinja2 is already a declared dependency; a new `templates/html/` directory holds all templates. `site_generator.py` gains a module-level `_TEMPLATES_DIR` path and a Jinja2 `Environment` (autoescape=False, trusted content). `content_loader.py` gains a module-level `_env` (autoescape=True, external file content). All public method signatures and generated HTML output are unchanged.

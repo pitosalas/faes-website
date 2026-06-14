@@ -2,6 +2,7 @@
 ## F19 — Grants by year bar chart
 **Priority**: Medium
 **Done:** yes
+**Tasks File Created:** yes
 **Tests Written:** yes
 **Test Passing:** yes
 **Description**: Add a bar chart to the grants page that visualises total donation amounts by year, drawn from a new `content/grantsdetailed.csv` file. Each row in the detailed CSV has columns `Year`, `Recipient`, and `Amount` (formatted as `XCG 1,000.`). The site generator reads this file, sums amounts per year, and injects a Chart.js bar chart above the grant cards on `grants.html`. The chart uses green bars with XCG-formatted axis labels and tooltips.

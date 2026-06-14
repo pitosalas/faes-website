@@ -2,6 +2,7 @@
 ## F06 — Content schema amendments: grant type and public/private flag
 **Priority**: High
 **Done:** yes
+**Tasks File Created:** yes
 **Tests Written:** yes
 **Test Passing:** yes
 **Description**: Two additions to the content front matter schema required by the spec:

@@ -2,11 +2,11 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-We are developing an app called faes-website. Read the files in the process/ folder to understand the development.
+We are developing an app called faes-website. Read the files in the doc and feature folders to understand the development.
 
 The following steps are required when Claude Code first launches:
 
-1. If there is no folder called `process/` then this is the first time running — read and follow: @.claude/bootstrap.md
+1. If there is no folder called `03-features/` then this is the first time running — read and follow: @.claude/bootstrap.md
 2. If writing new code or doing a code review, read and follow: @.claude/codereview.md
 3. For all other prompts in this session: @.claude/process.md
 
@@ -36,12 +36,19 @@ The app is a Python static site generator that reads markdown+YAML content files
 
 **Deployment** is via `.github/workflows/deploy.yml` — pushes to `main` trigger site generation and GitHub Pages deployment to `faesfoundation.com`.
 
-**Tests** in `tests/` are organized by feature (e.g. `test_f03_generator.py`). All 8 features are complete and tested.
+**Tests** in `tests/` are organized by feature (e.g. `test_f03_generator.py`). All features are complete and tested.
 
 Read and follow all rules in the `.claude/` folder:
 - @.claude/how_to_be.md — working principles and conduct (apply every session)
 - @.claude/process.md — development workflow and feature/task tracking rules
 - @.claude/codereview.md — coding standards, style rules, and review checklist
-- `process/spec.md` — app description and goals
+- `02-doc/spec.md` — app description and goals
+- `02-doc/current.md` — current session status and handoff notes
+- `02-doc/notes.md` — architecture decisions and gotchas
 
-Development is tracked in `process/`: features in `process/features/`, tasks in `process/tasks/`, spec in `process/spec.md`.
+Development is tracked in numbered folders:
+- `01-literate/` — generated literate programming docs for Python modules
+- `02-doc/` — spec, current status, notes
+- `03-features/` — feature files (FNN-slug.md)
+- `04-tasks/` — task files (TFNN-slug.md)
+- `05-issues/` — loose issues not yet converted to features

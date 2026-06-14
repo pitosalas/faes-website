@@ -2,6 +2,7 @@
 ## F21 — Org directories replace grants.csv
 **Priority**: High
 **Done:** yes
+**Tasks File Created:** yes
 **Tests Written:** yes
 **Test Passing:** yes
 **Description**: Replace `content/grants.csv` as the source of per-org metadata with a new `content/orgs/` directory structure. Each organisation that appears in `grantsdetailed.csv` (Recipient column) gets a subdirectory under `content/orgs/` whose name is exactly the Recipient string. Each subdirectory contains one file, `org.md`, with YAML front matter holding the org's metadata. Summary data (total amount, grant count, most recent year) continues to be derived from `grantsdetailed.csv`. `grants.csv` is ignored by the code going forward.
