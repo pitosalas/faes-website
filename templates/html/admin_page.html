@@ -19,6 +19,11 @@
   <div id="org-year-grid"></div>
 </div>
 
+<div id="charity-totals-section">
+  <h2>Totals by Charity (Jan 1 of selected year – today)</h2>
+  <div id="charity-totals-grid"></div>
+</div>
+
 <script>window.SECRET_ROWS = {{ rows_json | safe }}; window.SECRET_YEARS = {{ years | tojson }};</script>
 <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
 <script src="static/admin.js"></script>
