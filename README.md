@@ -2,7 +2,7 @@
 
 Static site generator for Fundashon Abram Edgardo Salas.
 
-The project builds a public website from markdown content and org data, then deploys it to GitHub Pages automatically
+The project builds a public website from markdown content and org data, then deploys it to GitHub Pages automatically. The content is not public on github. But this is. 
 
 ## What this project does
 
