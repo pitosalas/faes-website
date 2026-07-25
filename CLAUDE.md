@@ -7,7 +7,7 @@ We are developing an app called faes-website. Read the files in the doc and feat
 The following steps are required when Claude Code first launches:
 
 1. If there is no folder called `03-features/` then this is the first time running — read and follow: @.claude/bootstrap.md
-2. If writing new code or doing a code review, read and follow: @.claude/codereview.md
+2. If writing new code or doing a code review, read and follow: @.claude/style_guide.md
 3. For all other prompts in this session: @.claude/process.md
 
 ## Commands
@@ -39,9 +39,8 @@ The app is a Python static site generator that reads markdown+YAML content files
 **Tests** in `tests/` are organized by feature (e.g. `test_f03_generator.py`). All features are complete and tested.
 
 Read and follow all rules in the `.claude/` folder:
-- @.claude/how_to_be.md — working principles and conduct (apply every session)
 - @.claude/process.md — development workflow and feature/task tracking rules
-- @.claude/codereview.md — coding standards, style rules, and review checklist
+- @.claude/style_guide.md — coding standards, style rules, and review checklist
 - `02-doc/spec.md` — app description and goals
 - `02-doc/current.md` — current session status and handoff notes
 - `02-doc/notes.md` — architecture decisions and gotchas
@@ -49,6 +48,6 @@ Read and follow all rules in the `.claude/` folder:
 Development is tracked in numbered folders:
 - `01-literate/` — generated literate programming docs for Python modules
 - `02-doc/` — spec, current status, notes
-- `03-features/` — feature files (FNN-slug.md)
-- `04-tasks/` — task files (TFNN-slug.md)
-- `05-issues/` — loose issues not yet converted to features
+- `03-features/` — feature files (FNN-slug.md), in `notdone/`, `done/`, `deferred/`
+- `04-tasks/` — task files (TFNN-slug.md), in `notdone/`, `done/`, `deferred/`, plus `chores.md` for untracked bug fixes/refactors
+- `05-issues/` — issues, in `open/`, `closed/`, `deferred/`

@@ -1,19 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(uv run *)",
-      "Bash(git rm *)",
-      "Bash(kill %1)",
-      "Bash(git -C ../faes-content status)",
-      "Bash(git -C ../faes-content add all_bank_transactions.csv)",
-      "Bash(git -C:*)",
-      "Bash(git commit:*)",
-      "Bash(git ls-tree:*)",
-      "Bash(/Users/pitosalas/mydev/faes-website/02-doc/current.md:*)",
-      "Bash(__NEW_LINE_8fe6d773d19441ee__ cat)",
-      "Bash(/Users/pitosalas/mydev/faes-website/02-doc/notes.md:*)",
-      "Bash(# Step:*)",
-      "Bash(/Users/pitosalas/mydev/faes-website/CLAUDE.md:*)"
+      "WebSearch",
+      "Bash(git mv *)",
+      "Bash(uv run *)"
     ]
   }
 }
