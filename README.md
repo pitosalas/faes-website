@@ -143,8 +143,12 @@ Key directories and files:
 - `content/orgs/`: one subdirectory per grant recipient with `org.md` and optional logo.
 - `content/all_bank_transactions.csv`: full grant transaction history.
 - `static/`: CSS, logos, photos, and general images (`static/images/`).
-- `tests/`: feature-aligned test files (`test_f01_*` through `test_f21_*`).
-- `process/`: feature and task tracking docs.
+- `tests/`: feature-aligned test files (`test_f01_*` through `test_f22_*`).
+- `02-doc/`: spec, current status, and architecture notes.
+- `03-features/`: feature files (`FNN-slug.md`).
+- `04-tasks/`: task files (`TFNN-slug.md`).
+- `05-issues/`: loose issues not yet converted into features.
+- `01-literate/`: generated literate docs for Python modules.
 
 ## Generation pipeline
 
